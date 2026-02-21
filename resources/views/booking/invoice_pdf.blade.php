@@ -101,7 +101,7 @@
                         @else
                             <span style="color: #FB2F2F; margin-left: 16px;">
                                 {{ __('messages.pending') }}
-                            </span>   
+                            </span>
                         @endif
                 </div>
             </div>
@@ -188,7 +188,7 @@
 
         {{-- TABLE  --}}
         <table style="width: 100%; border-collapse: collapse; border: 1px solid #ccc;">
-            <tr> 
+            <tr>
             <thead style="background: #F6F7F9;">
                 <th style="padding:12px 30px; text-align: start;">{{__('messages.service')}}</th>
                 <th style="padding:12px 30px; text-align: end;">{{__('messages.Price')}}</th>
@@ -201,7 +201,7 @@
             </thead>
 
             </tr>
-            
+
             <tbody>
                 <tr>
                     <td style="padding:12px 30px; text-align: start;"> {{optional($bookingdata->service)->name ?? '-'}}</td>
@@ -257,7 +257,7 @@
                         </td>
                     @endif
                 </tr>
-               
+
                 {{-- DISCOUNT --}}
                 @if($bookingdata->bookingPackage == null && $bookingdata->discount > 0)
                 <tr>
@@ -279,7 +279,7 @@
                     <td style="padding:12px 30px; text-align: end; color: #219653;">-{{ getPriceFormat($bookingdata->final_coupon_discount_amount) }}</td>
                 </tr>
                 @endif
-                
+
                  <!-- Extra Charges -->
 
                  @php
@@ -296,7 +296,7 @@
                     <td style="padding:12px 30px; text-align: end; color: #219653;">+{{ getPriceFormat($extraCharges) }}</td>
                 </tr>
                  @endif
-                
+
                  @if($addonTotalPrice > 0)
                  <tr>
                     <td style="padding:12px 30px; text-align: start;"></td>
@@ -363,7 +363,7 @@
                                     @endif
                             </td>
                             <td style="padding:12px 30px; text-align: end; color: #1C1F34; border-top:1px solid #ccc;">
-                                    @if($payment != null && $payment->payment_status == 'paid') 
+                                    @if($payment != null && $payment->payment_status == 'paid')
                                     {{ __('messages.paid') }}
                                     @else
                                     {{ getPriceFormat($bookingdata->total_amount - $bookingdata->advance_paid_amount) }}
@@ -381,7 +381,7 @@
                                 <td style="padding:12px 30px; text-align: end; color: #1C1F34; border-top:1px solid #ccc;">{{getPriceFormat($bookingdata->cancellation_charge_amount) ?? 0}}</td>
                             </tr>
                         @if($bookingdata->advance_paid_amount > 0)
-                            @php 
+                            @php
                                 $refundamount = $bookingdata->advance_paid_amount - $bookingdata->cancellation_charge_amount
                             @endphp
                             @if($refundamount > 0)
@@ -391,13 +391,13 @@
                                     <td style="padding:12px 30px; text-align: end;"></td>
                                     <td style="padding:12px 30px; text-align: start; color: #1C1F34; border-top:1px solid #ccc;">{{ __('messages.refund_amount') }}</td>
                                     <td style="padding:12px 30px; text-align: end; color: #1C1F34; border-top:1px solid #ccc;">{{getPriceFormat($refundamount) ?? 0}} </td>
-                                
+
                                 </tr>
                             @endif
                         @endif
                     @endif
                @endif
-             
+
             </tbody>
         </table>
         <div class="bottom-section">
@@ -413,7 +413,7 @@
             <div style="display: inline; vertical-align: middle; margin-right: 10px;">
                 <h5 style="display: inline;">For more information, visit our website:</h5>
                 <a href="{{$generaldata->website}}" style="color: #5F60B9;">{{ $generaldata->website}}</a>
-                <h5 style="display: block; margin: 8px 0 0;">© 2024 All Rights Reserved by IQONIC Design</h5>
+                <h5 style="display: block; margin: 8px 0 0;">© 2026 All Rights Reserved by JWARK Team</h5>
             </div>
         </footer>
     </div>

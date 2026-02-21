@@ -20,7 +20,7 @@
     $seo_name = $seo_value['site_name'] ?? '';
     @endphp
 
-<title>{{$seo_name ?? 'Handyman Service'}}</title>
+<title>{{$seo_name ?? 'Jwark Service'}}</title>
 @if(!empty($metaTags['google_site_verification']))
     <meta name="google-site-verification" content="{{ $metaTags['google_site_verification'] }}" />
 @endif

@@ -27,6 +27,7 @@ Route::middleware([CheckInstallation::class])->group(function () {
     Route::get('/login-page', [FrontendController::class, 'userLoginView'])->name('user.login');
     Route::post('/user-login', [CustomerController::class, 'userLogin'])->name('user.user_login');
     Route::get('/register-page', [FrontendController::class, 'userRegistrationView'])->name('user.register');
+    // Route::post('/register-page', [FrontendController::class, 'loginregisterpagesettings'])->name('user.user_register');
     Route::get('/provider-register', [FrontendController::class, 'partnerRegistrationView'])->name('partner.register');
     Route::get('/forgotpassword-page', [FrontendController::class, 'forgotPassword'])->name('user.forgot_password');
 

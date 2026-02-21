@@ -34,9 +34,9 @@ class AlterSettingsTable extends Migration
                     'type' => 'general-setting',
                     'key' => 'general-setting',
                     'value' => [
-                        'site_name' => $appsetting->site_name ?? "Handyman Service",
-                        'site_description' => $appsetting->site_description ?? "Launch your own mobile-based online On-Demand Home Services with Handyman Service mobile app. The customizable templates of this amazing app can quickly let developers set up a service booking system to accept bookings from clients from anywhere in only a few minutes. With ready-to-use Sign-in page, Sign-up pages, Payment methods page, Booking lists, Service Type demo, Handyman detail page, Coupon page, and more, this Handyman Service app allows businesses to have a complete and running booking service system app in no time. The provider in this Handyman Service app can assign the booking to Handyman and accelerate the service. This Handyman Service system app comes with a Laravel PHP admin panel to have meaningful insights from the admin dashboard and statistics. Assign multi-roles and permissions like Admin, Service Provider, Handyman, and customers using this app. Additionally, this Handyman Service app supports Multiple Language/ RTL support. This customizable, ready-to-use app comes with light as well as dark theme support and push notification to engage with clients in a more interactive way.",
-                        'inquriy_email' => $appsetting->inquriy_email ?? "hello@iqonic.design",
+                        'site_name' => $appsetting->site_name ?? "Jwark Service",
+                        'site_description' => $appsetting->site_description ?? "Launch your own mobile-based online On-Demand Home Services with Jwark Service mobile app. The customizable templates of this amazing app can quickly let developers set up a service booking system to accept bookings from clients from anywhere in only a few minutes. With ready-to-use Sign-in page, Sign-up pages, Payment methods page, Booking lists, Service Type demo, Handyman detail page, Coupon page, and more, this Jwark Service app allows businesses to have a complete and running booking service system app in no time. The provider in this Jwark Service app can assign the booking to Handyman and accelerate the service. This Jwark Service system app comes with a Laravel PHP admin panel to have meaningful insights from the admin dashboard and statistics. Assign multi-roles and permissions like Admin, Service Provider, Handyman, and customers using this app. Additionally, this Jwark Service app supports Multiple Language/ RTL support. This customizable, ready-to-use app comes with light as well as dark theme support and push notification to engage with clients in a more interactive way.",
+                        'inquriy_email' => $appsetting->inquriy_email ?? "hello@jwark.team",
                         'helpline_number' => $appsetting->helpline_number ?? "+15265897485",
                         'website' => $appsetting->website ?? null,
                         'country_id' => $appsetting->country_id ?? "231",
@@ -89,7 +89,7 @@ class AlterSettingsTable extends Migration
                     'ios_app_links' => $appsetting->ios_app_links ?? 0,
                     'appstore_url' => $appsetting->appstore_url ?? "https://apps.apple.com/us/app/handyman-service-user/id1591427211",
                     'provider_appstore_url' => $appsetting->provider_appstore_url ?? "https://apps.apple.com/in/app/handyman-provider-app/id1596025324",
-                    'site_copyright' => $appsetting->site_copyright ?? "© 2024 All Rights Reserved by IQONIC Design",
+                    'site_copyright' => $appsetting->site_copyright ?? "© 2026 All Rights Reserved by JWARK Team",
                 ];
             }
         }

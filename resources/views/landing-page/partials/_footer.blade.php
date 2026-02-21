@@ -239,8 +239,8 @@
                 <div class="col-md-6 text-md-start text-center">
                    {{-- <p class="mb-0 text-white">{{ $appsetting->site_copyright }}
                     </p> --}}
-                    <p class="mb-0 text-white">{{ $copyright['first_part'] ?? '© 2024 All Rights Reserved by'}}
-                    <a target="_blank" href="{{ optional($generalsetting)->website }}">{{ $copyright['second_part'] ?? 'IQONIC Design'}} </a>
+                    <p class="mb-0 text-white">{{ $copyright['first_part'] ?? '© 2026 All Rights Reserved by'}}
+                    <a target="_blank" href="{{ optional($generalsetting)->website }}">{{ $copyright['second_part'] ?? 'JWARK Team'}} </a>
                     </p>
                 </div>
                 {{-- <div class="col-md-6 text-md-end text-center">
