@@ -1,0 +1,47 @@
+# Git
+.git
+.gitignore
+
+# IDEs
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Laravel (not needed in container)
+node_modules
+npm-debug.log
+yarn-error.log
+package.json
+package-lock.json
+webpack.mix.js
+resources/js
+resources/scss
+resources/sass
+public/css
+public/js
+public/scss
+public/sass
+
+# Testing
+phpunit.xml
+.phpunit.result.cache
+tests/
+
+# Development tools
+.env.example
+.env
+.install.sh
+README.md
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Misc
+storage/*.key
+composer.lock
