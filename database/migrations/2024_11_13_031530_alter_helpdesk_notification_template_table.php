@@ -165,9 +165,9 @@ class AlterHelpdeskNotificationTemplateTable extends Migration
             'user_type' => 'admin',
             'status' => 1,
             'subject' => 'Cancellation Charges',
-            'template_detail' => `<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>`,
+            'template_detail' => "<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>",
         ]);
-       
+
         $template->defaultNotificationTemplateMap()->create([
             'language' => 'en',
             'notification_link' => '',

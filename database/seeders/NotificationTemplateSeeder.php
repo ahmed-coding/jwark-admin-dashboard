@@ -1586,10 +1586,10 @@ class NotificationTemplateSeeder extends Seeder
             'mail_subject' => 'Cancellation Charges',
             'whatsapp_subject' => 'Cancellation Charges',
             'sms_subject' => 'Cancellation Charges',
-            'template_detail' => `<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>`,
-            'whatsapp_template_detail' => `<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>`,
-            'sms_template_detail' => `<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>`,
-            'mail_template_detail' => `<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>`,
+            'template_detail' => "<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>",
+            'whatsapp_template_detail' => "<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>",
+            'sms_template_detail' => "<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>",
+            'mail_template_detail' => "<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>",
         ]);
 
         $template->defaultNotificationTemplateMap()->create([

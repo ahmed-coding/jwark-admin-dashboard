@@ -219,12 +219,12 @@ class AlterHelpdeskMailTemplateTable extends Migration
             'user_type' => 'admin',
             'status' => 1,
             'subject' => 'Cancellation Charges',
-            'template_detail' => `<p>Hello [[ admin_name ]],</p>
+            'template_detail' => "<p>Hello [[ admin_name ]],</p>
                                   <p>We would like to inform you that the service provided by [[ provider_name ]] to [[ customer_name ]] has been cancelled. Consequently, a cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>
                                   <p>&nbsp;</p>
-                                  <p>Best regards,<br />[[ company_name ]]</p>`,
+                                  <p>Best regards,<br />[[ company_name ]]</p>",
         ]);
-        
+
         $template->defaultMailTemplateMap()->create([
             'language' => 'en',
             'notification_link' => '',

@@ -22,7 +22,7 @@ return new class extends Migration
                 'whatsapp_template_detail' => ['type' => 'longText', 'nullable' => true],
                 'whatsapp_subject' => ['type' => 'string', 'nullable' => true],
             ];
-        
+
             foreach ($columns as $column => $attributes) {
                 if (!Schema::hasColumn('notification_template_content_mapping', $column)) {
                     $type = $attributes['type'];
@@ -135,7 +135,7 @@ return new class extends Migration
             'whatsapp_template_detail' => '<p>#[[ booking_id ]] - [[ assignee_name ]] has been assigned to [[ booking_services_name ]].</p>',
             'sms_template_detail' => '<p>#[[ booking_id ]] - [[ assignee_name ]] has been assigned to [[ booking_services_name ]].</p>',
             'mail_template_detail' => '<p>#[[ booking_id ]] - [[ assignee_name ]] has been assigned to [[ booking_services_name ]].</p>',
-            
+
         ]);
         $template->defaultNotificationTemplateMap()->create([
             'language' => 'en',
@@ -334,7 +334,7 @@ return new class extends Migration
             'whatsapp_template_detail' => '<p>#[[ booking_id ]] - Payment For [[ booking_services_name ]] changed to [[ payment_status ]].</p>',
             'sms_template_detail' => '<p>#[[ booking_id ]] - Payment For [[ booking_services_name ]] changed to [[ payment_status ]].</p>',
             'mail_template_detail' => '<p>#[[ booking_id ]] - Payment For [[ booking_services_name ]] changed to [[ payment_status ]].</p>',
-            
+
         ]);
         $template->defaultNotificationTemplateMap()->create([
             'language' => 'en',
@@ -350,7 +350,7 @@ return new class extends Migration
             'whatsapp_template_detail' => '<p>#[[ booking_id ]] - Payment For [[ booking_services_name ]] changed to [[ payment_status ]].</p>',
             'sms_template_detail' => '<p>#[[ booking_id ]] - Payment For [[ booking_services_name ]] changed to [[ payment_status ]].</p>',
             'mail_template_detail' => '<p>#[[ booking_id ]] - Payment For [[ booking_services_name ]] changed to [[ payment_status ]].</p>',
-            
+
         ]);
 
         $template->defaultNotificationTemplateMap()->create([
@@ -738,7 +738,7 @@ return new class extends Migration
         ]);
 
 
-       
+
         $template = NotificationTemplate::create([
             'type' => 'subscription_add',
             'name' => 'subscription_add',
@@ -1126,12 +1126,12 @@ return new class extends Migration
             'mail_subject' => 'Cancellation Charges',
             'whatsapp_subject' => 'Cancellation Charges',
             'sms_subject' => 'Cancellation Charges',
-            'template_detail' => `<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>`,
-            'whatsapp_template_detail' => `<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>`,
-            'sms_template_detail' => `<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>`,
-            'mail_template_detail' => `<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>`,
+            'template_detail' => "<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>",
+            'whatsapp_template_detail' => "<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>",
+            'sms_template_detail' => "<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>",
+            'mail_template_detail' => "<p>#[[ booking_id ]] - A cancellation charge of [[ paid_amount ]] has been deducted from the customer's wallet.</p>",
         ]);
-       
+
         $template->defaultNotificationTemplateMap()->create([
             'language' => 'en',
             'notification_link' => '',
