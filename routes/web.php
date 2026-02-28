@@ -365,7 +365,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('get_payment_config', [PaymentGatewayController::class, 'getPaymentConfig'])->name('getPaymentConfig');
 
     Route::post('/razorpay-layout-page', [PaymentGatewayController::class, 'rezorpaypaymentPage'])->name('razorpay_layout_page');
-    
+
     Route::group(['middleware' => ['permission:tax list']], function () {
         Route::resource('tax', TaxController::class);
         Route::get('tax-index_data', [TaxController::class, 'index_data'])->name('tax.index_data');

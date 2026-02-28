@@ -34,7 +34,8 @@
                         ->class('form-control phone_number')
                         ->attribute('id', 'phone_number')
                         ->placeholder(__('messages.helpline_number')) }}
-                    <input type="hidden" name="country_code" id="country_code" value="{{ $generalsetting->country_code ?? '' }}">
+                    {{-- <input type="hidden" name="country_code" id="country_code" value="{{ $generalsetting->country_code ?? '' }}"> --}}
+                    <input type="hidden" name="country_code" id="country_code" value="+967">
                 </div>
                 <small id="phone-error" class="help-block with-errors text-danger"></small>
             </div>
@@ -131,7 +132,7 @@ $(document).ready(function() {
     var phoneInput = document.querySelector("#phone_number");
     var phoneError = document.querySelector("#phone-error");
     var countryCodeInput = document.querySelector("#country_code");
-    
+
     // Initialize intlTelInput with India as default
     var iti = window.intlTelInput(phoneInput, {
         initialCountry: "in",
@@ -139,7 +140,7 @@ $(document).ready(function() {
         preferredCountries: ["in", "us", "gb"],
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
         customContainer: "w-100",
-        onlyCountries: ["in", "us", "gb", "ca", "au", "de", "fr", "it", "es", "pt", "nl", "be", "ch", "at", "dk", "se", "no", "fi", "ie", "nz"]
+        onlyCountries: ["ye", "kse", "gb", "ca", "au", "de", "fr", "it", "es", "pt", "nl", "be", "ch", "at", "dk", "se", "no", "fi", "ie", "nz"]
     });
 
     // If there's an existing phone number, format it
@@ -151,7 +152,7 @@ $(document).ready(function() {
     phoneInput.addEventListener('countrychange', function() {
         var countryData = iti.getSelectedCountryData();
         countryCodeInput.value = countryData.dialCode;
-        
+
         // Clear the input and update placeholder
         phoneInput.value = '';
         phoneInput.placeholder = intlTelInputUtils.getExampleNumber(countryData.iso2, true, intlTelInputUtils.numberFormat.NATIONAL);
@@ -173,18 +174,18 @@ $(document).ready(function() {
         e.preventDefault();
         var pastedText = (e.clipboardData || window.clipboardData).getData('text');
         var numbersOnly = pastedText.replace(/\D/g, '');
-        
+
         // Get current cursor position
         var cursorPos = this.selectionStart;
         var textBefore = this.value.substring(0, cursorPos);
         var textAfter = this.value.substring(this.selectionEnd);
-        
+
         // Combine the text with the pasted numbers
         this.value = textBefore + numbersOnly + textAfter;
-        
+
         // Set cursor position after pasted text
         this.selectionStart = this.selectionEnd = cursorPos + numbersOnly.length;
-        
+
         // Trigger input event for validation
         this.dispatchEvent(new Event('input'));
     });
@@ -193,7 +194,7 @@ $(document).ready(function() {
     phoneInput.addEventListener('input', function(e) {
         // Remove any non-digit characters that might have been added
         var numbersOnly = this.value.replace(/\D/g, '');
-        
+
         // Limit to 15 digits
         if (numbersOnly.length > 15) {
             numbersOnly = numbersOnly.substring(0, 15);
@@ -253,7 +254,7 @@ $(document).ready(function() {
             $('#city_id').empty();
             stateName(country, state_id);
     });
-    
+
         $(document).on('change', '#state_id', function() {
             var state = $(this).val();
             $('#city_id').empty();

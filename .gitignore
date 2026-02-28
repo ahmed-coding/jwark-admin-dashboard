@@ -38,3 +38,6 @@ yarn-error.log
 node_modules
 node_modules
 /storage/media-library/**/*
+
+sync_config.jsonc
+.git

@@ -172,7 +172,7 @@
                 ->data('permission', ['service add on list'])
                 ->link->attr(['class' => '']);
         }
-        
+
         $menu
             ->add(
                 '<span>' .
@@ -215,7 +215,7 @@
             ->link->attr(['class' => '']);
 
         }
-        
+
         if (optional($servicesetting)->post_services == 1) {
             $menu
                 ->add(__('messages.sidebar_form_title', ['form' => trans('messages.custom_job')]), [

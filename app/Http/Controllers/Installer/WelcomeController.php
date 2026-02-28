@@ -16,10 +16,10 @@ class WelcomeController extends Controller
     {
         $dbConnectionStatus =dbConnectionStatus();
 
-        if($dbConnectionStatus && Schema::hasTable('users') && file_exists(storage_path('installed')) ) {
+        // if($dbConnectionStatus && Schema::hasTable('users') && file_exists(storage_path('installed')) ) {
 
-            abort(404);
-        }
+        //     abort(404);
+        // }
 
         return view('installer.welcome');
     }

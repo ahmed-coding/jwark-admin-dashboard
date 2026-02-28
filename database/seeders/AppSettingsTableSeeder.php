@@ -23,7 +23,7 @@ class AppSettingsTableSeeder extends Seeder
             array (
                 'earning_type' => NULL,
                 'facebook_url' => 'https://www.facebook.com/iqonicdesign/',
-                'helpline_number' => '+15265897485',
+                'helpline_number' => '+967770948670',
                 'id' => 1,
                 'inquriy_email' => 'hello@jwark.team',
                 'instagram_url' => 'https://www.instagram.com/iqonicdesign/?igshid=YmMyMTA2M2Y%3D',

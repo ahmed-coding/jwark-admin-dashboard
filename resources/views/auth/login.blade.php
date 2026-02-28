@@ -73,7 +73,7 @@
                             <div class="text-center mb-3">
                                 <button type="button" class="btn btn btn-outline-primary btn-sm mx-1 demo-login" data-email="demo@admin.com" data-password="12345678">Demo Admin</button>
                                 <button type="button" class="btn btn btn-outline-primary btn-sm mx-1 demo-login" data-email="demo@provider.com" data-password="12345678"> Provider</button>
-                                <button type="button" class="btn btn btn-outline-primary btn-sm mx-1 demo-login" data-email="demo@handyman.com" data-password="12345678"> Handyman</button>
+                                {{-- <button type="button" class="btn btn btn-outline-primary btn-sm mx-1 demo-login" data-email="demo@handyman.com" data-password="12345678"> Handyman</button> --}}
                             </div>
                             @endif
                          <button type="submit" class="btn btn-primary btn-block mt-2 w-100">

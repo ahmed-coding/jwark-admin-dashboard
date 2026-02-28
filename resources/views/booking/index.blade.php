@@ -32,14 +32,14 @@
                                 <span class="fw-bold"> {{ __('messages.total_amount') }}: </span>
                                 <span class="text-primary total-earnings-display fw-medium">{{ getPriceFormat($totalEarning) }}</span>
                             </div>
-                           
+
                             <a href="#" data-bs-toggle="modal" data-bs-target="#breakdownModal"
                                 class="text-success">View Breakdown</a>
                             @endif
                             <button type="button" class="btn btn-sm btn-primary ms-2" data-bs-toggle="modal"
                                 data-bs-target="#Export">{{ __('messages.export') }}</button>
                         </div>
-                       
+
 
 
                     </div>
@@ -149,7 +149,7 @@
     {{-- Convert to match DB --}}
     <button type="button" class="btn filter-button"
         data-filter="payment_status"
-        data-value="{{ strtolower($status) }}" 
+        data-value="{{ strtolower($status) }}"
         data-multiple="true">
         {{ __( 'messages.' . str_replace(' ', '_', $status) ) }}
     </button>
@@ -333,7 +333,7 @@
                     "data": function(d) {
                         const urlParams = new URLSearchParams(window.location.search);
                         const providerIdFromUrl = urlParams.get('provider_id');
-                        d.provider_id = providerIdFromUrl; 
+                        d.provider_id = providerIdFromUrl;
                         d.search = {
                             value: $('.dt-search').val()
                         };
@@ -611,7 +611,7 @@ console.log(data);
                         }
 
 
-                        
+
 
                         // Update the earnings list
                         let earningListHtml = generateEarningsList(earnings, data.userRole);
@@ -707,7 +707,7 @@ console.log(data);
                 const downloadButton = document.getElementById('downloadButton');
                 const spinner = document.querySelector('.spinner-border');
                 const buttonText = document.querySelector('.button-text');
-                
+
                 downloadButton.disabled = false;
                 spinner.classList.add('d-none');
                 buttonText.textContent = "{{ __('messages.export') }}";
@@ -815,12 +815,12 @@ console.log(data);
             if (customerIds && customerIds.length > 0) {
                 count += 1;
             }
-            
+
             const providerIds = $('#provider_id').val();
             if (providerIds && providerIds.length > 0) {
                 count += 1;
             }
-            
+
             const handymanIds = $('#handyman_id').val();
             if (handymanIds && handymanIds.length > 0) {
                 count += 1;
