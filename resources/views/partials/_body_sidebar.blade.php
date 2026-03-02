@@ -216,55 +216,55 @@
 
         }
 
-        if (optional($servicesetting)->post_services == 1) {
-            $menu
-                ->add(__('messages.sidebar_form_title', ['form' => trans('messages.custom_job')]), [
-                    'class' => 'category-main',
-                ])
-                ->data('permission', 'postjob');
+//         if (optional($servicesetting)->post_services == 1) {
+//             $menu
+//                 ->add(__('messages.sidebar_form_title', ['form' => trans('messages.custom_job')]), [
+//                     'class' => 'category-main',
+//                 ])
+//                 ->data('permission', 'postjob');
 
-            $menu
-                ->add(
-                    '<span>' .
-                        __('messages.job_request_list') .
-                        '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                        __('messages.job_request_list') .
-                        '</span></span>',
-                    ['route' => 'post-job-request.index'],
-                )
-                ->prepend(
-                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1544_3684)">
-<path d="M20.25 6H3.75C3.33579 6 3 6.33579 3 6.75V18.75C3 19.1642 3.33579 19.5 3.75 19.5H20.25C20.6642 19.5 21 19.1642 21 18.75V6.75C21 6.33579 20.6642 6 20.25 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M15.75 6V4.5C15.75 4.10218 15.592 3.72064 15.3107 3.43934C15.0294 3.15804 14.6478 3 14.25 3H9.75C9.35218 3 8.97064 3.15804 8.68934 3.43934C8.40804 3.72064 8.25 4.10218 8.25 4.5V6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M21 11.0918C18.2649 12.6743 15.1599 13.5052 12 13.5002C8.84021 13.5053 5.73527 12.6747 3 11.0927" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M10.5 10.5H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-</g><defs><clipPath id="clip0_1544_3684"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>',
-                )
-                ->nickname('post_job')
-                ->data('permission', 'postjob');
+//             $menu
+//                 ->add(
+//                     '<span>' .
+//                         __('messages.job_request_list') .
+//                         '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                         __('messages.job_request_list') .
+//                         '</span></span>',
+//                     ['route' => 'post-job-request.index'],
+//                 )
+//                 ->prepend(
+//                     '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1544_3684)">
+// <path d="M20.25 6H3.75C3.33579 6 3 6.33579 3 6.75V18.75C3 19.1642 3.33579 19.5 3.75 19.5H20.25C20.6642 19.5 21 19.1642 21 18.75V6.75C21 6.33579 20.6642 6 20.25 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M15.75 6V4.5C15.75 4.10218 15.592 3.72064 15.3107 3.43934C15.0294 3.15804 14.6478 3 14.25 3H9.75C9.35218 3 8.97064 3.15804 8.68934 3.43934C8.40804 3.72064 8.25 4.10218 8.25 4.5V6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M21 11.0918C18.2649 12.6743 15.1599 13.5052 12 13.5002C8.84021 13.5053 5.73527 12.6747 3 11.0927" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M10.5 10.5H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// </g><defs><clipPath id="clip0_1544_3684"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>',
+//                 )
+//                 ->nickname('post_job')
+//                 ->data('permission', 'postjob');
 
-            $menu
-                ->add(
-                    '<span>' .
-                        __('messages.job_service_list') .
-                        '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                        __('messages.subcategory') .
-                        '</span></span>',
-                    ['route' => 'service.user-service-list'],
-                )
-                ->prepend(
-                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1544_3699)">
-<path d="M9 6H20.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M9 12H20.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M9 18H20.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M3.75 6H5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M3.75 12H5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M3.75 18H5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-</g><defs><clipPath id="clip0_1544_3699"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>',
-                )
-                ->data('permission', 'userservice list')
-                ->link->attr(['class' => '']);
-        }
+//             $menu
+//                 ->add(
+//                     '<span>' .
+//                         __('messages.job_service_list') .
+//                         '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                         __('messages.subcategory') .
+//                         '</span></span>',
+//                     ['route' => 'service.user-service-list'],
+//                 )
+//                 ->prepend(
+//                     '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1544_3699)">
+// <path d="M9 6H20.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M9 12H20.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M9 18H20.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M3.75 6H5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M3.75 12H5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M3.75 18H5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// </g><defs><clipPath id="clip0_1544_3699"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>',
+//                 )
+//                 ->data('permission', 'userservice list')
+//                 ->link->attr(['class' => '']);
+//         }
 
         $menu
             ->add(__('messages.sidebar_form_title', ['form' => trans('messages.user')]), ['class' => 'category-main'])
@@ -353,123 +353,123 @@
                     ->link->attr(['class' => '']);
             }
         }
-        $menu
-            ->add(
-                '<span>' .
-                    __('messages.handymen') .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.handymen') .
-                    '</span></span>',
-                ['class' => ''],
-            )
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="6" r="4" stroke="currentColor" stroke-width="1.5"/>
-<circle cx="17" cy="18" r="4" stroke="currentColor" stroke-width="1.5"/>
-<path d="M17 16.667V19.3337" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M15.6665 18L18.3332 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M14 20.8344C13.3663 20.9421 12.695 21 12 21C8.13401 21 5 19.2091 5 17C5 14.7909 8.13401 13 12 13C13.7135 13 15.2832 13.3518 16.5 13.9359" stroke="currentColor" stroke-width="1.5"/>
-</svg>',
-            )
-            ->nickname('handyman')
-            ->data('permission', 'handyman list')
-            ->link->attr(['class' => ''])
-            ->href('#handyman');
+//         $menu
+//             ->add(
+//                 '<span>' .
+//                     __('messages.handymen') .
+//                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                     __('messages.handymen') .
+//                     '</span></span>',
+//                 ['class' => ''],
+//             )
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <circle cx="12" cy="6" r="4" stroke="currentColor" stroke-width="1.5"/>
+// <circle cx="17" cy="18" r="4" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M17 16.667V19.3337" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M15.6665 18L18.3332 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M14 20.8344C13.3663 20.9421 12.695 21 12 21C8.13401 21 5 19.2091 5 17C5 14.7909 8.13401 13 12 13C13.7135 13 15.2832 13.3518 16.5 13.9359" stroke="currentColor" stroke-width="1.5"/>
+// </svg>',
+//             )
+//             ->nickname('handyman')
+//             ->data('permission', 'handyman list')
+//             ->link->attr(['class' => ''])
+//             ->href('#handyman');
 
-        $menu->handyman
-            ->add('<span>' . __('messages.list_form_title', ['form' => __('messages.handyman')]) . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'handyman.index',
-            ])
-            ->data('permission', 'handyman list')
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M4.21533 16.0148C4.21533 16.4737 4.58728 16.8456 5.0461 16.8456H10.0307C10.4895 16.8456 10.8615 16.4737 10.8615 16.0148C10.8615 15.556 10.4895 15.1841 10.0307 15.1841H5.0461C4.58728 15.1841 4.21533 15.556 4.21533 16.0148ZM4.21533 11.0302C4.21533 11.489 4.58728 11.861 5.0461 11.861H15.0153C15.4741 11.861 15.8461 11.489 15.8461 11.0302C15.8461 10.5714 15.4741 10.1995 15.0153 10.1995H5.0461C4.58728 10.1995 4.21533 10.5714 4.21533 11.0302ZM4.21533 6.04561C4.21533 6.50443 4.58728 6.87638 5.0461 6.87638H15.0153C15.4741 6.87638 15.8461 6.50443 15.8461 6.04561C15.8461 5.58679 15.4741 5.21484 15.0153 5.21484H5.0461C4.58728 5.21484 4.21533 5.58679 4.21533 6.04561Z" fill="currentColor"/>
-<path d="M18.7671 13.1096V11.3835C18.7671 7.43151 18.7671 5.45548 17.9005 4.22774C17.0338 3 15.639 3 12.8493 3H7.9178C5.12812 3 3.73328 3 2.86664 4.22774C2 5.45548 2 7.43151 2 11.3835C2 15.3356 2 17.3116 2.86664 18.5394C3.73328 19.7671 5.12812 19.7671 7.9178 19.7671H12.8493H17.4061" stroke="currentColor" stroke-width="1.47945"/>
-<circle cx="18.5" cy="14.25" r="1.5" stroke="currentColor" stroke-width="1.5"/>
-<ellipse cx="18.5" cy="18.375" rx="2.625" ry="1.5" stroke="currentColor" stroke-width="1.5"/>
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->handyman
+//             ->add('<span>' . __('messages.list_form_title', ['form' => __('messages.handyman')]) . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'handyman.index',
+//             ])
+//             ->data('permission', 'handyman list')
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path fill-rule="evenodd" clip-rule="evenodd" d="M4.21533 16.0148C4.21533 16.4737 4.58728 16.8456 5.0461 16.8456H10.0307C10.4895 16.8456 10.8615 16.4737 10.8615 16.0148C10.8615 15.556 10.4895 15.1841 10.0307 15.1841H5.0461C4.58728 15.1841 4.21533 15.556 4.21533 16.0148ZM4.21533 11.0302C4.21533 11.489 4.58728 11.861 5.0461 11.861H15.0153C15.4741 11.861 15.8461 11.489 15.8461 11.0302C15.8461 10.5714 15.4741 10.1995 15.0153 10.1995H5.0461C4.58728 10.1995 4.21533 10.5714 4.21533 11.0302ZM4.21533 6.04561C4.21533 6.50443 4.58728 6.87638 5.0461 6.87638H15.0153C15.4741 6.87638 15.8461 6.50443 15.8461 6.04561C15.8461 5.58679 15.4741 5.21484 15.0153 5.21484H5.0461C4.58728 5.21484 4.21533 5.58679 4.21533 6.04561Z" fill="currentColor"/>
+// <path d="M18.7671 13.1096V11.3835C18.7671 7.43151 18.7671 5.45548 17.9005 4.22774C17.0338 3 15.639 3 12.8493 3H7.9178C5.12812 3 3.73328 3 2.86664 4.22774C2 5.45548 2 7.43151 2 11.3835C2 15.3356 2 17.3116 2.86664 18.5394C3.73328 19.7671 5.12812 19.7671 7.9178 19.7671H12.8493H17.4061" stroke="currentColor" stroke-width="1.47945"/>
+// <circle cx="18.5" cy="14.25" r="1.5" stroke="currentColor" stroke-width="1.5"/>
+// <ellipse cx="18.5" cy="18.375" rx="2.625" ry="1.5" stroke="currentColor" stroke-width="1.5"/>
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->handyman
-            ->add('<span>' . __('messages.list_form_title', ['form' => __('messages.handymanrequest')]) . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => ['handyman.pending', 'request'],
-            ])
-            ->data('permission', 'pending handyman')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_2357_772)">
-        <path d="M12.75 9C10.68 9 9 10.68 9 12.75C9 14.82 10.68 16.5 12.75 16.5C14.82 16.5 16.5 14.82 16.5 12.75C16.5 10.68 14.82 9 12.75 9ZM13.9875 14.5125L12.375 12.9V10.5H13.125V12.5925L14.5125 13.98L13.9875 14.5125ZM13.5 2.25H11.115C10.8 1.38 9.975 0.75 9 0.75C8.025 0.75 7.2 1.38 6.885 2.25H4.5C3.675 2.25 3 2.925 3 3.75V15C3 15.825 3.675 16.5 4.5 16.5H9.0825C8.64 16.0725 8.28 15.5625 8.0175 15H4.5V3.75H6V6H12V3.75H13.5V7.56C14.0325 7.635 14.535 7.7925 15 8.01V3.75C15 2.925 14.325 2.25 13.5 2.25ZM9 3.75C8.5875 3.75 8.25 3.4125 8.25 3C8.25 2.5875 8.5875 2.25 9 2.25C9.4125 2.25 9.75 2.5875 9.75 3C9.75 3.4125 9.4125 3.75 9 3.75Z" fill="#6C757D" />
-    </g>
-    <defs>
-        <clipPath id="clip0_2357_772">
-            <rect width="18" height="18" fill="white" />
-        </clipPath>
-    </defs>
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->handyman
+//             ->add('<span>' . __('messages.list_form_title', ['form' => __('messages.handymanrequest')]) . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => ['handyman.pending', 'request'],
+//             ])
+//             ->data('permission', 'pending handyman')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <g clip-path="url(#clip0_2357_772)">
+//         <path d="M12.75 9C10.68 9 9 10.68 9 12.75C9 14.82 10.68 16.5 12.75 16.5C14.82 16.5 16.5 14.82 16.5 12.75C16.5 10.68 14.82 9 12.75 9ZM13.9875 14.5125L12.375 12.9V10.5H13.125V12.5925L14.5125 13.98L13.9875 14.5125ZM13.5 2.25H11.115C10.8 1.38 9.975 0.75 9 0.75C8.025 0.75 7.2 1.38 6.885 2.25H4.5C3.675 2.25 3 2.925 3 3.75V15C3 15.825 3.675 16.5 4.5 16.5H9.0825C8.64 16.0725 8.28 15.5625 8.0175 15H4.5V3.75H6V6H12V3.75H13.5V7.56C14.0325 7.635 14.535 7.7925 15 8.01V3.75C15 2.925 14.325 2.25 13.5 2.25ZM9 3.75C8.5875 3.75 8.25 3.4125 8.25 3C8.25 2.5875 8.5875 2.25 9 2.25C9.4125 2.25 9.75 2.5875 9.75 3C9.75 3.4125 9.4125 3.75 9 3.75Z" fill="#6C757D" />
+//     </g>
+//     <defs>
+//         <clipPath id="clip0_2357_772">
+//             <rect width="18" height="18" fill="white" />
+//         </clipPath>
+//     </defs>
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->handyman
-            ->add(
-                '<span>' . __('messages.unassigned_list_form_title', ['form' => __('messages.handyman')]) . '</span>',
-                ['class' => 'sidebar-layout', 'route' => ['handyman.pending', 'unassigned']],
-            )
-            ->data('permission', 'pending handyman')
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M4.21533 16.0148C4.21533 16.4737 4.58728 16.8456 5.0461 16.8456H10.0307C10.4895 16.8456 10.8615 16.4737 10.8615 16.0148C10.8615 15.556 10.4895 15.1841 10.0307 15.1841H5.0461C4.58728 15.1841 4.21533 15.556 4.21533 16.0148ZM4.21533 11.0302C4.21533 11.489 4.58728 11.861 5.0461 11.861H15.0153C15.4741 11.861 15.8461 11.489 15.8461 11.0302C15.8461 10.5714 15.4741 10.1995 15.0153 10.1995H5.0461C4.58728 10.1995 4.21533 10.5714 4.21533 11.0302ZM4.21533 6.04561C4.21533 6.50443 4.58728 6.87638 5.0461 6.87638H15.0153C15.4741 6.87638 15.8461 6.50443 15.8461 6.04561C15.8461 5.58679 15.4741 5.21484 15.0153 5.21484H5.0461C4.58728 5.21484 4.21533 5.58679 4.21533 6.04561Z" fill="currentColor"/>
-<path d="M18.7671 13.1096V11.3835C18.7671 7.43151 18.7671 5.45548 17.9005 4.22774C17.0338 3 15.639 3 12.8493 3H7.9178C5.12812 3 3.73328 3 2.86664 4.22774C2 5.45548 2 7.43151 2 11.3835C2 15.3356 2 17.3116 2.86664 18.5394C3.73328 19.7671 5.12812 19.7671 7.9178 19.7671H12.8493H16.5479" stroke="currentColor" stroke-width="1.47945"/>
-<path d="M18.5216 21.0774H18.5217C19.7185 21.0759 20.8659 20.5996 21.7121 19.7532C22.5582 18.9068 23.0342 17.7593 23.0354 16.5625V16.5624C23.0354 15.6693 22.7706 14.7963 22.2744 14.0538C21.7783 13.3113 21.073 12.7326 20.2479 12.3909C19.4229 12.0492 18.515 11.9598 17.6391 12.1342C16.7632 12.3085 15.9587 12.7386 15.3273 13.3702C14.6959 14.0017 14.266 14.8063 14.0919 15.6823C13.9179 16.5582 14.0074 17.466 14.3494 18.291C14.6913 19.116 15.2702 19.8211 16.0128 20.3171C16.7555 20.8131 17.6285 21.0777 18.5216 21.0774ZM16.7501 13.9125C17.2744 13.5623 17.8909 13.3756 18.5215 13.3758L18.5215 13.3758C19.3664 13.3767 20.1764 13.7127 20.7738 14.3101C21.3712 14.9076 21.7073 15.7176 21.7082 16.5625C21.7084 17.193 21.5216 17.8095 21.1714 18.3339C20.8212 18.8583 20.3234 19.267 19.7408 19.5085C19.1583 19.7499 18.5172 19.8131 17.8988 19.6901C17.2803 19.5672 16.7122 19.2635 16.2663 18.8176C15.8204 18.3718 15.5168 17.8036 15.3938 17.1852C15.2708 16.5667 15.3341 15.9256 15.5755 15.3431C15.8169 14.7606 16.2257 14.2627 16.7501 13.9125Z" fill="currentColor" stroke="currentColor" stroke-width="0.153424"/>
-<path d="M18.0562 17.9518C17.9345 17.952 17.8165 17.9096 17.7227 17.832C17.6289 17.7544 17.5653 17.6464 17.5427 17.5267C17.5202 17.4071 17.5402 17.2833 17.5993 17.1769C17.6584 17.0704 17.7528 16.988 17.8663 16.9439L18.4924 16.6997V15.4914C18.4924 15.3531 18.5473 15.2204 18.6452 15.1225C18.743 15.0247 18.8757 14.9697 19.0141 14.9697C19.1524 14.9697 19.2851 15.0247 19.383 15.1225C19.4808 15.2204 19.5358 15.3531 19.5358 15.4914V17.0566C19.5359 17.1616 19.5042 17.2642 19.445 17.351C19.3858 17.4377 19.3018 17.5046 19.204 17.5428L18.2461 17.9174C18.1855 17.9405 18.1211 17.9521 18.0562 17.9518Z" fill="currentColor"/>
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->handyman
+//             ->add(
+//                 '<span>' . __('messages.unassigned_list_form_title', ['form' => __('messages.handyman')]) . '</span>',
+//                 ['class' => 'sidebar-layout', 'route' => ['handyman.pending', 'unassigned']],
+//             )
+//             ->data('permission', 'pending handyman')
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path fill-rule="evenodd" clip-rule="evenodd" d="M4.21533 16.0148C4.21533 16.4737 4.58728 16.8456 5.0461 16.8456H10.0307C10.4895 16.8456 10.8615 16.4737 10.8615 16.0148C10.8615 15.556 10.4895 15.1841 10.0307 15.1841H5.0461C4.58728 15.1841 4.21533 15.556 4.21533 16.0148ZM4.21533 11.0302C4.21533 11.489 4.58728 11.861 5.0461 11.861H15.0153C15.4741 11.861 15.8461 11.489 15.8461 11.0302C15.8461 10.5714 15.4741 10.1995 15.0153 10.1995H5.0461C4.58728 10.1995 4.21533 10.5714 4.21533 11.0302ZM4.21533 6.04561C4.21533 6.50443 4.58728 6.87638 5.0461 6.87638H15.0153C15.4741 6.87638 15.8461 6.50443 15.8461 6.04561C15.8461 5.58679 15.4741 5.21484 15.0153 5.21484H5.0461C4.58728 5.21484 4.21533 5.58679 4.21533 6.04561Z" fill="currentColor"/>
+// <path d="M18.7671 13.1096V11.3835C18.7671 7.43151 18.7671 5.45548 17.9005 4.22774C17.0338 3 15.639 3 12.8493 3H7.9178C5.12812 3 3.73328 3 2.86664 4.22774C2 5.45548 2 7.43151 2 11.3835C2 15.3356 2 17.3116 2.86664 18.5394C3.73328 19.7671 5.12812 19.7671 7.9178 19.7671H12.8493H16.5479" stroke="currentColor" stroke-width="1.47945"/>
+// <path d="M18.5216 21.0774H18.5217C19.7185 21.0759 20.8659 20.5996 21.7121 19.7532C22.5582 18.9068 23.0342 17.7593 23.0354 16.5625V16.5624C23.0354 15.6693 22.7706 14.7963 22.2744 14.0538C21.7783 13.3113 21.073 12.7326 20.2479 12.3909C19.4229 12.0492 18.515 11.9598 17.6391 12.1342C16.7632 12.3085 15.9587 12.7386 15.3273 13.3702C14.6959 14.0017 14.266 14.8063 14.0919 15.6823C13.9179 16.5582 14.0074 17.466 14.3494 18.291C14.6913 19.116 15.2702 19.8211 16.0128 20.3171C16.7555 20.8131 17.6285 21.0777 18.5216 21.0774ZM16.7501 13.9125C17.2744 13.5623 17.8909 13.3756 18.5215 13.3758L18.5215 13.3758C19.3664 13.3767 20.1764 13.7127 20.7738 14.3101C21.3712 14.9076 21.7073 15.7176 21.7082 16.5625C21.7084 17.193 21.5216 17.8095 21.1714 18.3339C20.8212 18.8583 20.3234 19.267 19.7408 19.5085C19.1583 19.7499 18.5172 19.8131 17.8988 19.6901C17.2803 19.5672 16.7122 19.2635 16.2663 18.8176C15.8204 18.3718 15.5168 17.8036 15.3938 17.1852C15.2708 16.5667 15.3341 15.9256 15.5755 15.3431C15.8169 14.7606 16.2257 14.2627 16.7501 13.9125Z" fill="currentColor" stroke="currentColor" stroke-width="0.153424"/>
+// <path d="M18.0562 17.9518C17.9345 17.952 17.8165 17.9096 17.7227 17.832C17.6289 17.7544 17.5653 17.6464 17.5427 17.5267C17.5202 17.4071 17.5402 17.2833 17.5993 17.1769C17.6584 17.0704 17.7528 16.988 17.8663 16.9439L18.4924 16.6997V15.4914C18.4924 15.3531 18.5473 15.2204 18.6452 15.1225C18.743 15.0247 18.8757 14.9697 19.0141 14.9697C19.1524 14.9697 19.2851 15.0247 19.383 15.1225C19.4808 15.2204 19.5358 15.3531 19.5358 15.4914V17.0566C19.5359 17.1616 19.5042 17.2642 19.445 17.351C19.3858 17.4377 19.3018 17.5046 19.204 17.5428L18.2461 17.9174C18.1855 17.9405 18.1211 17.9521 18.0562 17.9518Z" fill="currentColor"/>
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->handyman
-            ->add('<span>' . __('messages.list_form_title', ['form' => __('messages.handyman_earning')]) . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'handymanEarning',
-            ])
-            ->data('role', ['admin', 'provider'])
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_2357_751)">
-        <path d="M8.84999 8.175C7.14749 7.7325 6.59999 7.275 6.59999 6.5625C6.59999 5.745 7.35749 5.175 8.62499 5.175C9.95999 5.175 10.455 5.8125 10.5 6.75H12.1575C12.105 5.46 11.3175 4.275 9.74999 3.8925V2.25H7.49999V3.87C6.04499 4.185 4.87499 5.13 4.87499 6.5775C4.87499 8.31 6.30749 9.1725 8.39999 9.675C10.275 10.125 10.65 10.785 10.65 11.4825C10.65 12 10.2825 12.825 8.62499 12.825C7.07999 12.825 6.47249 12.135 6.38999 11.25H4.73999C4.82999 12.8925 6.05999 13.815 7.49999 14.1225V15.75H9.74999V14.1375C11.2125 13.86 12.375 13.0125 12.375 11.475C12.375 9.345 10.5525 8.6175 8.84999 8.175Z" fill="#6C757D" />
-    </g>
-    <defs>
-        <clipPath id="clip0_2357_751">
-            <rect width="18" height="18" fill="white" />
-        </clipPath>
-    </defs>
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->handyman
+//             ->add('<span>' . __('messages.list_form_title', ['form' => __('messages.handyman_earning')]) . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'handymanEarning',
+//             ])
+//             ->data('role', ['admin', 'provider'])
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <g clip-path="url(#clip0_2357_751)">
+//         <path d="M8.84999 8.175C7.14749 7.7325 6.59999 7.275 6.59999 6.5625C6.59999 5.745 7.35749 5.175 8.62499 5.175C9.95999 5.175 10.455 5.8125 10.5 6.75H12.1575C12.105 5.46 11.3175 4.275 9.74999 3.8925V2.25H7.49999V3.87C6.04499 4.185 4.87499 5.13 4.87499 6.5775C4.87499 8.31 6.30749 9.1725 8.39999 9.675C10.275 10.125 10.65 10.785 10.65 11.4825C10.65 12 10.2825 12.825 8.62499 12.825C7.07999 12.825 6.47249 12.135 6.38999 11.25H4.73999C4.82999 12.8925 6.05999 13.815 7.49999 14.1225V15.75H9.74999V14.1375C11.2125 13.86 12.375 13.0125 12.375 11.475C12.375 9.345 10.5525 8.6175 8.84999 8.175Z" fill="#6C757D" />
+//     </g>
+//     <defs>
+//         <clipPath id="clip0_2357_751">
+//             <rect width="18" height="18" fill="white" />
+//         </clipPath>
+//     </defs>
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->handyman
-            ->add('<span>' . __('messages.list_form_title', ['form' => __('messages.handymantype')]) . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'handymantype.index',
-            ])
-            ->data('permission', 'handymantype list')
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14 20.8344C13.3663 20.9421 12.695 21 12 21C8.13401 21 5 19.2091 5 17C5 14.7909 8.13401 13 12 13C13.7135 13 15.2832 13.3518 16.5 13.9359" stroke="currentColor" stroke-width="1.5"/>
-<g clip-path="url(#clip0_10_6123)">
-<circle cx="17" cy="18" r="1.25" stroke="currentColor" stroke-width="1.36364"/>
-<path d="M17.7358 13.8974C17.5826 13.834 17.3885 13.834 17.0002 13.834C16.6119 13.834 16.4178 13.834 16.2646 13.8974C16.0604 13.982 15.8982 14.1442 15.8136 14.3484C15.775 14.4416 15.7599 14.55 15.754 14.7081C15.7453 14.9405 15.6261 15.1556 15.4248 15.2719C15.2234 15.3881 14.9775 15.3838 14.772 15.2751C14.6321 15.2012 14.5306 15.1601 14.4306 15.1469C14.2115 15.1181 13.9899 15.1774 13.8145 15.312C13.683 15.4129 13.5859 15.581 13.3918 15.9173C13.1977 16.2536 13.1006 16.4217 13.079 16.586C13.0501 16.8052 13.1095 17.0268 13.244 17.2021C13.3054 17.2821 13.3917 17.3494 13.5257 17.4336C13.7226 17.5573 13.8493 17.7681 13.8493 18.0007C13.8493 18.2332 13.7226 18.444 13.5257 18.5677C13.3917 18.6518 13.3054 18.7191 13.244 18.7992C13.1094 18.9745 13.0501 19.1961 13.0789 19.4152C13.1005 19.5796 13.1976 19.7477 13.3918 20.084C13.5859 20.4202 13.683 20.5884 13.8145 20.6893C13.9898 20.8238 14.2114 20.8832 14.4306 20.8544C14.5306 20.8412 14.632 20.8001 14.7719 20.7262C14.9775 20.6175 15.2234 20.6131 15.4247 20.7294C15.6261 20.8457 15.7453 21.0608 15.754 21.2932C15.7599 21.4513 15.775 21.5597 15.8136 21.6529C15.8982 21.8571 16.0604 22.0193 16.2646 22.1039C16.4178 22.1673 16.6119 22.1673 17.0002 22.1673C17.3885 22.1673 17.5826 22.1673 17.7358 22.1039C17.94 22.0193 18.1022 21.8571 18.1868 21.6529C18.2254 21.5597 18.2405 21.4513 18.2464 21.2931C18.2551 21.0608 18.3742 20.8457 18.5756 20.7294C18.777 20.6131 19.0229 20.6175 19.2285 20.7261C19.3684 20.8001 19.4698 20.8412 19.5698 20.8543C19.7889 20.8832 20.0105 20.8238 20.1859 20.6893C20.3174 20.5884 20.4145 20.4202 20.6086 20.084C20.8027 19.7477 20.8998 19.5796 20.9214 19.4152C20.9503 19.1961 20.8909 18.9745 20.7564 18.7991C20.695 18.7191 20.6086 18.6518 20.4747 18.5677C20.2778 18.4439 20.1511 18.2332 20.1511 18.0006C20.1511 17.7681 20.2778 17.5574 20.4747 17.4336C20.6087 17.3495 20.695 17.2822 20.7564 17.2021C20.891 17.0268 20.9503 16.8052 20.9215 16.5861C20.8999 16.4217 20.8028 16.2536 20.6086 15.9173C20.4145 15.5811 20.3174 15.4129 20.1859 15.312C20.0106 15.1775 19.789 15.1181 19.5698 15.1469C19.4698 15.1601 19.3684 15.2012 19.2285 15.2751C19.0229 15.3838 18.777 15.3882 18.5757 15.2719C18.3743 15.1556 18.2551 14.9405 18.2464 14.7081C18.2405 14.55 18.2254 14.4416 18.1868 14.3484C18.1022 14.1442 17.94 13.982 17.7358 13.8974Z" stroke="currentColor" stroke-width="1.5"/>
-</g>
-<circle cx="12" cy="6" r="4" stroke="currentColor" stroke-width="1.5"/>
-<defs>
-<clipPath id="clip0_10_6123">
-<rect x="12" y="13" width="10" height="10" rx="4.54545" fill="white"/>
-</clipPath>
-</defs>
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->handyman
+//             ->add('<span>' . __('messages.list_form_title', ['form' => __('messages.handymantype')]) . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'handymantype.index',
+//             ])
+//             ->data('permission', 'handymantype list')
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M14 20.8344C13.3663 20.9421 12.695 21 12 21C8.13401 21 5 19.2091 5 17C5 14.7909 8.13401 13 12 13C13.7135 13 15.2832 13.3518 16.5 13.9359" stroke="currentColor" stroke-width="1.5"/>
+// <g clip-path="url(#clip0_10_6123)">
+// <circle cx="17" cy="18" r="1.25" stroke="currentColor" stroke-width="1.36364"/>
+// <path d="M17.7358 13.8974C17.5826 13.834 17.3885 13.834 17.0002 13.834C16.6119 13.834 16.4178 13.834 16.2646 13.8974C16.0604 13.982 15.8982 14.1442 15.8136 14.3484C15.775 14.4416 15.7599 14.55 15.754 14.7081C15.7453 14.9405 15.6261 15.1556 15.4248 15.2719C15.2234 15.3881 14.9775 15.3838 14.772 15.2751C14.6321 15.2012 14.5306 15.1601 14.4306 15.1469C14.2115 15.1181 13.9899 15.1774 13.8145 15.312C13.683 15.4129 13.5859 15.581 13.3918 15.9173C13.1977 16.2536 13.1006 16.4217 13.079 16.586C13.0501 16.8052 13.1095 17.0268 13.244 17.2021C13.3054 17.2821 13.3917 17.3494 13.5257 17.4336C13.7226 17.5573 13.8493 17.7681 13.8493 18.0007C13.8493 18.2332 13.7226 18.444 13.5257 18.5677C13.3917 18.6518 13.3054 18.7191 13.244 18.7992C13.1094 18.9745 13.0501 19.1961 13.0789 19.4152C13.1005 19.5796 13.1976 19.7477 13.3918 20.084C13.5859 20.4202 13.683 20.5884 13.8145 20.6893C13.9898 20.8238 14.2114 20.8832 14.4306 20.8544C14.5306 20.8412 14.632 20.8001 14.7719 20.7262C14.9775 20.6175 15.2234 20.6131 15.4247 20.7294C15.6261 20.8457 15.7453 21.0608 15.754 21.2932C15.7599 21.4513 15.775 21.5597 15.8136 21.6529C15.8982 21.8571 16.0604 22.0193 16.2646 22.1039C16.4178 22.1673 16.6119 22.1673 17.0002 22.1673C17.3885 22.1673 17.5826 22.1673 17.7358 22.1039C17.94 22.0193 18.1022 21.8571 18.1868 21.6529C18.2254 21.5597 18.2405 21.4513 18.2464 21.2931C18.2551 21.0608 18.3742 20.8457 18.5756 20.7294C18.777 20.6131 19.0229 20.6175 19.2285 20.7261C19.3684 20.8001 19.4698 20.8412 19.5698 20.8543C19.7889 20.8832 20.0105 20.8238 20.1859 20.6893C20.3174 20.5884 20.4145 20.4202 20.6086 20.084C20.8027 19.7477 20.8998 19.5796 20.9214 19.4152C20.9503 19.1961 20.8909 18.9745 20.7564 18.7991C20.695 18.7191 20.6086 18.6518 20.4747 18.5677C20.2778 18.4439 20.1511 18.2332 20.1511 18.0006C20.1511 17.7681 20.2778 17.5574 20.4747 17.4336C20.6087 17.3495 20.695 17.2822 20.7564 17.2021C20.891 17.0268 20.9503 16.8052 20.9215 16.5861C20.8999 16.4217 20.8028 16.2536 20.6086 15.9173C20.4145 15.5811 20.3174 15.4129 20.1859 15.312C20.0106 15.1775 19.789 15.1181 19.5698 15.1469C19.4698 15.1601 19.3684 15.2012 19.2285 15.2751C19.0229 15.3838 18.777 15.3882 18.5757 15.2719C18.3743 15.1556 18.2551 14.9405 18.2464 14.7081C18.2405 14.55 18.2254 14.4416 18.1868 14.3484C18.1022 14.1442 17.94 13.982 17.7358 13.8974Z" stroke="currentColor" stroke-width="1.5"/>
+// </g>
+// <circle cx="12" cy="6" r="4" stroke="currentColor" stroke-width="1.5"/>
+// <defs>
+// <clipPath id="clip0_10_6123">
+// <rect x="12" y="13" width="10" height="10" rx="4.54545" fill="white"/>
+// </clipPath>
+// </defs>
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
         $menu
             ->add(
@@ -584,51 +584,51 @@
             ->nickname('cash_history')
             ->data('permission', 'payment list');
 
-        $menu
-            ->add(
-                '<span>' .
-                    __('messages.earnings') .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.earnings') .
-                    '</span></span>',
-                ['route' => 'earning'],
-            )
-            ->data('permission', 'earning list')
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
-<path d="M12 6V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M15 9.5C15 8.11929 13.6569 7 12 7C10.3431 7 9 8.11929 9 9.5C9 10.8807 10.3431 12 12 12C13.6569 12 15 13.1193 15 14.5C15 15.8807 13.6569 17 12 17C10.3431 17 9 15.8807 9 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-',
-            )
-            ->nickname('earning');
+//         $menu
+//             ->add(
+//                 '<span>' .
+//                     __('messages.earnings') .
+//                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                     __('messages.earnings') .
+//                     '</span></span>',
+//                 ['route' => 'earning'],
+//             )
+//             ->data('permission', 'earning list')
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M12 6V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M15 9.5C15 8.11929 13.6569 7 12 7C10.3431 7 9 8.11929 9 9.5C9 10.8807 10.3431 12 12 12C13.6569 12 15 13.1193 15 14.5C15 15.8807 13.6569 17 12 17C10.3431 17 9 15.8807 9 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// </svg>
+// ',
+//             )
+//             ->nickname('earning');
 
-        if (
-            auth()->user()->user_type == 'provider' ||
-            auth()->user()->user_type == 'admin' ||
-            auth()->user()->user_type == 'demo_admin'
-        ) {
-            $menu
-                ->add(
-                    '<span>' .
-                        __('messages.provider_withdrawal_requests') .
-                        '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                        __('messages.provider_withdrawal_requests') .
-                        '</span></span>',
-                    ['route' => 'wallet_transaction'],
-                )
-                ->prepend(
-                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
-<path d="M12 6V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M15 9.5C15 8.11929 13.6569 7 12 7C10.3431 7 9 8.11929 9 9.5C9 10.8807 10.3431 12 12 12C13.6569 12 15 13.1193 15 14.5C15 15.8807 13.6569 17 12 17C10.3431 17 9 15.8807 9 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-',
-                )
-                ->nickname('provider_withdrawal_requests')
-                ->data('permission', 'service list');
-        }
+//         if (
+//             auth()->user()->user_type == 'provider' ||
+//             auth()->user()->user_type == 'admin' ||
+//             auth()->user()->user_type == 'demo_admin'
+//         ) {
+//             $menu
+//                 ->add(
+//                     '<span>' .
+//                         __('messages.provider_withdrawal_requests') .
+//                         '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                         __('messages.provider_withdrawal_requests') .
+//                         '</span></span>',
+//                     ['route' => 'wallet_transaction'],
+//                 )
+//                 ->prepend(
+//                     '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M12 6V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M15 9.5C15 8.11929 13.6569 7 12 7C10.3431 7 9 8.11929 9 9.5C9 10.8807 10.3431 12 12 12C13.6569 12 15 13.1193 15 14.5C15 15.8807 13.6569 17 12 17C10.3431 17 9 15.8807 9 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// </svg>
+// ',
+//                 )
+//                 ->nickname('provider_withdrawal_requests')
+//                 ->data('permission', 'service list');
+//         }
 
         $user = auth()->user();
         $isAdminOrProvider = $user && ($user->hasRole('admin') || $user->hasRole('provider')); // Check if user is admin or provider
@@ -661,56 +661,56 @@
 }
 
 
-        $menu
-            ->add(
-                '<span>' .
-                    __('messages.list_form_title', ['form' => __('messages.coupons')]) .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.coupons') .
-                    '</span></span>',
-                ['class' => ''],
-            )
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14 11C14 10.4477 14.4477 10 15 10C15.5523 10 16 10.4477 16 11V13C16 13.5523 15.5523 14 15 14C14.4477 14 14 13.5523 14 13V11Z" stroke="currentColor" stroke-width="1.5"/>
-<path d="M14.0079 19.0029L13.2579 19.0007V19.0007L14.0079 19.0029ZM14.0137 17L14.7637 17.0022V17H14.0137ZM3.14958 18.8284L2.61991 19.3594H2.61991L3.14958 18.8284ZM3.14958 5.17157L2.61991 4.64058L2.61991 4.64058L3.14958 5.17157ZM2.95308 10.2537L2.58741 10.9085H2.58741L2.95308 10.2537ZM2.01058 8.98947L1.26124 8.95797L2.01058 8.98947ZM2.95308 13.7463L2.58741 13.0915L2.58741 13.0915L2.95308 13.7463ZM2.01058 15.0105L2.75992 14.979L2.01058 15.0105ZM21.0469 10.2537L21.4126 10.9085L21.0469 10.2537ZM21.9894 8.98947L22.7388 8.95797V8.95797L21.9894 8.98947ZM20.8504 5.17157L21.3801 4.64058L21.3801 4.64058L20.8504 5.17157ZM21.0469 13.7463L20.6812 14.4012V14.4012L21.0469 13.7463ZM21.9894 15.0105L22.7388 15.042V15.042L21.9894 15.0105ZM20.8504 18.8284L21.3801 19.3594L21.3801 19.3594L20.8504 18.8284ZM21.9437 14.332L22.5981 13.9656L22.5981 13.9656L21.9437 14.332ZM21.9437 9.66803L22.5981 10.0344L22.5981 10.0344L21.9437 9.66803ZM2.05634 14.332L1.4019 13.9656L1.4019 13.9656L2.05634 14.332ZM2.05634 9.66802L2.71079 9.30168L2.71078 9.30168L2.05634 9.66802ZM14.0137 7H14.7637L14.7637 6.99782L14.0137 7ZM14.0064 4.49855L13.2564 4.50073V4.50073L14.0064 4.49855ZM16.5278 4.0189L16.5471 3.26915L16.5278 4.0189ZM17.0336 19.9642L17.0653 20.7135H17.0653L17.0336 19.9642ZM13.8595 19.8541L13.3299 19.323L13.3299 19.323L13.8595 19.8541ZM14.7579 19.0051L14.7637 17.0022L13.2637 16.9978L13.2579 19.0007L14.7579 19.0051ZM15.0162 16.75C15.1574 16.75 15.2687 16.8637 15.2687 17H16.7687C16.7687 16.0317 15.9823 15.25 15.0162 15.25V16.75ZM15.0162 15.25C14.0501 15.25 13.2637 16.0317 13.2637 17H14.7637C14.7637 16.8637 14.875 16.75 15.0162 16.75V15.25ZM9.99502 4.75H13.5052V3.25H9.99502V4.75ZM13.0079 19.25H9.99502V20.75H13.0079V19.25ZM9.99502 19.25C8.08355 19.25 6.72521 19.2484 5.69469 19.1102C4.68554 18.9749 4.10384 18.721 3.67925 18.2974L2.61991 19.3594C3.3698 20.1074 4.32051 20.4393 5.4953 20.5969C6.64871 20.7516 8.12585 20.75 9.99502 20.75V19.25ZM9.99502 3.25C8.12585 3.25 6.64871 3.24841 5.4953 3.4031C4.32051 3.56066 3.3698 3.89255 2.61991 4.64058L3.67925 5.70256C4.10384 5.27902 4.68554 5.02513 5.69469 4.88979C6.72521 4.75159 8.08355 4.75 9.99502 4.75V3.25ZM2.58741 10.9085C2.97311 11.1239 3.23007 11.533 3.23007 12H4.73007C4.73007 10.9664 4.1586 10.0678 3.31876 9.59884L2.58741 10.9085ZM2.75992 9.02097C2.83795 7.16494 3.09146 6.28889 3.67925 5.70256L2.61991 4.64058C1.59036 5.66758 1.34012 7.08185 1.26124 8.95797L2.75992 9.02097ZM3.23007 12C3.23007 12.467 2.97311 12.8761 2.58741 13.0915L3.31876 14.4012C4.1586 13.9322 4.73007 13.0336 4.73007 12H3.23007ZM1.26124 15.042C1.34012 16.9182 1.59036 18.3324 2.61991 19.3594L3.67925 18.2974C3.09146 17.7111 2.83795 16.8351 2.75992 14.979L1.26124 15.042ZM20.7699 12C20.7699 11.533 21.0269 11.1239 21.4126 10.9085L20.6812 9.59884C19.8414 10.0678 19.2699 10.9664 19.2699 12H20.7699ZM22.7388 8.95797C22.6599 7.08185 22.4096 5.66758 21.3801 4.64058L20.3207 5.70256C20.9085 6.28889 21.1621 7.16494 21.2401 9.02097L22.7388 8.95797ZM21.4126 13.0915C21.0269 12.8761 20.7699 12.467 20.7699 12H19.2699C19.2699 13.0336 19.8414 13.9322 20.6812 14.4012L21.4126 13.0915ZM21.2401 14.979C21.1621 16.8351 20.9085 17.7111 20.3207 18.2974L21.3801 19.3594C22.4096 18.3324 22.6599 16.9182 22.7388 15.042L21.2401 14.979ZM20.6812 14.4012C20.9652 14.5597 21.1507 14.6636 21.2761 14.7427C21.3379 14.7817 21.3653 14.8024 21.3735 14.8093C21.388 14.8213 21.3375 14.7846 21.2892 14.6983L22.5981 13.9656C22.5153 13.8177 22.4043 13.7154 22.3304 13.6542C22.2503 13.5878 22.1613 13.5276 22.0764 13.4741C21.9087 13.3683 21.6804 13.2411 21.4126 13.0915L20.6812 14.4012ZM22.7388 15.042C22.746 14.8706 22.7541 14.6937 22.7476 14.5458C22.741 14.3959 22.7178 14.1795 22.5981 13.9656L21.2892 14.6983C21.2386 14.6079 21.2461 14.5457 21.249 14.6117C21.2503 14.6404 21.2505 14.6822 21.2488 14.7464C21.2472 14.8104 21.244 14.8847 21.2401 14.979L22.7388 15.042ZM21.4126 10.9085C21.6804 10.7589 21.9087 10.6317 22.0764 10.5259C22.1613 10.4724 22.2503 10.4122 22.3304 10.3458C22.4043 10.2846 22.5153 10.1823 22.5981 10.0344L21.2892 9.30168C21.3375 9.21543 21.388 9.17871 21.3735 9.19072C21.3653 9.19756 21.3379 9.21832 21.2761 9.25725C21.1507 9.33637 20.9652 9.44028 20.6812 9.59884L21.4126 10.9085ZM21.2401 9.02097C21.244 9.11528 21.2472 9.18961 21.2488 9.25357C21.2505 9.31779 21.2503 9.35964 21.249 9.38827C21.2461 9.45428 21.2386 9.39206 21.2892 9.30169L22.5981 10.0344C22.7178 9.82054 22.741 9.60408 22.7476 9.45419C22.7541 9.30634 22.746 9.12945 22.7388 8.95797L21.2401 9.02097ZM2.58741 13.0915C2.31959 13.2411 2.0913 13.3683 1.92358 13.4741C1.83872 13.5276 1.74971 13.5878 1.66957 13.6542C1.59566 13.7154 1.48474 13.8177 1.4019 13.9656L2.71078 14.6983C2.6625 14.7846 2.61198 14.8213 2.62648 14.8093C2.63474 14.8024 2.66215 14.7817 2.72387 14.7427C2.84929 14.6636 3.03482 14.5597 3.31876 14.4012L2.58741 13.0915ZM2.75992 14.979C2.75595 14.8847 2.75285 14.8104 2.7512 14.7464C2.74954 14.6822 2.74973 14.6404 2.75099 14.6117C2.75389 14.5457 2.76137 14.6079 2.71078 14.6983L1.4019 13.9656C1.28221 14.1795 1.25903 14.3959 1.25244 14.5458C1.24593 14.6937 1.25403 14.8706 1.26124 15.042L2.75992 14.979ZM3.31876 9.59884C3.03482 9.44028 2.84929 9.33637 2.72386 9.25725C2.66214 9.21832 2.63474 9.19756 2.62648 9.19072C2.61198 9.17871 2.66251 9.21543 2.71079 9.30168L1.4019 10.0344C1.48473 10.1823 1.59565 10.2846 1.66956 10.3458C1.74971 10.4122 1.83872 10.4724 1.92357 10.5259C2.0913 10.6317 2.31959 10.7589 2.58741 10.9085L3.31876 9.59884ZM1.26124 8.95797C1.25403 9.12945 1.24593 9.30634 1.25244 9.45419C1.25903 9.60408 1.28221 9.82054 1.4019 10.0344L2.71078 9.30168C2.76137 9.39206 2.75389 9.45428 2.75099 9.38827C2.74973 9.35964 2.74954 9.31779 2.7512 9.25357C2.75285 9.18961 2.75595 9.11528 2.75992 9.02097L1.26124 8.95797ZM14.7637 6.99782L14.7564 4.49637L13.2564 4.50073L13.2637 7.00218L14.7637 6.99782ZM15.0162 7.25C14.875 7.25 14.7637 7.13631 14.7637 7H13.2637C13.2637 7.96826 14.0501 8.75 15.0162 8.75V7.25ZM15.2687 7C15.2687 7.13631 15.1574 7.25 15.0162 7.25V8.75C15.9823 8.75 16.7687 7.96826 16.7687 7H15.2687ZM15.2687 4.51618V7H16.7687V4.51618H15.2687ZM16.5084 4.76865C18.6966 4.82509 19.6778 5.06124 20.3208 5.70256L21.3801 4.64058C20.2676 3.53084 18.6939 3.32452 16.5471 3.26915L16.5084 4.76865ZM16.7687 4.51618C16.7687 4.656 16.6534 4.77239 16.5084 4.76865L16.5471 3.26915C15.8429 3.25099 15.2687 3.81835 15.2687 4.51618H16.7687ZM13.5052 4.75C13.3698 4.75 13.2568 4.64027 13.2564 4.50073L14.7564 4.49637C14.7544 3.80569 14.1931 3.25 13.5052 3.25V4.75ZM17.0653 20.7135C18.9399 20.6343 20.353 20.384 21.3801 19.3594L20.3208 18.2974C19.7336 18.8831 18.8563 19.1365 17.002 19.2148L17.0653 20.7135ZM15.2687 17V18.9765H16.7687V17H15.2687ZM13.2579 19.0007C13.2575 19.121 13.2572 19.2136 13.255 19.2926C13.2528 19.3721 13.249 19.4192 13.245 19.4481C13.2411 19.4764 13.2396 19.4669 13.2513 19.4387C13.2654 19.4045 13.2911 19.3617 13.3299 19.323L14.389 20.3852C14.6246 20.1502 14.701 19.8709 14.7311 19.6521C14.7582 19.4548 14.7573 19.219 14.7579 19.0051L13.2579 19.0007ZM13.0079 20.75C13.2218 20.75 13.4576 20.7516 13.6549 20.7251C13.8739 20.6957 14.1534 20.6201 14.389 20.3852L13.3299 19.323C13.3687 19.2843 13.4116 19.2587 13.4458 19.2447C13.4741 19.2331 13.4836 19.2346 13.4553 19.2384C13.4264 19.2423 13.3792 19.246 13.2998 19.248C13.2208 19.25 13.1282 19.25 13.0079 19.25V20.75ZM17.002 19.2148C16.8812 19.2199 16.7889 19.2238 16.7101 19.225C16.631 19.2262 16.5849 19.2244 16.5575 19.2217C16.5309 19.2191 16.5426 19.2175 16.5734 19.2292C16.6103 19.2433 16.6536 19.2685 16.6917 19.305L15.6536 20.3878C15.8978 20.6219 16.183 20.6921 16.4108 20.7145C16.6127 20.7344 16.8518 20.7225 17.0653 20.7135L17.002 19.2148ZM15.2687 18.9765C15.2687 19.1953 15.267 19.4374 15.295 19.6397C15.3263 19.8655 15.407 20.1514 15.6536 20.3878L16.6917 19.305C16.7313 19.343 16.7584 19.3863 16.7737 19.4221C16.7863 19.4516 16.7848 19.4622 16.7808 19.4337C16.7768 19.4046 16.7729 19.3566 16.7708 19.2753C16.7687 19.1945 16.7687 19.0997 16.7687 18.9765H15.2687Z" fill="currentColor"/>
-</svg>',
-            )
-            ->nickname('coupon')
-            ->data('permission', 'coupon list')
-            ->link->attr(['class' => ''])
-            ->href('#coupon');
+//         $menu
+//             ->add(
+//                 '<span>' .
+//                     __('messages.list_form_title', ['form' => __('messages.coupons')]) .
+//                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                     __('messages.coupons') .
+//                     '</span></span>',
+//                 ['class' => ''],
+//             )
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M14 11C14 10.4477 14.4477 10 15 10C15.5523 10 16 10.4477 16 11V13C16 13.5523 15.5523 14 15 14C14.4477 14 14 13.5523 14 13V11Z" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M14.0079 19.0029L13.2579 19.0007V19.0007L14.0079 19.0029ZM14.0137 17L14.7637 17.0022V17H14.0137ZM3.14958 18.8284L2.61991 19.3594H2.61991L3.14958 18.8284ZM3.14958 5.17157L2.61991 4.64058L2.61991 4.64058L3.14958 5.17157ZM2.95308 10.2537L2.58741 10.9085H2.58741L2.95308 10.2537ZM2.01058 8.98947L1.26124 8.95797L2.01058 8.98947ZM2.95308 13.7463L2.58741 13.0915L2.58741 13.0915L2.95308 13.7463ZM2.01058 15.0105L2.75992 14.979L2.01058 15.0105ZM21.0469 10.2537L21.4126 10.9085L21.0469 10.2537ZM21.9894 8.98947L22.7388 8.95797V8.95797L21.9894 8.98947ZM20.8504 5.17157L21.3801 4.64058L21.3801 4.64058L20.8504 5.17157ZM21.0469 13.7463L20.6812 14.4012V14.4012L21.0469 13.7463ZM21.9894 15.0105L22.7388 15.042V15.042L21.9894 15.0105ZM20.8504 18.8284L21.3801 19.3594L21.3801 19.3594L20.8504 18.8284ZM21.9437 14.332L22.5981 13.9656L22.5981 13.9656L21.9437 14.332ZM21.9437 9.66803L22.5981 10.0344L22.5981 10.0344L21.9437 9.66803ZM2.05634 14.332L1.4019 13.9656L1.4019 13.9656L2.05634 14.332ZM2.05634 9.66802L2.71079 9.30168L2.71078 9.30168L2.05634 9.66802ZM14.0137 7H14.7637L14.7637 6.99782L14.0137 7ZM14.0064 4.49855L13.2564 4.50073V4.50073L14.0064 4.49855ZM16.5278 4.0189L16.5471 3.26915L16.5278 4.0189ZM17.0336 19.9642L17.0653 20.7135H17.0653L17.0336 19.9642ZM13.8595 19.8541L13.3299 19.323L13.3299 19.323L13.8595 19.8541ZM14.7579 19.0051L14.7637 17.0022L13.2637 16.9978L13.2579 19.0007L14.7579 19.0051ZM15.0162 16.75C15.1574 16.75 15.2687 16.8637 15.2687 17H16.7687C16.7687 16.0317 15.9823 15.25 15.0162 15.25V16.75ZM15.0162 15.25C14.0501 15.25 13.2637 16.0317 13.2637 17H14.7637C14.7637 16.8637 14.875 16.75 15.0162 16.75V15.25ZM9.99502 4.75H13.5052V3.25H9.99502V4.75ZM13.0079 19.25H9.99502V20.75H13.0079V19.25ZM9.99502 19.25C8.08355 19.25 6.72521 19.2484 5.69469 19.1102C4.68554 18.9749 4.10384 18.721 3.67925 18.2974L2.61991 19.3594C3.3698 20.1074 4.32051 20.4393 5.4953 20.5969C6.64871 20.7516 8.12585 20.75 9.99502 20.75V19.25ZM9.99502 3.25C8.12585 3.25 6.64871 3.24841 5.4953 3.4031C4.32051 3.56066 3.3698 3.89255 2.61991 4.64058L3.67925 5.70256C4.10384 5.27902 4.68554 5.02513 5.69469 4.88979C6.72521 4.75159 8.08355 4.75 9.99502 4.75V3.25ZM2.58741 10.9085C2.97311 11.1239 3.23007 11.533 3.23007 12H4.73007C4.73007 10.9664 4.1586 10.0678 3.31876 9.59884L2.58741 10.9085ZM2.75992 9.02097C2.83795 7.16494 3.09146 6.28889 3.67925 5.70256L2.61991 4.64058C1.59036 5.66758 1.34012 7.08185 1.26124 8.95797L2.75992 9.02097ZM3.23007 12C3.23007 12.467 2.97311 12.8761 2.58741 13.0915L3.31876 14.4012C4.1586 13.9322 4.73007 13.0336 4.73007 12H3.23007ZM1.26124 15.042C1.34012 16.9182 1.59036 18.3324 2.61991 19.3594L3.67925 18.2974C3.09146 17.7111 2.83795 16.8351 2.75992 14.979L1.26124 15.042ZM20.7699 12C20.7699 11.533 21.0269 11.1239 21.4126 10.9085L20.6812 9.59884C19.8414 10.0678 19.2699 10.9664 19.2699 12H20.7699ZM22.7388 8.95797C22.6599 7.08185 22.4096 5.66758 21.3801 4.64058L20.3207 5.70256C20.9085 6.28889 21.1621 7.16494 21.2401 9.02097L22.7388 8.95797ZM21.4126 13.0915C21.0269 12.8761 20.7699 12.467 20.7699 12H19.2699C19.2699 13.0336 19.8414 13.9322 20.6812 14.4012L21.4126 13.0915ZM21.2401 14.979C21.1621 16.8351 20.9085 17.7111 20.3207 18.2974L21.3801 19.3594C22.4096 18.3324 22.6599 16.9182 22.7388 15.042L21.2401 14.979ZM20.6812 14.4012C20.9652 14.5597 21.1507 14.6636 21.2761 14.7427C21.3379 14.7817 21.3653 14.8024 21.3735 14.8093C21.388 14.8213 21.3375 14.7846 21.2892 14.6983L22.5981 13.9656C22.5153 13.8177 22.4043 13.7154 22.3304 13.6542C22.2503 13.5878 22.1613 13.5276 22.0764 13.4741C21.9087 13.3683 21.6804 13.2411 21.4126 13.0915L20.6812 14.4012ZM22.7388 15.042C22.746 14.8706 22.7541 14.6937 22.7476 14.5458C22.741 14.3959 22.7178 14.1795 22.5981 13.9656L21.2892 14.6983C21.2386 14.6079 21.2461 14.5457 21.249 14.6117C21.2503 14.6404 21.2505 14.6822 21.2488 14.7464C21.2472 14.8104 21.244 14.8847 21.2401 14.979L22.7388 15.042ZM21.4126 10.9085C21.6804 10.7589 21.9087 10.6317 22.0764 10.5259C22.1613 10.4724 22.2503 10.4122 22.3304 10.3458C22.4043 10.2846 22.5153 10.1823 22.5981 10.0344L21.2892 9.30168C21.3375 9.21543 21.388 9.17871 21.3735 9.19072C21.3653 9.19756 21.3379 9.21832 21.2761 9.25725C21.1507 9.33637 20.9652 9.44028 20.6812 9.59884L21.4126 10.9085ZM21.2401 9.02097C21.244 9.11528 21.2472 9.18961 21.2488 9.25357C21.2505 9.31779 21.2503 9.35964 21.249 9.38827C21.2461 9.45428 21.2386 9.39206 21.2892 9.30169L22.5981 10.0344C22.7178 9.82054 22.741 9.60408 22.7476 9.45419C22.7541 9.30634 22.746 9.12945 22.7388 8.95797L21.2401 9.02097ZM2.58741 13.0915C2.31959 13.2411 2.0913 13.3683 1.92358 13.4741C1.83872 13.5276 1.74971 13.5878 1.66957 13.6542C1.59566 13.7154 1.48474 13.8177 1.4019 13.9656L2.71078 14.6983C2.6625 14.7846 2.61198 14.8213 2.62648 14.8093C2.63474 14.8024 2.66215 14.7817 2.72387 14.7427C2.84929 14.6636 3.03482 14.5597 3.31876 14.4012L2.58741 13.0915ZM2.75992 14.979C2.75595 14.8847 2.75285 14.8104 2.7512 14.7464C2.74954 14.6822 2.74973 14.6404 2.75099 14.6117C2.75389 14.5457 2.76137 14.6079 2.71078 14.6983L1.4019 13.9656C1.28221 14.1795 1.25903 14.3959 1.25244 14.5458C1.24593 14.6937 1.25403 14.8706 1.26124 15.042L2.75992 14.979ZM3.31876 9.59884C3.03482 9.44028 2.84929 9.33637 2.72386 9.25725C2.66214 9.21832 2.63474 9.19756 2.62648 9.19072C2.61198 9.17871 2.66251 9.21543 2.71079 9.30168L1.4019 10.0344C1.48473 10.1823 1.59565 10.2846 1.66956 10.3458C1.74971 10.4122 1.83872 10.4724 1.92357 10.5259C2.0913 10.6317 2.31959 10.7589 2.58741 10.9085L3.31876 9.59884ZM1.26124 8.95797C1.25403 9.12945 1.24593 9.30634 1.25244 9.45419C1.25903 9.60408 1.28221 9.82054 1.4019 10.0344L2.71078 9.30168C2.76137 9.39206 2.75389 9.45428 2.75099 9.38827C2.74973 9.35964 2.74954 9.31779 2.7512 9.25357C2.75285 9.18961 2.75595 9.11528 2.75992 9.02097L1.26124 8.95797ZM14.7637 6.99782L14.7564 4.49637L13.2564 4.50073L13.2637 7.00218L14.7637 6.99782ZM15.0162 7.25C14.875 7.25 14.7637 7.13631 14.7637 7H13.2637C13.2637 7.96826 14.0501 8.75 15.0162 8.75V7.25ZM15.2687 7C15.2687 7.13631 15.1574 7.25 15.0162 7.25V8.75C15.9823 8.75 16.7687 7.96826 16.7687 7H15.2687ZM15.2687 4.51618V7H16.7687V4.51618H15.2687ZM16.5084 4.76865C18.6966 4.82509 19.6778 5.06124 20.3208 5.70256L21.3801 4.64058C20.2676 3.53084 18.6939 3.32452 16.5471 3.26915L16.5084 4.76865ZM16.7687 4.51618C16.7687 4.656 16.6534 4.77239 16.5084 4.76865L16.5471 3.26915C15.8429 3.25099 15.2687 3.81835 15.2687 4.51618H16.7687ZM13.5052 4.75C13.3698 4.75 13.2568 4.64027 13.2564 4.50073L14.7564 4.49637C14.7544 3.80569 14.1931 3.25 13.5052 3.25V4.75ZM17.0653 20.7135C18.9399 20.6343 20.353 20.384 21.3801 19.3594L20.3208 18.2974C19.7336 18.8831 18.8563 19.1365 17.002 19.2148L17.0653 20.7135ZM15.2687 17V18.9765H16.7687V17H15.2687ZM13.2579 19.0007C13.2575 19.121 13.2572 19.2136 13.255 19.2926C13.2528 19.3721 13.249 19.4192 13.245 19.4481C13.2411 19.4764 13.2396 19.4669 13.2513 19.4387C13.2654 19.4045 13.2911 19.3617 13.3299 19.323L14.389 20.3852C14.6246 20.1502 14.701 19.8709 14.7311 19.6521C14.7582 19.4548 14.7573 19.219 14.7579 19.0051L13.2579 19.0007ZM13.0079 20.75C13.2218 20.75 13.4576 20.7516 13.6549 20.7251C13.8739 20.6957 14.1534 20.6201 14.389 20.3852L13.3299 19.323C13.3687 19.2843 13.4116 19.2587 13.4458 19.2447C13.4741 19.2331 13.4836 19.2346 13.4553 19.2384C13.4264 19.2423 13.3792 19.246 13.2998 19.248C13.2208 19.25 13.1282 19.25 13.0079 19.25V20.75ZM17.002 19.2148C16.8812 19.2199 16.7889 19.2238 16.7101 19.225C16.631 19.2262 16.5849 19.2244 16.5575 19.2217C16.5309 19.2191 16.5426 19.2175 16.5734 19.2292C16.6103 19.2433 16.6536 19.2685 16.6917 19.305L15.6536 20.3878C15.8978 20.6219 16.183 20.6921 16.4108 20.7145C16.6127 20.7344 16.8518 20.7225 17.0653 20.7135L17.002 19.2148ZM15.2687 18.9765C15.2687 19.1953 15.267 19.4374 15.295 19.6397C15.3263 19.8655 15.407 20.1514 15.6536 20.3878L16.6917 19.305C16.7313 19.343 16.7584 19.3863 16.7737 19.4221C16.7863 19.4516 16.7848 19.4622 16.7808 19.4337C16.7768 19.4046 16.7729 19.3566 16.7708 19.2753C16.7687 19.1945 16.7687 19.0997 16.7687 18.9765H15.2687Z" fill="currentColor"/>
+// </svg>',
+//             )
+//             ->nickname('coupon')
+//             ->data('permission', 'coupon list')
+//             ->link->attr(['class' => ''])
+//             ->href('#coupon');
 
-        $menu->coupon
-            ->add('<span>' . __('messages.list_form_title', ['form' => __('messages.coupon')]) . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'coupon.index',
-            ])
-            ->data('permission', 'coupon list')
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
-<path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->coupon
+//             ->add('<span>' . __('messages.list_form_title', ['form' => __('messages.coupon')]) . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'coupon.index',
+//             ])
+//             ->data('permission', 'coupon list')
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+// <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->coupon
-            ->add('<span>' . __('messages.add_form_title', ['form' => __('messages.coupon')]) . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'coupon.create',
-            ])
-            ->data('permission', 'coupon add')
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
-<path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->coupon
+//             ->add('<span>' . __('messages.add_form_title', ['form' => __('messages.coupon')]) . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'coupon.create',
+//             ])
+//             ->data('permission', 'coupon add')
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
         $menu
             ->add(
@@ -789,24 +789,24 @@
             ->nickname('user_ratings')
             ->data('permission', 'userrating list');
 
-        $menu
-            ->add(
-                '<span>' .
-                    trans('messages.list_form_title', ['form' => trans('messages.handyman_ratings')]) .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.handyman_ratings') .
-                    '</span></span>',
-                ['route' => 'handyman-rating.index'],
-            )
-            ->prepend(
-                '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.9787 17.3546L8.6771 19.8096L9.94694 15.8731L6.60303 13.4604H10.7088L11.9787 9.52393L13.2909 13.4604H17.3967L14.0528 15.8731L15.3226 19.8096L11.9787 17.3546Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.9787 9.52376V4.19043H8.38086V13.4603H10.7089L11.9787 9.52376Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.9785 9.52376L13.2907 13.4603H15.6187V4.19043H11.9785V9.52376Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>',
-            )
-            ->nickname('handyman_ratings')
-            ->data('permission', 'handymanrating list');
+//         $menu
+//             ->add(
+//                 '<span>' .
+//                     trans('messages.list_form_title', ['form' => trans('messages.handyman_ratings')]) .
+//                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                     __('messages.handyman_ratings') .
+//                     '</span></span>',
+//                 ['route' => 'handyman-rating.index'],
+//             )
+//             ->prepend(
+//                 '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M11.9787 17.3546L8.6771 19.8096L9.94694 15.8731L6.60303 13.4604H10.7088L11.9787 9.52393L13.2909 13.4604H17.3967L14.0528 15.8731L15.3226 19.8096L11.9787 17.3546Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M11.9787 9.52376V4.19043H8.38086V13.4603H10.7089L11.9787 9.52376Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M11.9785 9.52376L13.2907 13.4603H15.6187V4.19043H11.9785V9.52376Z" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+// </svg>',
+//             )
+//             ->nickname('handyman_ratings')
+//             ->data('permission', 'handymanrating list');
 
         $menu
             ->add(__('messages.sidebar_form_title', ['form' => trans('messages.system')]), ['class' => 'category-main'])
@@ -856,49 +856,49 @@
                 ->nickname('plan')
                 ->data('permission', 'plan list');
         }
-        $menu
-            ->add(
-                '<span>' .
-                    __('messages.taxes') .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.taxes') .
-                    '</span></span>',
-                ['route' => 'tax.index'],
-            )
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1544_3650)">
-<path d="M18.75 5.25L5.25 18.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7.125 9.75C8.57475 9.75 9.75 8.57475 9.75 7.125C9.75 5.67525 8.57475 4.5 7.125 4.5C5.67525 4.5 4.5 5.67525 4.5 7.125C4.5 8.57475 5.67525 9.75 7.125 9.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16.875 19.5C18.3247 19.5 19.5 18.3247 19.5 16.875C19.5 15.4253 18.3247 14.25 16.875 14.25C15.4253 14.25 14.25 15.4253 14.25 16.875C14.25 18.3247 15.4253 19.5 16.875 19.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-</g><defs><clipPath id="clip0_1544_3650"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>',
-            )
-            ->nickname('tax')
-            ->data('permission', 'tax list');
+//         $menu
+//             ->add(
+//                 '<span>' .
+//                     __('messages.taxes') .
+//                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                     __('messages.taxes') .
+//                     '</span></span>',
+//                 ['route' => 'tax.index'],
+//             )
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <g clip-path="url(#clip0_1544_3650)">
+// <path d="M18.75 5.25L5.25 18.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M7.125 9.75C8.57475 9.75 9.75 8.57475 9.75 7.125C9.75 5.67525 8.57475 4.5 7.125 4.5C5.67525 4.5 4.5 5.67525 4.5 7.125C4.5 8.57475 5.67525 9.75 7.125 9.75Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// <path d="M16.875 19.5C18.3247 19.5 19.5 18.3247 19.5 16.875C19.5 15.4253 18.3247 14.25 16.875 14.25C15.4253 14.25 14.25 15.4253 14.25 16.875C14.25 18.3247 15.4253 19.5 16.875 19.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+// </g><defs><clipPath id="clip0_1544_3650"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>',
+//             )
+//             ->nickname('tax')
+//             ->data('permission', 'tax list');
 
-        if (optional($othersetting)->blog == 1) {
-            $menu
-                ->add(
-                    '<span>' .
-                        __('messages.blogs') .
-                        '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                        __('messages.blogs') .
-                        '</span></span>',
-                    ['route' => 'blog.index'],
-                )
-                ->data('role', ['admin', 'demo_admin'])
-                ->prepend(
-                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M18.18 8.03933L18.6435 7.57589C19.4113 6.80804 20.6563 6.80804 21.4241 7.57589C22.192 8.34374 22.192 9.58868 21.4241 10.3565L20.9607 10.82M18.18 8.03933C18.18 8.03933 18.238 9.02414 19.1069 9.89309C19.9759 10.762 20.9607 10.82 20.9607 10.82M18.18 8.03933L13.9194 12.2999C13.6308 12.5885 13.4865 12.7328 13.3624 12.8919C13.2161 13.0796 13.0906 13.2827 12.9882 13.4975C12.9014 13.6797 12.8368 13.8732 12.7078 14.2604L12.2946 15.5L12.1609 15.901M20.9607 10.82L16.7001 15.0806C16.4115 15.3692 16.2672 15.5135 16.1081 15.6376C15.9204 15.7839 15.7173 15.9094 15.5025 16.0118C15.3203 16.0986 15.1268 16.1632 14.7396 16.2922L13.5 16.7054L13.099 16.8391M13.099 16.8391L12.6979 16.9728C12.5074 17.0363 12.2973 16.9867 12.1553 16.8447C12.0133 16.7027 11.9637 16.4926 12.0272 16.3021L12.1609 15.901M13.099 16.8391L12.1609 15.901" stroke="currentColor" stroke-width="1.5"/>
-<path d="M8 13H10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M8 9H14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M8 17H9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M19.8284 3.17157C18.6569 2 16.7712 2 13 2H11C7.22876 2 5.34315 2 4.17157 3.17157C3 4.34315 3 6.22876 3 10V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C20.7715 19.8853 20.9554 18.4796 20.9913 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-',
-                )
-                ->link->attr(['class' => '']);
-        }
+//         if (optional($othersetting)->blog == 1) {
+//             $menu
+//                 ->add(
+//                     '<span>' .
+//                         __('messages.blogs') .
+//                         '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                         __('messages.blogs') .
+//                         '</span></span>',
+//                     ['route' => 'blog.index'],
+//                 )
+//                 ->data('role', ['admin', 'demo_admin'])
+//                 ->prepend(
+//                     '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M18.18 8.03933L18.6435 7.57589C19.4113 6.80804 20.6563 6.80804 21.4241 7.57589C22.192 8.34374 22.192 9.58868 21.4241 10.3565L20.9607 10.82M18.18 8.03933C18.18 8.03933 18.238 9.02414 19.1069 9.89309C19.9759 10.762 20.9607 10.82 20.9607 10.82M18.18 8.03933L13.9194 12.2999C13.6308 12.5885 13.4865 12.7328 13.3624 12.8919C13.2161 13.0796 13.0906 13.2827 12.9882 13.4975C12.9014 13.6797 12.8368 13.8732 12.7078 14.2604L12.2946 15.5L12.1609 15.901M20.9607 10.82L16.7001 15.0806C16.4115 15.3692 16.2672 15.5135 16.1081 15.6376C15.9204 15.7839 15.7173 15.9094 15.5025 16.0118C15.3203 16.0986 15.1268 16.1632 14.7396 16.2922L13.5 16.7054L13.099 16.8391M13.099 16.8391L12.6979 16.9728C12.5074 17.0363 12.2973 16.9867 12.1553 16.8447C12.0133 16.7027 11.9637 16.4926 12.0272 16.3021L12.1609 15.901M13.099 16.8391L12.1609 15.901" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M8 13H10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M8 9H14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M8 17H9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M19.8284 3.17157C18.6569 2 16.7712 2 13 2H11C7.22876 2 5.34315 2 4.17157 3.17157C3 4.34315 3 6.22876 3 10V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C20.7715 19.8853 20.9554 18.4796 20.9913 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// </svg>
+// ',
+//                 )
+//                 ->link->attr(['class' => '']);
+//         }
 
         $menu
             ->add(
@@ -942,115 +942,115 @@
             ->data('role', ['admin', 'demo_admin'])
             ->link->attr(['class' => '']);
 
-        $menu
-            ->add(
-                '<span>' .
-                    __('messages.pages') .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.pages') .
-                    '</span></span>',
-                ['class' => ''],
-            )
-            ->data('permission', [
-                'terms condition',
-                'privacy policy',
-                'about us',
-                'Help and support',
-                'Refund and Cancellation Policy',
-                'data deletion request',
-            ])
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5 8C5 5.17157 5 3.75736 5.87868 2.87868C6.75736 2 8.17157 2 11 2H13C15.8284 2 17.2426 2 18.1213 2.87868C19 3.75736 19 5.17157 19 8V16C19 18.8284 19 20.2426 18.1213 21.1213C17.2426 22 15.8284 22 13 22H11C8.17157 22 6.75736 22 5.87868 21.1213C5 20.2426 5 18.8284 5 16V8Z" stroke="currentColor" stroke-width="1.5"/>
-<path d="M5 4.07617C4.02491 4.17208 3.36857 4.38885 2.87868 4.87873C2 5.75741 2 7.17163 2 10.0001V14.0001C2 16.8285 2 18.2427 2.87868 19.1214C3.36857 19.6113 4.02491 19.828 5 19.9239" stroke="currentColor" stroke-width="1.5"/>
-<path d="M19 4.07617C19.9751 4.17208 20.6314 4.38885 21.1213 4.87873C22 5.75741 22 7.17163 22 10.0001V14.0001C22 16.8285 22 18.2427 21.1213 19.1214C20.6314 19.6113 19.9751 19.828 19 19.9239" stroke="currentColor" stroke-width="1.5"/>
-<path d="M9 13H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M9 9H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M9 17H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-',
-            )
-            ->nickname('pages')
-            ->link->attr(['class' => ''])
-            ->href('#pages');
+//         $menu
+//             ->add(
+//                 '<span>' .
+//                     __('messages.pages') .
+//                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                     __('messages.pages') .
+//                     '</span></span>',
+//                 ['class' => ''],
+//             )
+//             ->data('permission', [
+//                 'terms condition',
+//                 'privacy policy',
+//                 'about us',
+//                 'Help and support',
+//                 'Refund and Cancellation Policy',
+//                 'data deletion request',
+//             ])
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M5 8C5 5.17157 5 3.75736 5.87868 2.87868C6.75736 2 8.17157 2 11 2H13C15.8284 2 17.2426 2 18.1213 2.87868C19 3.75736 19 5.17157 19 8V16C19 18.8284 19 20.2426 18.1213 21.1213C17.2426 22 15.8284 22 13 22H11C8.17157 22 6.75736 22 5.87868 21.1213C5 20.2426 5 18.8284 5 16V8Z" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M5 4.07617C4.02491 4.17208 3.36857 4.38885 2.87868 4.87873C2 5.75741 2 7.17163 2 10.0001V14.0001C2 16.8285 2 18.2427 2.87868 19.1214C3.36857 19.6113 4.02491 19.828 5 19.9239" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M19 4.07617C19.9751 4.17208 20.6314 4.38885 21.1213 4.87873C22 5.75741 22 7.17163 22 10.0001V14.0001C22 16.8285 22 18.2427 21.1213 19.1214C20.6314 19.6113 19.9751 19.828 19 19.9239" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M9 13H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M9 9H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M9 17H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// </svg>
+// ',
+//             )
+//             ->nickname('pages')
+//             ->link->attr(['class' => ''])
+//             ->href('#pages');
 
-        $menu->pages
-            ->add('<span>' . __('messages.terms_condition') . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'term-condition',
-            ])
-            ->data('permission', 'terms condition')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M14 1.5H8L6.5 0H2C1.175 0 0.5075 0.675 0.5075 1.5L0.5 10.5C0.5 11.325 1.175 12 2 12H14C14.825 12 15.5 11.325 15.5 10.5V3C15.5 2.175 14.825 1.5 14 1.5ZM14 10.5H2V1.5H5.8775L7.3775 3H14V10.5ZM12.5 6H3.5V4.5H12.5V6ZM9.5 9H3.5V7.5H9.5V9Z" fill="#6C757D" />
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->pages
+//             ->add('<span>' . __('messages.terms_condition') . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'term-condition',
+//             ])
+//             ->data('permission', 'terms condition')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M14 1.5H8L6.5 0H2C1.175 0 0.5075 0.675 0.5075 1.5L0.5 10.5C0.5 11.325 1.175 12 2 12H14C14.825 12 15.5 11.325 15.5 10.5V3C15.5 2.175 14.825 1.5 14 1.5ZM14 10.5H2V1.5H5.8775L7.3775 3H14V10.5ZM12.5 6H3.5V4.5H12.5V6ZM9.5 9H3.5V7.5H9.5V9Z" fill="#6C757D" />
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->pages
-            ->add('<span>' . __('messages.privacy_policy') . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'privacy-policy',
-            ])
-            ->data('permission', 'privacy policy')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 0.75L0.25 3.75V8.25C0.25 12.4125 3.13 16.305 7 17.25C10.87 16.305 13.75 12.4125 13.75 8.25V3.75L7 0.75ZM12.25 8.25C12.25 11.64 10.015 14.7675 7 15.6975C3.985 14.7675 1.75 11.64 1.75 8.25V4.725L7 2.3925L12.25 4.725V8.25ZM3.5575 8.6925L2.5 9.75L5.5 12.75L11.5 6.75L10.4425 5.685L5.5 10.6275L3.5575 8.6925Z" fill="#6C757D" />
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->pages
+//             ->add('<span>' . __('messages.privacy_policy') . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'privacy-policy',
+//             ])
+//             ->data('permission', 'privacy policy')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M7 0.75L0.25 3.75V8.25C0.25 12.4125 3.13 16.305 7 17.25C10.87 16.305 13.75 12.4125 13.75 8.25V3.75L7 0.75ZM12.25 8.25C12.25 11.64 10.015 14.7675 7 15.6975C3.985 14.7675 1.75 11.64 1.75 8.25V4.725L7 2.3925L12.25 4.725V8.25ZM3.5575 8.6925L2.5 9.75L5.5 12.75L11.5 6.75L10.4425 5.685L5.5 10.6275L3.5575 8.6925Z" fill="#6C757D" />
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->pages
-            ->add('<span>' . __('messages.help_support') . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'help-support',
-            ])
-            ->data('permission', 'helpdesk')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 3.5H0.5V14C0.5 14.825 1.175 15.5 2 15.5H12.5V14H2V3.5ZM14 0.5H5C4.175 0.5 3.5 1.175 3.5 2V11C3.5 11.825 4.175 12.5 5 12.5H14C14.825 12.5 15.5 11.825 15.5 11V2C15.5 1.175 14.825 0.5 14 0.5ZM14 11H5V2H14V11ZM9.1325 6.62C9.44 6.0725 10.0175 5.75 10.355 5.27C10.715 4.76 10.5125 3.815 9.5 3.815C8.84 3.815 8.51 4.3175 8.375 4.7375L7.3475 4.31C7.6325 3.47 8.39 2.75 9.4925 2.75C10.415 2.75 11.0525 3.17 11.375 3.695C11.6525 4.145 11.81 4.9925 11.3825 5.6225C10.91 6.32 10.46 6.53 10.2125 6.98C10.115 7.16 10.0775 7.28 10.0775 7.865H8.9375C8.945 7.5575 8.8925 7.055 9.1325 6.62ZM8.7125 9.4625C8.7125 9.02 9.065 8.6825 9.5 8.6825C9.9425 8.6825 10.28 9.02 10.28 9.4625C10.28 9.8975 9.95 10.25 9.5 10.25C9.065 10.25 8.7125 9.8975 8.7125 9.4625Z" fill="#6C757D" />
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->pages
+//             ->add('<span>' . __('messages.help_support') . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'help-support',
+//             ])
+//             ->data('permission', 'helpdesk')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M2 3.5H0.5V14C0.5 14.825 1.175 15.5 2 15.5H12.5V14H2V3.5ZM14 0.5H5C4.175 0.5 3.5 1.175 3.5 2V11C3.5 11.825 4.175 12.5 5 12.5H14C14.825 12.5 15.5 11.825 15.5 11V2C15.5 1.175 14.825 0.5 14 0.5ZM14 11H5V2H14V11ZM9.1325 6.62C9.44 6.0725 10.0175 5.75 10.355 5.27C10.715 4.76 10.5125 3.815 9.5 3.815C8.84 3.815 8.51 4.3175 8.375 4.7375L7.3475 4.31C7.6325 3.47 8.39 2.75 9.4925 2.75C10.415 2.75 11.0525 3.17 11.375 3.695C11.6525 4.145 11.81 4.9925 11.3825 5.6225C10.91 6.32 10.46 6.53 10.2125 6.98C10.115 7.16 10.0775 7.28 10.0775 7.865H8.9375C8.945 7.5575 8.8925 7.055 9.1325 6.62ZM8.7125 9.4625C8.7125 9.02 9.065 8.6825 9.5 8.6825C9.9425 8.6825 10.28 9.02 10.28 9.4625C10.28 9.8975 9.95 10.25 9.5 10.25C9.065 10.25 8.7125 9.8975 8.7125 9.4625Z" fill="#6C757D" />
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->pages
-            ->add('<span>' . __('messages.refund_cancellation_policy') . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'refund-cancellation-policy',
-            ])
-            ->data('permission', 'Refund and Cancellation Policy')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6.4075 14H1.75V6.5H12.25V9.785L13.75 8.285V3.5C13.75 2.675 13.075 2 12.25 2H11.5V0.5H10V2H4V0.5H2.5V2H1.75C0.9175 2 0.2575 2.675 0.2575 3.5L0.25 14C0.25 14.825 0.9175 15.5 1.75 15.5H7.9075L6.4075 14ZM1.75 3.5H12.25V5H1.75V3.5ZM10.405 15.875L7.75 13.22L8.8075 12.1625L10.3975 13.7525L13.5775 10.5725L14.635 11.63L10.405 15.875ZM5.8075 9.5L7 10.6925L5.9425 11.75L4.75 10.5575L3.5575 11.75L2.5 10.6925L3.6925 9.5L2.5 8.3075L3.5575 7.25L4.75 8.4425L5.9425 7.25L7 8.3075L5.8075 9.5Z" fill="#6C757D" />
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->pages
+//             ->add('<span>' . __('messages.refund_cancellation_policy') . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'refund-cancellation-policy',
+//             ])
+//             ->data('permission', 'Refund and Cancellation Policy')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M6.4075 14H1.75V6.5H12.25V9.785L13.75 8.285V3.5C13.75 2.675 13.075 2 12.25 2H11.5V0.5H10V2H4V0.5H2.5V2H1.75C0.9175 2 0.2575 2.675 0.2575 3.5L0.25 14C0.25 14.825 0.9175 15.5 1.75 15.5H7.9075L6.4075 14ZM1.75 3.5H12.25V5H1.75V3.5ZM10.405 15.875L7.75 13.22L8.8075 12.1625L10.3975 13.7525L13.5775 10.5725L14.635 11.63L10.405 15.875ZM5.8075 9.5L7 10.6925L5.9425 11.75L4.75 10.5575L3.5575 11.75L2.5 10.6925L3.6925 9.5L2.5 8.3075L3.5575 7.25L4.75 8.4425L5.9425 7.25L7 8.3075L5.8075 9.5Z" fill="#6C757D" />
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->pages
-            ->add('<span>' . __('messages.data_deletion_request') . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'data-deletion-request',
-            ])
-            ->data('permission', 'data deletion request')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6.4075 14H1.75V6.5H12.25V9.785L13.75 8.285V3.5C13.75 2.675 13.075 2 12.25 2H11.5V0.5H10V2H4V0.5H2.5V2H1.75C0.9175 2 0.2575 2.675 0.2575 3.5L0.25 14C0.25 14.825 0.9175 15.5 1.75 15.5H7.9075L6.4075 14ZM1.75 3.5H12.25V5H1.75V3.5ZM10.405 15.875L7.75 13.22L8.8075 12.1625L10.3975 13.7525L13.5775 10.5725L14.635 11.63L10.405 15.875ZM5.8075 9.5L7 10.6925L5.9425 11.75L4.75 10.5575L3.5575 11.75L2.5 10.6925L3.6925 9.5L2.5 8.3075L3.5575 7.25L4.75 8.4425L5.9425 7.25L7 8.3075L5.8075 9.5Z" fill="#6C757D" />
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->pages
+//             ->add('<span>' . __('messages.data_deletion_request') . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'data-deletion-request',
+//             ])
+//             ->data('permission', 'data deletion request')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M6.4075 14H1.75V6.5H12.25V9.785L13.75 8.285V3.5C13.75 2.675 13.075 2 12.25 2H11.5V0.5H10V2H4V0.5H2.5V2H1.75C0.9175 2 0.2575 2.675 0.2575 3.5L0.25 14C0.25 14.825 0.9175 15.5 1.75 15.5H7.9075L6.4075 14ZM1.75 3.5H12.25V5H1.75V3.5ZM10.405 15.875L7.75 13.22L8.8075 12.1625L10.3975 13.7525L13.5775 10.5725L14.635 11.63L10.405 15.875ZM5.8075 9.5L7 10.6925L5.9425 11.75L4.75 10.5575L3.5575 11.75L2.5 10.6925L3.6925 9.5L2.5 8.3075L3.5575 7.25L4.75 8.4425L5.9425 7.25L7 8.3075L5.8075 9.5Z" fill="#6C757D" />
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-            $menu->pages
-    ->add('<span>' . __('messages.about_us') . '</span>', [
-        'class' => 'sidebar-layout',
-        'route' => 'about-us',
-    ])
-    ->data('permission', 'about us')
-    ->prepend(
-        '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 0C3.58984 0 0 3.58984 0 8C0 12.4102 3.58984 16 8 16C12.4102 16 16 12.4102 16 8C16 3.58984 12.4102 0 8 0ZM8 14.5C4.41016 14.5 1.5 11.5898 1.5 8C1.5 4.41016 4.41016 1.5 8 1.5C11.5898 1.5 14.5 4.41016 14.5 8C14.5 11.5898 11.5898 14.5 8 14.5ZM8.75 12H7.25V7H8.75V12ZM8.75 5H7.25V3.5H8.75V5Z" fill="#6C757D" />
-</svg>',
-    )
-    ->link->attr(['class' => '']);
+//             $menu->pages
+//     ->add('<span>' . __('messages.about_us') . '</span>', [
+//         'class' => 'sidebar-layout',
+//         'route' => 'about-us',
+//     ])
+//     ->data('permission', 'about us')
+//     ->prepend(
+//         '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M8 0C3.58984 0 0 3.58984 0 8C0 12.4102 3.58984 16 8 16C12.4102 16 16 12.4102 16 8C16 3.58984 12.4102 0 8 0ZM8 14.5C4.41016 14.5 1.5 11.5898 1.5 8C1.5 4.41016 4.41016 1.5 8 1.5C11.5898 1.5 14.5 4.41016 14.5 8C14.5 11.5898 11.5898 14.5 8 14.5ZM8.75 12H7.25V7H8.75V12ZM8.75 5H7.25V3.5H8.75V5Z" fill="#6C757D" />
+// </svg>',
+//     )
+//     ->link->attr(['class' => '']);
 
 
         $menu
@@ -1108,26 +1108,26 @@
             ->data('permission', 'document add')
             ->link->attr(['class' => '']);
 
-        $menu
-            ->add(
-                '<span>' .
-                    __('messages.frontend_setting') .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.frontend_setting') .
-                    '</span></span>',
-                ['route' => 'frontend_setting.index'],
-            )
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15.5 9L15.6716 9.17157C17.0049 10.5049 17.6716 11.1716 17.6716 12C17.6716 12.8284 17.0049 13.4951 15.6716 14.8284L15.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M13.2939 7.16992L11.9998 11.9996L10.7058 16.8292" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M8.50019 9L8.32861 9.17157C6.99528 10.5049 6.32861 11.1716 6.32861 12C6.32861 12.8284 6.99528 13.4951 8.32861 14.8284L8.50019 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="currentColor" stroke-width="1.5"/>
-</svg>',
-            )
-            ->nickname('frontend_setting')
-            ->data('role', ['admin', 'demo_admin'])
-            ->link->attr(['class' => '']);
+//         $menu
+//             ->add(
+//                 '<span>' .
+//                     __('messages.frontend_setting') .
+//                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                     __('messages.frontend_setting') .
+//                     '</span></span>',
+//                 ['route' => 'frontend_setting.index'],
+//             )
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M15.5 9L15.6716 9.17157C17.0049 10.5049 17.6716 11.1716 17.6716 12C17.6716 12.8284 17.0049 13.4951 15.6716 14.8284L15.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M13.2939 7.16992L11.9998 11.9996L10.7058 16.8292" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M8.50019 9L8.32861 9.17157C6.99528 10.5049 6.32861 11.1716 6.32861 12C6.32861 12.8284 6.99528 13.4951 8.32861 14.8284L8.50019 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="currentColor" stroke-width="1.5"/>
+// </svg>',
+//             )
+//             ->nickname('frontend_setting')
+//             ->data('role', ['admin', 'demo_admin'])
+//             ->link->attr(['class' => '']);
 
         $menu
             ->add(
