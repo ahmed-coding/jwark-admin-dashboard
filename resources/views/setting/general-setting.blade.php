@@ -135,12 +135,12 @@ $(document).ready(function() {
 
     // Initialize intlTelInput with India as default
     var iti = window.intlTelInput(phoneInput, {
-        initialCountry: "in",
+        initialCountry: "ye",
         separateDialCode: true,
-        preferredCountries: ["in", "us", "gb"],
+        preferredCountries: ["ye"],
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
         customContainer: "w-100",
-        onlyCountries: ["ye", "kse", "gb", "ca", "au", "de", "fr", "it", "es", "pt", "nl", "be", "ch", "at", "dk", "se", "no", "fi", "ie", "nz"]
+        onlyCountries: ["YE","SA", "AE", "OM", "QA", "BH", "KW",]
     });
 
     // If there's an existing phone number, format it

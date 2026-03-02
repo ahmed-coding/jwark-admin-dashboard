@@ -532,6 +532,18 @@ class BookingController extends Controller
 
         $user = User::where('id', $data['provider_id'])->with('providertype')->first();
 
+        // التحقق من وجود العنوان قبل إنشاء الحجز
+        if (!empty($data['booking_address_id'])) {
+            $addressExists = ProviderAddressMapping::where('id', $data['booking_address_id'])
+                ->where('provider_id', $data['provider_id'])
+                ->exists();
+
+            if (!$addressExists) {
+                // إذا لم يكن العنوان موجوداً، اجعله null لتجنب خطأ Foreign Key
+                $data['booking_address_id'] = null;
+            }
+        }
+
         $result = Booking::updateOrCreate(['id' => $request->id], $data);
 
         $activity_data = [

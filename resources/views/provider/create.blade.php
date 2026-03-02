@@ -272,12 +272,12 @@
     var phoneError = document.querySelector("#contact_number-error");
     var countryCodeInput = document.querySelector("#country_code");
     var iti = window.intlTelInput(phoneInput, {
-        initialCountry: "in",
+        initialCountry: "ye",
         separateDialCode: true,
-        preferredCountries: ["in", "us", "gb"],
+        preferredCountries: ["YE"],
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
         customContainer: "w-100",
-        onlyCountries: ["in", "us", "gb", "ca", "au", "de", "fr", "it", "es", "pt", "nl", "be", "ch", "at", "dk", "se", "no", "fi", "ie", "nz"]
+        onlyCountries: ["YE","SA", "AE", "OM", "QA", "BH", "KW",],
     });
     if (phoneInput.value && phoneInput.value.startsWith('+')) {
         iti.setNumber(phoneInput.value);

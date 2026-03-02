@@ -94,7 +94,7 @@
                                  <div class="form-group">
                                     <label for="zone_id" class="text-secondary">{{ __('messages.select_zone') }} <span class="text-danger">*</span></label>
                                     <select name="zone_id[]" class="form-select select2 mb-5" id="zone_id" style="width:100%" multiple="multiple">
-                                       
+
                                     </select>
                                  </div>
                               </div>
@@ -149,7 +149,7 @@
                                          class="form-control"
                                           data-is-required="{{ $document->is_required ? 1 : 0 }}"
                                          {{ $document->is_required ? 'required' : '' }}>
-                                   
+
                                     <small class="help-block with-errors text-danger"></small>
                                  </div>
                               @endforeach
@@ -191,10 +191,10 @@
        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
        <style>
          .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-       
+
          border: none;
          position: relative;
-      
+
          }
        </style>
    <script>
@@ -207,20 +207,20 @@
         let isUsernameValid = true;
         let isEmailValid = true;
         let isContactNumberValid = true;
-      
+
                 function validateInput(inputSelector, fieldName, errorSelector) {
                     let debounceTimer = null;
-                
+
                     $(inputSelector).on('input', function () {
                         let value = $(this).val().trim();
                         clearTimeout(debounceTimer);
-                
+
                         if (fieldName === 'phone_number' && value !== '') {
                             const selectedCountry = iti.getSelectedCountryData();
                             const dialCode = selectedCountry?.dialCode || '';
                             value = `+${dialCode}${value}`;
                         }
-                
+
                         debounceTimer = setTimeout(function () {
                             if (value !== '') {
                                 $.ajax({
@@ -238,7 +238,7 @@
                                         } else {
                                             $(errorSelector).text('').hide();
                                         }
-                
+
                                         // Update validation state
                                         if (fieldName === 'username') isUsernameValid = !hasError;
                                         if (fieldName === 'email') isEmailValid = !hasError;
@@ -246,7 +246,7 @@
                                     },
                                     error: function () {
                                         $(errorSelector).text(`Error checking ${fieldName.replace('_', ' ')}.`).show();
-                
+
                                         if (fieldName === 'username') isUsernameValid = false;
                                         if (fieldName === 'email') isEmailValid = false;
                                         if (fieldName === 'phone_number') isContactNumberValid = false;
@@ -254,7 +254,7 @@
                                 });
                             } else {
                                 $(errorSelector).text('').hide();
-                
+
                                 // Reset to true if empty
                                 if (fieldName === 'username') isUsernameValid = true;
                                 if (fieldName === 'email') isEmailValid = true;
@@ -397,8 +397,8 @@
                      });
 
                 }
-                   
-                  
+
+
             }).trigger('change');
 
             $('#providerdata').change(function() {
@@ -413,7 +413,7 @@
 
 var input = document.querySelector("#phone_number");
 var iti = window.intlTelInput(input, {
-    initialCountry: "in",
+    initialCountry: "ye",
     separateDialCode: true,
     formatOnDisplay: false,
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
@@ -440,7 +440,7 @@ $('form').on('submit', function(e) {
         $('#phone_number_err').text('Please enter a valid mobile number.');
         return false;
     }
-    
+
     let cleanNumber = iti.getNumber();
     cleanNumber = cleanNumber.replace(/\s+/g, '').replace(/[^0-9+]/g, '');
     $('#phone_number').val(cleanNumber);

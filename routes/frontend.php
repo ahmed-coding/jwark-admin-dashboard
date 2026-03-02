@@ -26,7 +26,7 @@ require __DIR__.'/auth.php';
 
 Route::middleware([CheckInstallation::class])->group(function () {
     // Route::get('/', [HomeController::class, 'index'])->name('home');
-
+    // Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
     Route::get('/login-page', [FrontendController::class, 'userLoginView'])->name('user.login');
     Route::post('/user-login', [CustomerController::class, 'userLogin'])->name('user.user_login');
     Route::get('/register-page', [FrontendController::class, 'userRegistrationView'])->name('user.register');
@@ -64,7 +64,7 @@ Route::middleware([CheckInstallation::class])->group(function () {
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/', [HomeController::class, 'index'])->name('frontend.index');
-
+    // Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
     Route::get('/helpdesk-list', [FrontendController::class, 'helpdeskList'])->name('helpdesk.list');
     Route::get('/helpdesk-datatable', [FrontendController::class, 'helpdeskDatatable'])->name('helpdesk.data');
     Route::get('/helpdesk-detail/{id}', [FrontendController::class, 'helpdeskDetail'])->name('helpdesk.detail');

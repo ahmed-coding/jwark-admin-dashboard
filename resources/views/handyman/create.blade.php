@@ -26,25 +26,25 @@
                                 {{ html()->text('first_name', $handymandata->first_name)->placeholder(__('messages.first_name'))->class('form-control')->required() }}
                                 <small class="help-block with-errors text-danger"></small>
                             </div>
-                    
+
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.last_name').' <span class="text-danger">*</span>', 'last_name')->class('form-control-label') }}
                                 {{ html()->text('last_name', $handymandata->last_name)->placeholder(__('messages.last_name'))->class('form-control')->required() }}
                                 <small class="help-block with-errors text-danger"></small>
                             </div>
-                    
+
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.username').' <span class="text-danger">*</span>', 'username')->class('form-control-label') }}
                                 {{ html()->text('username', $handymandata->username)->placeholder(__('messages.username'))->class('form-control')->required() }}
                                 <small class="help-block with-errors text-danger"></small>
                             </div>
-                    
+
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.email').' <span class="text-danger">*</span>', 'email')->class('form-control-label') }}
                                 {{ html()->email('email', $handymandata->email)->placeholder(__('messages.email'))->class('form-control')->required()->attribute('pattern', '[^@]+@[^@]+\.[a-zA-Z]{2,}')->attribute('title', 'Please enter a valid email address') }}
                                 <small class="help-block with-errors text-danger"></small>
                             </div>
-                    
+
                             @if (!isset($handymandata->id) || $handymandata->id == null)
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.password').' <span class="text-danger">*</span>', 'password')->class('form-control-label') }}
@@ -60,7 +60,7 @@
                                     ->class('select2js form-group providers')
                                     ->required()
                                     ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.providers')]))
-                                    ->attribute('data-ajax--url', route('ajax-list', ['type' => 'provider'])) 
+                                    ->attribute('data-ajax--url', route('ajax-list', ['type' => 'provider']))
                                     }}
                             </div>
                             @endif
@@ -71,11 +71,11 @@
                                     ->class('select2js form-group handymantype_id')
                                     ->id('handymantype_id')
                                     ->required()
-                                    ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.handymantype')])) 
-                                    
+                                    ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.handymantype')]))
+
                                     }}
                             </div>
-<!--                     
+<!--
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.select_name', ['select' => __('messages.provider_address')]).' <span class="text-danger">*</span>', 'name')->class('form-control-label') }}
                                 <br />
@@ -83,10 +83,10 @@
                                     ->class('select2js form-group service_address_id')
                                     ->id('service_address_id')
                                     ->required()
-                                    ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.provider_address')])) 
+                                    ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.provider_address')]))
                                     }}
                             </div> -->
-                    
+
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.select_name', ['select' => __('messages.country')]).' <span class="text-danger">*</span>', 'country_id')->class('form-control-label') }}
                                 <br />
@@ -94,27 +94,27 @@
                                     ->class('select2js form-group country')
                                     ->required()
                                     ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.country')]))
-                                    ->attribute('data-ajax--url', route('ajax-list', ['type' => 'country'])) 
+                                    ->attribute('data-ajax--url', route('ajax-list', ['type' => 'country']))
                                     }}
                             </div>
-                    
+
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.select_name', ['select' => __('messages.state')]).' <span class="text-danger">*</span>', 'state_id')->class('form-control-label') }}
                                 <br />
                                 {{ html()->select('state_id', [], [])
                                     ->class('select2js form-group state_id')
                                     ->required()
-                                    ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.state')]))       
+                                    ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.state')]))
                                     }}
                             </div>
-                    
+
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.select_name', ['select' => __('messages.city')]).' <span class="text-danger">*</span>', 'city_id')->class('form-control-label') }}
                                 <br />
                                 {{ html()->select('city_id', [], old('city_id'))
                                     ->class('select2js form-group city_id')->required()->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.city')])) }}
                             </div>
-                    
+
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.contact_number').' <span class="text-danger">*</span>', 'contact_number')->class('form-control-label') }}
                                 {{ html()->text('contact_number', $handymandata->contact_number)->placeholder(__('messages.contact_number'))->class('form-control contact_number')->required() }}
@@ -122,12 +122,12 @@
                                       //'pattern' => '^(\+|-)?\d+$', // Accepts '+' and numeric characters only --}}
                                 <small class="help-block with-errors text-danger" id="contact_number_err"></small>
                             </div>
-                    
+
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.status').' <span class="text-danger">*</span>', 'status')->class('form-control-label') }}
                                 {{ html()->select('status', ['1' => __('messages.active'), '0' => __('messages.inactive')], old('status'))->class('form-select select2js')->required() }}
                             </div>
-                    
+
                             <div class="form-group col-md-4">
                                 <label class="form-control-label" for="profile_image">{{ __('messages.profile_image') }}
                                 </label>
@@ -138,7 +138,7 @@
                                 </div>
                                 <!-- <span class="selected_file"></span> -->
                             </div>
-                    
+
                             @if(getMediaFileExit($handymandata, 'profile_image'))
                             <div class="col-md-2 mb-2 position-relative">
                                 <img id="profile_image_preview" src="{{getSingleMedia($handymandata,'profile_image')}}"
@@ -154,7 +154,7 @@
                                 </a>
                             </div>
                             @endif
-                    
+
                             <div class="form-group col-md-12">
                                 {{ html()->label(__('messages.address'), 'address')->class('form-control-label') }}
                                 {{ html()->textarea('address')->class('form-control textarea')->rows(3)->placeholder(__('messages.address')) }}
@@ -210,16 +210,16 @@
                 // Initialize intl-tel-input for the contact number
     var input = document.querySelector("#contact_number");
     var iti = window.intlTelInput(input, {
-        initialCountry: "in", // Set the default country code
+        initialCountry: "ye", // Set the default country code
         separateDialCode: true, // Show the dial code separately
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js" // To handle number formatting
     });
 
     $(input).on('change', function() {
-    var full = iti.getNumber(); 
-    var code = '+' + iti.getSelectedCountryData().dialCode; 
-    var number = full.replace(code, ''); 
-    number = number.replace(/^0+/, ''); 
+    var full = iti.getNumber();
+    var code = '+' + iti.getSelectedCountryData().dialCode;
+    var number = full.replace(code, '');
+    number = number.replace(/^0+/, '');
     $('#contact_number').val(code + ' ' + number);
 });
 

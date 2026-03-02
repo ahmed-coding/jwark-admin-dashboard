@@ -102,7 +102,7 @@
 
     // Initialize intlTelInput
     var iti = window.intlTelInput(input, {
-        initialCountry: "in",
+        initialCountry: "ye",
         separateDialCode: true,
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
     });
@@ -121,7 +121,7 @@
     // Format and set the number as "countrycode-nationalnumber" (e.g., 91-1234567890)
     function setFormattedContactNumber() {
         var countryCode = iti.getSelectedCountryData().dialCode;
-        var nationalNumber = input.value.replace(/\s/g, ''); 
+        var nationalNumber = input.value.replace(/\s/g, '');
         var formattedNumber = '+' + countryCode + ' ' + nationalNumber;
         $('#contact_number').val(formattedNumber);
     }

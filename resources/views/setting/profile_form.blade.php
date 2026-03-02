@@ -26,7 +26,7 @@
                 ->attribute('enctype', 'multipart/form-data')
                 ->id('user-form')
                 ->open() }}
-            
+
             <input type="hidden" name="profile" value="profile">
             {{ html()->hidden('username') }}
             {{ html()->hidden('email') }}
@@ -46,7 +46,7 @@
                             ->required() }}
                         <small class="help-block with-errors text-danger"></small>
                     </div>
-                    
+
                     <div class="form-group col-md-6">
                         {{ html()->label(__('messages.last_name') . ' <span class="text-danger">*</span>')
                             ->class('form-control-label')
@@ -58,7 +58,7 @@
                             ->required() }}
                         <small class="help-block with-errors text-danger"></small>
                     </div>
-                    
+
                     <div class="form-group col-md-6">
                         {{ html()->label(__('messages.username') . ' <span class="text-danger">*</span>')
                             ->class('form-control-label')
@@ -91,7 +91,7 @@
                             ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.country')]))
                             ->attribute('data-ajax--url', route('ajax-list', ['type' => 'country'])) }}
                     </div>
-                    
+
                     <div class="form-group col-md-6">
                         {{ html()->label(__('messages.select_name', ['select' => __('messages.state')]), 'state_id')->class('form-control-label') }}
                         <br />
@@ -99,7 +99,7 @@
                             ->class('form-group select2js state_id')
                             ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.state')])) }}
                     </div>
-                    
+
                     <div class="form-group col-md-6">
                         {{ html()->label(__('messages.select_name', ['select' => __('messages.city')]), 'city_id')->class('form-control-label') }}
                         <br />
@@ -107,7 +107,7 @@
                             ->class('form-group select2js city_id')
                             ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.city')])) }}
                     </div>
-                    
+
                     <div class="form-group col-md-6">
                         {{ html()->label(__('messages.email') . ' <span class="text-danger">*</span>', 'email')->class('form-control-label') }}
                         {{ html()->email('email',$user_data->email)
@@ -118,7 +118,7 @@
                             ->attribute('title', 'Please enter a valid email address') }}
                         <small class="help-block with-errors text-danger"></small>
                     </div>
-                    
+
                     <div class="form-group col-md-6">
                         <label for="mobile" class="form-control-label">{{ __('messages.contact_number') }} <span class="text-danger">*</span></label>
                         <div class="input-group mb-3">
@@ -131,7 +131,7 @@
                                 ->attribute('oninput', 'this.value = this.value.replace(/[^0-9+]/g, \'\')') }}
                             <div class="invalid-feedback" id="contact_number-error">Contact number field is required.</div>
                         </div>
-                    </div>           
+                    </div>
 
                 @if(auth()->user()->hasRole('handyman'))
 
@@ -145,7 +145,7 @@
                             ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.handymantype')]))
                             ->attribute('data-ajax--url', route('ajax-list', ['type' => 'handymantype'])) }}
                     </div>
-                
+
                     {{-- <div class="form-group col-md-6">
                         {{ html()->label(__('messages.select_name', ['select' => __('messages.provider_address')]), 'name')
                             ->class('form-control-label') }}
@@ -166,7 +166,7 @@
                         ->attribute('data-placeholder', __('messages.select_name', ['select' => __('messages.service_zone')])) }}
                 </div>
                 @endif
-                
+
                 <div class="form-group col-md-6">
                     {{ html()->label(__('messages.status') . ' <span class="text-danger">*</span>', 'status')
                         ->class('form-control-label') }}
@@ -174,7 +174,7 @@
                         ->class('form-select select2js')
                         ->required() }}
                 </div>
-                
+
                 <div class="form-group col-md-6">
                     {{ html()->label(__('messages.choose_profile_image'), 'profile_image')
                         ->class('form-control-label') }}
@@ -182,14 +182,14 @@
                         {{ html()->file('profile_image')
                             ->class('custom-file-input custom-file-input-sm detail')
                             ->id('profile_image')
-                            ->attribute('accept','image/*') }}                        
+                            ->attribute('accept','image/*') }}
                         <label class="custom-file-label upload-label" id="imagelabel"
-                        for="profile_image">{{ __('messages.profile_image') }}</label>                    
+                        for="profile_image">{{ __('messages.profile_image') }}</label>
                     </div>
                 </div>
 
-            
-                @if($user_data->user_type =='provider')   
+
+                @if($user_data->user_type =='provider')
 
                     <div class="form-group col-md-12">
                     {{ html()->label(__('messages.select_name', ['select' => __('messages.service_zone')]), 'service_zones')->class('form-control-label') }}
@@ -204,7 +204,7 @@
                 <div class="form-group col-md-12 mt-4">
                     <h4>{{ __('messages.why_choose_me') }}</h4>
                 </div>
-            
+
                 <div class="form-group col-md-12">
                     {{ html()->label(__('messages.title'))->class('form-control-label')->for('title') }}
                     {{ html()->text('title', $user_data->title)
@@ -213,7 +213,7 @@
                     }}
                     <small class="help-block with-errors text-danger"></small>
                 </div>
-            
+
                 <div class="form-group col-md-12">
                     {{ html()->label(__('messages.description'))->class('form-control-label')->for('about_description') }}
                     {{ html()->textarea('about_description',$user_data->about_description)
@@ -222,8 +222,8 @@
                         ->placeholder(__('messages.description'))
                     }}
                 </div>
-            
-                
+
+
 
                 @if($user_data->reason != null)
 
@@ -244,11 +244,11 @@
                                 </div>
                             </div>
                         </div>
-    
+
                     @endforeach
 
                 @endif
-            
+
                 <div class="form-section form-group col-md-12 ">
                     {{ html()->label(__('messages.reason'))->class('form-control-label')->for('reason') }}
                     <div class="row">
@@ -260,13 +260,13 @@
                             <small class="help-block with-errors text-danger"></small>
 
                             <div class="form-group mb-0 col-3 align-self-center">
-                                
+
                                 <button class="remove-section  button-custom button-remove"> <i class="far fa-trash-alt"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-            
+
                 <div class="form-group col-md-12">
                     <div class="form-group row">
                         <div class="col-md-9 text-md-right pe-1">
@@ -332,9 +332,9 @@ $(document).ready(function() {
 
           // Remove Section
         $(document).on('click', '.remove-section1', function () {
-            
+
          $(this).closest('.form-section1').remove();
-            
+
         });
 
         // Function to update Remove button visibility
@@ -350,7 +350,7 @@ $(document).ready(function() {
         updateRemoveButtonVisibility();
     });
 
-   
+
 
 
     function stateName(country, state = "") {
@@ -457,7 +457,7 @@ $(document).ready(function() {
 
     // Initialize intlTelInput
     var iti = window.intlTelInput(input, {
-        initialCountry: "auto", // Automatically detect country
+        initialCountry: "ye", // Automatically detect country
         separateDialCode: true,
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
         loadUtils: true,
@@ -465,7 +465,7 @@ $(document).ready(function() {
             fetch('https://ipapi.co/json')
                 .then(response => response.json())
                 .then(data => callback(data.country_code.toLowerCase()))
-                .catch(() => callback('in')); // Default to India if IP lookup fails
+                .catch(() => callback('ye')); // Default to India if IP lookup fails
         }
     });
 

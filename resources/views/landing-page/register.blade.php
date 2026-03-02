@@ -162,20 +162,20 @@
         let isUsernameValid = true;
         let isEmailValid = true;
         let isContactNumberValid = true;
-      
+
                 function validateInput(inputSelector, fieldName, errorSelector) {
                     let debounceTimer = null;
-                
+
                     $(inputSelector).on('input', function () {
                         let value = $(this).val().trim();
                         clearTimeout(debounceTimer);
-                
+
                         if (fieldName === 'contact_number' && value !== '') {
                             const selectedCountry = iti.getSelectedCountryData();
                             const dialCode = selectedCountry?.dialCode || '';
                             value = `+${dialCode}${value}`;
                         }
-                
+
                         debounceTimer = setTimeout(function () {
                             if (value !== '') {
                                 $.ajax({
@@ -193,7 +193,7 @@
                                         } else {
                                             $(errorSelector).text('').hide();
                                         }
-                
+
                                         // Update validation state
                                         if (fieldName === 'username') isUsernameValid = !hasError;
                                         if (fieldName === 'email') isEmailValid = !hasError;
@@ -201,7 +201,7 @@
                                     },
                                     error: function () {
                                         $(errorSelector).text(`Error checking ${fieldName.replace('_', ' ')}.`).show();
-                
+
                                         if (fieldName === 'username') isUsernameValid = false;
                                         if (fieldName === 'email') isEmailValid = false;
                                         if (fieldName === 'contact_number') isContactNumberValid = false;
@@ -209,7 +209,7 @@
                                 });
                             } else {
                                 $(errorSelector).text('').hide();
-                
+
                                 // Reset to true if empty
                                 if (fieldName === 'username') isUsernameValid = true;
                                 if (fieldName === 'email') isEmailValid = true;
@@ -233,11 +233,11 @@
 
             // Format contact number with space between country code and phone number
             if (iti.isValidNumber()) {
-            var fullNumber = iti.getNumber(); 
+            var fullNumber = iti.getNumber();
             var countryData = iti.getSelectedCountryData();
             var dialCode = countryData.dialCode;
             var localNumber = fullNumber.replace(`+${dialCode}`, '');
-            var formattedNumber = `+${dialCode} ${localNumber}`; 
+            var formattedNumber = `+${dialCode} ${localNumber}`;
             $('#contact_number').val(formattedNumber);
         }
 
@@ -252,7 +252,7 @@
             }
 
             if (!isUsernameValid || !isEmailValid || !isContactNumberValid) {
-      
+
         return;
     }
             // Disable the submit button and show the loader
@@ -337,7 +337,7 @@
         // Initialize intl-tel-input for the contact number
         var input = document.querySelector("#contact_number");
         var iti = window.intlTelInput(input, {
-            initialCountry: "in",
+            initialCountry: "ye",
             separateDialCode: true,
             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
         });
