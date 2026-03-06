@@ -57,14 +57,14 @@
 import { ref, defineProps,computed,onMounted} from 'vue';
 import * as yup from 'yup'
 import { useField, useForm } from 'vee-validate'
-import { GET_WALLET_PAYMENT_METHOD, GET_WALLET_STRIPE_PAYMENT_URL,WALLET_PAYMENT_API} from '../data/api'; 
+import { GET_WALLET_PAYMENT_METHOD, GET_WALLET_STRIPE_PAYMENT_URL,WALLET_PAYMENT_API} from '../data/api';
 import Swal from 'sweetalert2-neutral';
-import { confirmcancleSwal} from '../data/utilities'; 
+import { confirmcancleSwal} from '../data/utilities';
 import Wallet from '../components/Wallet.vue';
 const props = defineProps(['booking_id','customer_id','discount','total_amount','advance_payment_amount','wallet_amount']);
 
 onMounted(() => {
-      
+
   setFormData(defaultData())
 
 })
@@ -78,7 +78,7 @@ const defaultData = () => {
   return {
     payment_method:'stripe',
 
-  
+
   }
 }
 
@@ -140,7 +140,7 @@ console.log(responseData);
           if(responseData.payment_geteway_data != null ){
 
             Openstripepayment(responseData)
-    
+
           }else{
 
             IsLoading.value=0;
@@ -149,9 +149,9 @@ console.log(responseData);
               title: 'Error',
               text: 'check Your Stripe key Integration !',
               icon: 'error',
-              iconColor: '#5F60B9'
+              iconColor: '#284A8A'
             }).then((result) => {
-    
+
             })
 
           }
@@ -164,12 +164,12 @@ console.log(responseData);
               title: 'Error',
               text: 'Something Went Wrong!',
               icon: 'error',
-              iconColor: '#5F60B9'
+              iconColor: '#284A8A'
             }).then((result) => {
-    
+
             })
         }
-  
+
 
   })
 
@@ -194,15 +194,15 @@ const res= await fetch(GET_WALLET_STRIPE_PAYMENT_URL, {
              Swal.fire({
                title:'Error',
                text: responseData.message,
-               icon: 'error', 
-               iconColor: '#5F60B9'
+               icon: 'error',
+               iconColor: '#284A8A'
              }).then((result) => {
-     
+
              })
         }else{
             window.location.href = responseData.url;
         }
- 
+
 
       }else{
 
@@ -210,16 +210,16 @@ const res= await fetch(GET_WALLET_STRIPE_PAYMENT_URL, {
             title: 'Error',
             text: 'Something Went Wrong!',
             icon: 'error',
-            iconColor: '#5F60B9'
+            iconColor: '#284A8A'
           }).then((result) => {
-  
+
           })
       }
 
 
 }
 
- 
+
 const formatCurrencyVue = (value) => {
 
 if(window.currencyFormat !== undefined) {

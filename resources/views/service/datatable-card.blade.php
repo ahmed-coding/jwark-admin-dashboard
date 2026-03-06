@@ -5,7 +5,7 @@
       @endif
       <a href="{{ route('service.detail', $data->id) }}" class="service-img">
          <img src="{{ getSingleMedia($data,'service_attachment', null) }}" alt="service"
-         class="service-img w-100 object-cover img-fluid rounded-3"> 
+         class="service-img w-100 object-cover img-fluid rounded-3">
       </a>
 
       @if(auth()->check() && auth()->user()->hasRole('user'))
@@ -86,7 +86,7 @@
     @endif
 @endif
 
-   </ul> 
+   </ul>
    <div
       class="mt-3">
       <div class="d-flex align-items-center gap-2">
@@ -117,7 +117,7 @@
 <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
 <script>
    $(document).ready(function () {
-   
+
     const baseUrl = document.querySelector('meta[name="baseUrl"]').getAttribute('content');
 
     $('.save_fav').off('click').on('click', function () {
@@ -140,7 +140,7 @@
                title: 'Done',
                text: response.message,
                icon: 'success',
-               iconColor: '#5F60B9'
+               iconColor: '#284A8A'
                }).then((result) => {
                   if (result.isConfirmed) {
                      $('#datatable').DataTable().ajax.reload();
@@ -172,7 +172,7 @@
                title: 'Done',
                text: response.message,
                icon: 'success',
-               iconColor: '#5F60B9'
+               iconColor: '#284A8A'
                }).then((result) => {
                   if (result.isConfirmed) {
                      $('#datatable').DataTable().ajax.reload();
@@ -215,4 +215,4 @@
     window.location.href = $(this).attr('href');
 });
 });
-</script>   
+</script>

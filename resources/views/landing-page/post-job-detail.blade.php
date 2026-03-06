@@ -4,7 +4,7 @@
 @section('content')
 @php
     $postJobData = json_decode($postJob->content(), true);
-    $serviceIds = collect($postJobData['post_request_detail']['service'])->pluck('id')->toArray(); 
+    $serviceIds = collect($postJobData['post_request_detail']['service'])->pluck('id')->toArray();
 @endphp
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <div class="section-padding">
@@ -30,7 +30,7 @@
                         <div class="col-lg-4">
                             @if(!empty($postJobData['post_request_detail']['service'][0]['attchments']))
                                 <img src="{{ $postJobData['post_request_detail']['service'][0]['attchments'][0] }}" class="img-fluid w-100 rounded-3" alt="post-job-image">
-                            @else 
+                            @else
                                 <img src="{{ asset('images/default.png') }}" alt="" class="img-fluid object-cover rounded-3 mt-4 w-100"/>
                             @endif
                         </div>
@@ -38,28 +38,28 @@
                 </div>
                 <div class="mt-5 pt-3">
                     <h5 class="mt-0 mb-4 text-capitalize">services</h5>
-                    
-                   
+
+
                    @if(count($postJobData['post_request_detail']['service']) < 5)
 
                     @foreach ($postJobData['post_request_detail']['service'] as $service)
 
                    <!-- <h1>2432543</h1> -->
-                          
+
                                 <div class="text-center d-inline-block">
                                     @if(!empty($service['attchments']))
                                         <img src="{{$service['attchments'][0]}}" class="img-fluid avatar-120 rounded-2 object-fit-cover" alt="booking-service">
-                                    @else 
+                                    @else
                                         <img src="{{ asset('images/default.png') }}" alt="" class="img-fluid object-fit-cover rounded-3 mt-4 w-100"/>
                                     @endif
                                     <span class="mt-2 d-block">{{ $service['name'] }}</span>
                                 </div>
-                           
+
                         @endforeach
 
-                   
 
-    
+
+
                     @else
 
                                        <!-- <h1>1111111</h1> -->
@@ -70,7 +70,7 @@
                                 <div class="text-center d-inline-block">
                                     @if(!empty($service['attchments']))
                                         <img src="{{$service['attchments'][0]}}" class="img-fluid avatar-120 rounded-2 object-fit-cover" alt="booking-service">
-                                    @else 
+                                    @else
                                         <img src="{{ asset('images/default.png') }}" alt="" class="img-fluid object-fit-cover rounded-3 mt-4 w-100"/>
                                     @endif
                                     <span class="mt-2 d-block">{{ $service['name'] }}</span>
@@ -90,7 +90,7 @@
                             <div class="col-lg-12 position-relative">
                                 <ul class="list-inline m-0 p-0">
                                     <li class="mb-4 pb-4 border-bottom">
-                                    
+
                                         <div class="d-flex align-items-center justify-content-between gap-3">
                                             <div class="d-inline-flex align-items-center gap-3">
                                                 <div class="flex-shrink-0">
@@ -130,12 +130,12 @@
                                 <input type="hidden" id="post_request_id" value="{{ $bidderData['post_request_id'] }}">
                                 <input type="hidden" id="provider_id" class="provider_id" value="{{ $bidderData['provider_id'] }}" data-provider-id="{{ $bidderData['provider_id'] }}">
                                 <input type="hidden" id="price" class="price" value="{{ $bidderData['price'] }}" data-price="{{ $bidderData['price'] }}">
-                                 
+
 
                                 <div class="col-lg-12 position-relative">
                                     <ul class="list-inline m-0 p-0">
                                         <li class="mb-4 pb-4 border-bottom">
-                                        
+
                                             <div class="d-flex align-items-center justify-content-between gap-3">
                                                 <div class="d-inline-flex align-items-center gap-3">
                                                     <div class="flex-shrink-0">
@@ -184,7 +184,7 @@
                             <div class="d-flex align-items-center gap-1 lh-1">
                                 <h6 class="mt-4 mb-0 text-capitalize text-body">Job Price:${{ $postJobData['post_request_detail']['price'] }}</h6>
                             </div>
-                            
+
                             <div class="mt-3">
                                 <h6>Services</h6>
                                 {{-- @foreach ($postJobData['post_request_detail']['service'] as $service) --}}
@@ -231,7 +231,7 @@
                                     </div>
                                     <img src="" alt="booking" width="100" height="100" class="rounded-circle">
                                     {{-- <img src="{{ $bidder['provider']['profile_image'] }}" alt="booking" width="100" height="100" class="rounded-circle"> --}}
-                        
+
                                     <div class="mt-3">
                                         <a href="#" class="btn btn-lg btn-primary btn-success btn-sm float-end update-post-job"
                                             >Accept</a>
@@ -273,7 +273,7 @@
             const postRequestId = $('#post_request_id').val();
             const providerId = form.find('.provider_id').data('provider-id');
             const price = form.find('.price').data('price');
-             
+
             $.ajax({
                 url: baseUrl + '/api/save-post-job',
                 type: 'POST',
@@ -291,7 +291,7 @@
                 title: 'Done',
                 text: response.message,
                 icon: 'success',
-                iconColor: '#5F60B9'
+                iconColor: '#284A8A'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         const postRequestId = $('#post_request_id').val();
@@ -303,7 +303,7 @@
                     console.error('Error', error);
                 }
             });
-            
+
         });
     });
 </script>

@@ -31,7 +31,7 @@ class SettingsTableSeeder extends Seeder
                 'id' => 2,
                 'key' => 'theme-setup',
                 'type' => 'theme-setup',
-                'value' => '{"primary_color":"#5f60b9"}',
+                'value' => '{"primary_color":"#284A8A"}',
             ),
             2 =>
             array(

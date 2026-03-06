@@ -154,8 +154,8 @@
 
                     @php
                         $servicepackage = $bookingData['booking_detail']['booking_package'];
-                        $services = isset($servicepackage['services']) && is_array($servicepackage['services']) 
-                            ? $servicepackage['services'] 
+                        $services = isset($servicepackage['services']) && is_array($servicepackage['services'])
+                            ? $servicepackage['services']
                             : [];
                     @endphp
 
@@ -170,9 +170,9 @@
                         @endphp
                             <div class="mb-4 pb-4 border-bottom d-flex align-items-sm-center aling-items-start flex-sm-row flex-column gap-5">
                                 <div class="flex-shrink-0 provider-image-container">
-                                    <img src="{{ $service_image }}" 
-                                        alt="service-image" 
-                                        class="img-fluid object-fit-cover rounded-3" 
+                                    <img src="{{ $service_image }}"
+                                        alt="service-image"
+                                        class="img-fluid object-fit-cover rounded-3"
                                         style="width: 100px; height:100px;">
                                 </div>
                                 <div>
@@ -186,7 +186,7 @@
                                     <h6>{{ getPriceFormat($service_price) }}</h6>
                                 </div>
                             </div>
-                        @endforeach             
+                        @endforeach
 
                 </div>
             </div>
@@ -224,9 +224,9 @@
                     <div class="row">
                         <div class="col-lg-5 col-sm-6 position-relative">
                             <h6 class="mt-0 mb-4 font-size-18 text-capitalize">
-                                {{ __('landingpage.about_provider') }} 
+                                {{ __('landingpage.about_provider') }}
                                 @if(isset($bookingData['handyman_data']) && count($bookingData['handyman_data']) > 0 && $bookingData['provider_data']['id'] === $bookingData['handyman_data'][0]['id'])
-                                    <span class="text-muted"> ({{ __('landingpage.as_handyman') }} )</span> 
+                                    <span class="text-muted"> ({{ __('landingpage.as_handyman') }} )</span>
                                 @endif
                             </h6>
                             <div class="img flex-shrink-0 mb-4">
@@ -329,11 +329,11 @@
                             </div>
                         </div>
 
-                        @if(!empty($bookingData['handyman_data'])) 
+                        @if(!empty($bookingData['handyman_data']))
                         <div class="col-lg-5 col-sm-6 mt-sm-0 mt-5">
-                            
+
                             @foreach($bookingData['handyman_data'] as $handyman)
-                            @if($bookingData['provider_data']['id'] !== $handyman['id']) 
+                            @if($bookingData['provider_data']['id'] !== $handyman['id'])
                             <h6 class="mt-0 mb-4 font-size-18 text-capitalize">{{__('landingpage.about_handyman')}}</h6>
                             <div class="img flex-shrink-0 mb-4">
                                 <a href="{{ route('handyman-detail', $handyman['id']) }}">
@@ -556,9 +556,9 @@
                                         </td>
                                         @else
                                         <td>
-                                            
+
                                             <span class="d-block text-end">
-                                                
+
                                                 {{ $bookingData['booking_detail']['post_request_id'] == null ? getPriceFormat($bookingData['booking_detail']['final_total_service_price']) : getPriceFormat($bookingData['booking_detail']['amount']) }}
                                             </span>
                                         </td>
@@ -1142,7 +1142,7 @@ Reason Modal
                     title: 'Done',
                     text: data.message,
                     icon: 'success',
-                    iconColor: '#5F60B9'
+                    iconColor: '#284A8A'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         IsLoading = false;
@@ -1218,7 +1218,7 @@ Reason Modal
             text: 'Do you want to end this service?',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#5F60B9',
+            confirmButtonColor: '#284A8A',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes',
             cancelButtonText: 'No'

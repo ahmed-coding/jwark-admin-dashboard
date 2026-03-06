@@ -6,10 +6,10 @@
                     <form @submit="formSubmit">
                       <template v-if="!isChildComponentVisible">
                       <!-- <input type="hidden" name="_token" :value="csrfToken"> -->
-                    
+
                         <h6 class="mb-2 mt-3 text-capitalize">{{ $t('messages.payment_method') }}</h6>
                         <div class="d-flex align-items-center flex-wrap gap-3">
-                          
+
                             <div class="form-check"  v-if="isStripeEnabled">
                               <input class="form-check-input" type="radio" name="payment_method" v-model="payment_method" id='stripe' value='stripe' :checked="payment_method == 'stripe'"/>
 
@@ -28,7 +28,7 @@
                               <label class="form-check-label h6 fw-normal text-capitalize"
                                 for="cash">{{$t('messages.cash')}}</label>
                             </div>
-                          
+
                         </div>
                         <p>{{ $t('messages.wallet_balance') }}: {{formatCurrencyVue(wallet_amount)}}</p>
                         <div class="mt-3">
@@ -36,7 +36,7 @@
                                 <button class="btn btn-primary" type="submit"> <span v-if="IsLoading==1" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> <span v-else>{{ $t('landingpage.Proceed_To_Payment') }}</span></button>
                             </div>
                         </div>
-                      </template> 
+                      </template>
                         <component :is="currentComponent" :service="service" :booking_id="booking_id" :discount="discount" :advance_payment_amount="advance_payment_amount" :customer_id="customer_id" :wallet_amount = "wallet_amount" v-if="isChildComponentVisible" />
                     </form>
                 </div>
@@ -48,13 +48,13 @@
 import { ref, defineProps,computed,onMounted} from 'vue';
 import * as yup from 'yup'
 import { useField, useForm } from 'vee-validate'
-import { GET_PAYMENT_METHOD, GET_STRIPE_PAYMENT_URL,WALLET_PAYMENT_API,PAYMENT_GATEWAY_LIST} from '../data/api'; 
+import { GET_PAYMENT_METHOD, GET_STRIPE_PAYMENT_URL,WALLET_PAYMENT_API,PAYMENT_GATEWAY_LIST} from '../data/api';
 import Swal from 'sweetalert2-neutral';
-import { confirmcancleSwal, confirmcancleWallet} from '../data/utilities'; 
+import { confirmcancleSwal, confirmcancleWallet} from '../data/utilities';
 import Wallet from '../components/Wallet.vue';
 const props = defineProps(['is_enable_advance_payment','booking_id','customer_id','discount','total_amount','advance_payment_amount','wallet_amount']);
 console.log(props.is_enable_advance_payment)
-const paymentGatewayList = ref([]); 
+const paymentGatewayList = ref([]);
 const fetchPaymentGatewayList = async () => {
   try {
     const response = await fetch(PAYMENT_GATEWAY_LIST);
@@ -82,8 +82,8 @@ const isCashEnabled = computed(() => {
   return Array.isArray(paymentGatewayList.value) && paymentGatewayList.value.some(gateway => gateway.type === 'cash' && gateway.status === 1);
 });
 console.log(isCashEnabled);
-   
- 
+
+
 
 const IsLoading=ref(0);
 
@@ -92,7 +92,7 @@ const defaultData = () => {
   return {
     payment_method:'stripe',
 
-  
+
   }
 }
 
@@ -142,7 +142,7 @@ const formSubmit = handleSubmit(async(values) => {
     if(values.type == 'advance_payment'){
       values.total_amount=props.advance_payment_amount;
       values.advance_payment_amount=props.advance_payment_amount;
-      values.payment_status = 'advanced_paid'; 
+      values.payment_status = 'advanced_paid';
     }else{
       values.total_amount=props.total_amount;
       values.payment_status = 'paid';
@@ -168,7 +168,7 @@ const formSubmit = handleSubmit(async(values) => {
           title: 'Done',
           text: responseData.message,
           icon: 'success',
-          iconColor: '#5F60B9'
+          iconColor: '#284A8A'
         }).then((result) => {
 
             if (result.isConfirmed) {
@@ -177,14 +177,14 @@ const formSubmit = handleSubmit(async(values) => {
              }
 
           })
- 
+
             }else{
               IsLoading.value=0;
               Swal.fire({
                 title: 'Error',
                 text: 'Something Went Wrong!',
                 icon: 'error',
-                iconColor: '#5F60B9'
+                iconColor: '#284A8A'
               }).then((result) => {
 
               })
@@ -199,7 +199,7 @@ const formSubmit = handleSubmit(async(values) => {
         showChildComponent();
       });
     }
-    
+
   } else if (values.payment_type === 'cash') {
     IsLoading.value = 1;
 
@@ -225,7 +225,7 @@ const formSubmit = handleSubmit(async(values) => {
         title: 'Success',
         text: 'Payment recorded successfully!',
         icon: 'success',
-        iconColor: '#5F60B9',
+        iconColor: '#284A8A',
       }).then(() => {
         const baseUrl = document.querySelector('meta[name="baseUrl"]').getAttribute('content');
         window.location.href = baseUrl + '/booking-list';
@@ -237,14 +237,14 @@ const formSubmit = handleSubmit(async(values) => {
         title: 'Error',
         text: 'Failed to record cash payment!',
         icon: 'error',
-        iconColor: '#5F60B9',
+        iconColor: '#284A8A',
       });
     }
   } else{
-     
+
 
       IsLoading.value=1;
-      
+
       const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
       const response = await fetch(GET_PAYMENT_METHOD, {
@@ -264,7 +264,7 @@ const formSubmit = handleSubmit(async(values) => {
           if(responseData.payment_geteway_data != null ){
 
             Openstripepayment(responseData)
-    
+
           }else{
 
             IsLoading.value=0;
@@ -273,9 +273,9 @@ const formSubmit = handleSubmit(async(values) => {
               title: 'Error',
               text: 'check Your Stripe key Integration !',
               icon: 'error',
-              iconColor: '#5F60B9'
+              iconColor: '#284A8A'
             }).then((result) => {
-    
+
             })
 
           }
@@ -288,9 +288,9 @@ const formSubmit = handleSubmit(async(values) => {
               title: 'Error',
               text: 'Something Went Wrong!',
               icon: 'error',
-              iconColor: '#5F60B9'
+              iconColor: '#284A8A'
             }).then((result) => {
-    
+
             })
         }
   }
@@ -302,7 +302,7 @@ const formSubmit = handleSubmit(async(values) => {
  const Openstripepayment = async(data) => {
 
   const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
-  
+
   const res= await fetch(GET_STRIPE_PAYMENT_URL, {
            method: 'POST',
            headers: {
@@ -320,15 +320,15 @@ const formSubmit = handleSubmit(async(values) => {
                Swal.fire({
                  title:'Error',
                  text: responseData.message,
-                 icon: 'error', 
-                 iconColor: '#5F60B9'
+                 icon: 'error',
+                 iconColor: '#284A8A'
                }).then((result) => {
-       
+
                })
           }else{
               window.location.href = responseData.url;
           }
-   
+
 
         }else{
 
@@ -336,9 +336,9 @@ const formSubmit = handleSubmit(async(values) => {
               title: 'Error',
               text: 'Something Went Wrong!',
               icon: 'error',
-              iconColor: '#5F60B9'
+              iconColor: '#284A8A'
             }).then((result) => {
-    
+
             })
         }
 
@@ -352,7 +352,7 @@ if(window.currencyFormat !== undefined) {
 }
 return value
 }
- 
+
 const isChildComponentVisible = ref(false);
 const currentComponent = ref(null);
 

@@ -62,7 +62,7 @@
         <a :href="`${baseUrl}/provider-detail/${provider_id}`"><span class="font-size-14 service-user-name">{{ userName }}</span></a>
      </div>
      <div class="d-flex align-items-center gap-1 f-none mt-2">
-      <rating-component :readonly = true :showrating ="false" :ratingvalue="props.reviewNo" />              
+      <rating-component :readonly = true :showrating ="false" :ratingvalue="props.reviewNo" />
 
         <h6 class="font-size-14">{{reviewNo }}
     <a :href="`${baseUrl}/rating-all?service_id=${service_id}`"><span v-if="reviewCount>1" class="text-body ms-1">({{ reviewCount }} {{ $t('messages.reviews') }})</span><span v-else class="text-body ms-1">({{ reviewCount }} {{ $t('messages.review') }})</span>
@@ -120,7 +120,7 @@ const saveFavourite = async(values) => {
             title: 'Done',
             text: responseData.message,
             icon: 'success',
-            iconColor: '#5F60B9'
+            iconColor: '#284A8A'
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.reload();
@@ -154,7 +154,7 @@ const deleteFavourite = async(values) => {
          title: 'Done',
          text: responseData.message,
          icon: 'success',
-         iconColor: '#5F60B9'
+         iconColor: '#284A8A'
          }).then((result) => {
                if (result.isConfirmed) {
                   window.location.reload();

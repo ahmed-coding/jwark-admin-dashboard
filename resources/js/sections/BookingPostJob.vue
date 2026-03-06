@@ -8,11 +8,11 @@
                     <div class="col-lg-8">
                       <div  class="booking-list-content-active">
                           <h5 class="text-capitalize">schedule service</h5>
-        
+
                           <div class="mt-5 card bg-light rounded-3">
                             <div class="card-body booking-service-form">
                               <div class="row">
-                                  
+
                                   <div class="col-12">
                                       <label class="form-label">Date And Time</label>
                                       <div class="input-group icon-left custom-form-field flex-nowrap">
@@ -37,7 +37,7 @@
                                                 placeholder="Select date and time"
                                                 name="date" />
                                       </div>
-      
+
                                       <span v-if="errorMessages['date']">
                                           <ul class="text-danger">
                                             <li v-for="err in errorMessages['date']" :key="err">{{ err }}</li>
@@ -45,7 +45,7 @@
                                         </span>
                                         <span class="text-danger">{{ errors.date }}</span>
                                   </div>
-                                
+
                                   <div class="col-12 mt-5">
                                       <label class="form-label">location</label>
                                       <div class="input-group icon-left custom-form-field">
@@ -64,8 +64,8 @@
                                           </span>
                                           <textarea class="form-control"
                                               placeholder="Address" v-model="address" name="address"></textarea>
-      
-                                          
+
+
                                       </div>
                                       <span v-if="errorMessages['address']">
                                           <ul class="text-danger">
@@ -88,7 +88,7 @@
             <div class="mt-5 pt-md-5 pt-3 text-center">
                 <div class="d-inline-flex align-items-center flex-wrap gap-3">
                     <a :href="`${baseUrl}/post-job-detail/${post_job.post_request_detail.id}`" class="btn btn-outline-primary">Cancel</a>
-                    
+
                     <button type="submit" class="btn btn-primary"><span>Save Booking</span></button>
                 </div>
             </div>
@@ -104,9 +104,9 @@ import FlatPickr from 'vue-flatpickr-component'
 import { useField, useForm } from 'vee-validate'
 import 'flatpickr/dist/flatpickr.css';
 import * as yup from 'yup'
-import { STORE_BOOKING_API} from '../data/api'; 
+import { STORE_BOOKING_API} from '../data/api';
 import couponcard from '../components/CouponCard.vue';
-import { confirmcancleSwal} from '../data/utilities'; 
+import { confirmcancleSwal} from '../data/utilities';
 import Swal from 'sweetalert2-neutral';
 import { Calendar, DatePicker } from 'v-calendar';
 import 'v-calendar/style.css';
@@ -140,7 +140,7 @@ const defaultData = () => {
 
 const validationSchema = yup.object({
     address: yup.string().required('Address is Required'),
-    date: yup.string().required('Date is Required'), 
+    date: yup.string().required('Date is Required'),
 })
 
 const { handleSubmit, errors, resetForm,setValues } = useForm({
@@ -199,19 +199,19 @@ const formSubmit = handleSubmit(async(values) => {
         title: 'Done',
         text: responseData.message,
         icon: 'success',
-        iconColor: '#5F60B9'
+        iconColor: '#284A8A'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = baseUrl + '/booking-list';
             }
         })
-    }  
-    else { 
+    }
+    else {
         Swal.fire({
             title: 'Error',
             text: 'Something Went Wrong!',
             icon: 'error',
-            iconColor: '#5F60B9'
+            iconColor: '#284A8A'
         }).then((result) => {
 
         })

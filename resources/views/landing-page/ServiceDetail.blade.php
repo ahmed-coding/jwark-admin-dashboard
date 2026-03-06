@@ -23,7 +23,7 @@
                                     </svg>
                                 </span>
                                 <h6>{{ round($serviceData['service_detail']['total_rating'],1) }}<span class="text-body"> <a href="{{route('rating.all', ['service_id' => $serviceData['service_detail']['id']])}}"> ({{ $serviceData['service_detail']['total_review'] }} {{__('messages.reviews')}})</span></a></h6>
-                              
+
                             </div>
                             @if(!empty($serviceData['service_detail']['duration']))
     @php
@@ -399,9 +399,9 @@
                             });
                         @endphp
 
-                        <landing-servicedetailsection-section 
-                            :service="{{ json_encode(array_values($filteredRelatedServices)) }}" 
-                            :user_id="{{$userId}}" 
+                        <landing-servicedetailsection-section
+                            :service="{{ json_encode(array_values($filteredRelatedServices)) }}"
+                            :user_id="{{$userId}}"
                             :favourite="{{ json_encode($favouriteServiceData) }}">
                         </landing-servicedetailsection-section>
                     </div>
@@ -503,7 +503,7 @@
                 @endphp
 
               @if(count($serviceZone) == 0)
-                
+
                 @if(!empty($serviceData['service_detail']['service_address_mapping']))
                 <div class="bg-light p-5 rounded-3 mt-5">
                     <h5 class="mb-2">{{__('landingpage.available_location')}}</h5>
@@ -692,7 +692,7 @@
                         title: 'Done',
                         text: response.message,
                         icon: 'success',
-                        iconColor: '#5F60B9'
+                        iconColor: '#284A8A'
                     }).then((result) => {
                         if (result.isConfirmed) {
                             window.location.reload();
@@ -724,7 +724,7 @@
                         title: 'Done',
                         text: response.message,
                         icon: 'success',
-                        iconColor: '#5F60B9'
+                        iconColor: '#284A8A'
                     }).then((result) => {
                         if (result.isConfirmed) {
                             window.location.reload();

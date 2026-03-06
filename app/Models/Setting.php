@@ -20,7 +20,7 @@ class Setting extends Model implements  HasMedia
 
     // Define default theme colors
     const DEFAULT_COLORS = [
-        'primary_color' => '#5F60B9',
+        'primary_color' => '#284A8A',
         'secondary_color' => '#8F9FBC'
     ];
 
@@ -53,7 +53,7 @@ class Setting extends Model implements  HasMedia
     {
         // Validate and filter colors
         $validColors = array_intersect_key(
-            $colors, 
+            $colors,
             self::DEFAULT_COLORS
         );
 
@@ -128,7 +128,7 @@ class Setting extends Model implements  HasMedia
     public static function getThemeColorsCss()
     {
         $colors = self::getThemeSettings();
-        
+
         return <<<CSS
         :root {
             --bs-primary: {$colors->primary_color};
@@ -151,7 +151,7 @@ class Setting extends Model implements  HasMedia
 
    public function translate($attribute, $locale = null)
     {
-        
+
         $locale = $locale ?? app()->getLocale() ?? 'en';
         if($locale !== 'en'){
             $translation = $this->translations()
@@ -207,13 +207,13 @@ class Setting extends Model implements  HasMedia
     public static function getValueByKey($key,$type,$langauge = null)
     {
         $setting = self::where('key', $key);
-    
+
         if ($type !== null) {
             $setting->where('type', $type);
         }
-    
+
         $setting = $setting->first();
-    
+
         if ($setting) {
             // if ($key === 'privacy_policy' || $key === 'terms_condition'|| $key === 'about_us'|| $key === 'help_support' || $key === 'refund_cancellation_policy' || $key === 'data_deletion_request' || $key === 'earning-setting' || $key === 'userdashboard-setting') {
                 // $decodedValue = json_decode($setting->value, true);
@@ -226,11 +226,11 @@ class Setting extends Model implements  HasMedia
                 // }
             if ($key === 'privacy_policy' || $key === 'terms_condition'|| $key === 'about_us'|| $key === 'help_support' || $key === 'refund_cancellation_policy' || $key === 'data_deletion_request' || $key === 'earning-setting' || $key === 'userdashboard-setting') {
                 $decodedValue = json_decode($setting->value, true);
-                
+
                 if (in_array($key, ['privacy_policy', 'terms_condition', 'about_us', 'help_support', 'refund_cancellation_policy', 'data_deletion_request'])) {
-                    
+
                     if (isset($decodedValue['status']) && $decodedValue['status'] == '1') {
-                        
+
                         $setting =  $setting->getTranslation($setting->translations, $langauge, 'value', $decodedValue[$key]) ?? $decodedValue[$key];
                         return $setting ?? '';
                     }
@@ -245,6 +245,6 @@ class Setting extends Model implements  HasMedia
         }
 
     return null;
-    
+
     }
 }

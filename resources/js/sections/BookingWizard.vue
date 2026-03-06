@@ -69,7 +69,7 @@
                   <div class="d-sm-flex align-items-center gap-3 justify-content-between">
                     <!-- <h4 class="mb-0">{{ service.name }}</h4>
                     <p>{{service.description}}</p> -->
-                    
+
                       <div class="d-inline-flex align-items-sm-center align-items-start flex-sm-row flex-column gap-3">
                         <div class="comment-user-info">
                             <h4 class="mb-0">{{ service.name }}</h4>
@@ -80,13 +80,13 @@
                               <div class="d-inline-flex">
                                 <span>{{$t('messages.Package_Expire')}}: </span>&nbsp;
                                 <p class="text-primary commnet-content m-0">
-                                  {{ formatDate(service.end_at) }} 
+                                  {{ formatDate(service.end_at) }}
                                 </p>
                               </div>
                             </div>
                         </div>
                       </div>
-                   
+
                     <div class="flex-shrink-0 d-inline-flex align-items-center gap-2 mt-sm-0 mt-2">
                       <span class="text-primary fw-500 d-inline-block position-relative font-size-18">{{ formatCurrencyVue(service.price) }} (<del>{{ formatCurrencyVue(service.total_price) }}</del>)</span>
                     </div>
@@ -100,15 +100,15 @@
           <form  @submit="formSubmit">
            <!-- <input type="hidden" name="_token" :value="csrfToken"> -->
             <div class="col-12">
-                
+
                 <template v-if="!isChildComponentVisible">
-  
+
                   <div class="row">
                     <div :class="service.price == 0 ? 'col-lg-12' : 'col-lg-7'">
                       <div  class="booking-list-content-active">
                           <h5 class="text-capitalize">{{ $t('messages.schedule_ervice') }}</h5>
-          
-                          
+
+
                           <div v-if="serviceaddon && serviceaddon.length">
                             <h5 class="mt-5 mb-3">{{ $t('landingpage.Add-ons') }}</h5>
                             <div v-for="(service, index) in serviceaddon" :key="index" class="mb-4 pb-4 d-flex align-items-sm-center aling-items-start flex-sm-row flex-column gap-5">
@@ -125,47 +125,47 @@
                                 </div>
                             </div>
                           </div>
-          
+
                           <div class="mt-5 card bg-light rounded-3">
                             <div class="card-body booking-service-form">
                               <div class="row g-3">
-      
+
                                   <div v-if="service.is_slot == 1" class="col-12">
-      
+
                                       <div class="mt-1">
-                                        
+
                                           <div>
-                                          
+
                                               <div class="px-4 pt-3 pb-4 bg-body">
                                                   <div class="select-week-days">
-              
+
                                                       <div class="custom-form-field">
                                                           <label class="form-label">{{ $t('landingpage.date_time') }}</label>
-                      
-                                                        
+
+
                                                           <DatePicker v-model="DateFormate" view="weekly" :attributes="todos" mode="DateFormate" :min-date="new Date()"  @click="handleDateSelect(DateFormate)" expanded/>
-                                                          
+
                                                           <span v-if="errorMessages['date']">
                                                               <ul class="text-danger">
                                                                 <li v-for="err in errorMessages['date']" :key="err">{{ err }}</li>
                                                               </ul>
                                                             </span>
-                                                            <span class="text-danger">{{ errors.date }}</span>                               
+                                                            <span class="text-danger">{{ errors.date }}</span>
                                                         </div>
-                                                      
+
                                                   </div>
                                                   <div v-if="date==null" class="time-slot mt-3 pt-3 border-top">
                                                       <p class="text-capitalize mb-2 lh-1">{{ $t('landingpage.date_time') }}</p>
-                
+
                                                           <div  v-for="(dayInfo, index) in availableserviceslot" :key="index">
-              
+
                                                               <div v-if="dayInfo.day === dayName">
-              
+
                                                                   <div v-if="dayInfo.slot != null">
-              
-                                                          
+
+
                                                                       <ul class="list-inline m-0 d-flex align-items-center flex-wrap gap-3">
-              
+
                                                                       <li class="time-slot" v-for="timeSlot in dayInfo.slot" :key="timeSlot">
                                                                           <!-- <span class="btn btn-sm time-slot-btn font-size-14">{{ timeSlot }}</span> -->
                                                                           <input type="radio" :id="timeSlot" v-model="start_time" :value="timeSlot" name="start_time" class="btn-check"/>
@@ -174,33 +174,33 @@
                                                                           </label>
                                                                       </li>
                                                                     </ul>
-              
+
                                                                   </div>
-              
+
                                                                   <div v-else>
-                                                          
+
                                                                       {{ $t('landingpage.slot_not_available') }}
                                                                   </div>
-      
+
                                                                   <span v-if="errorMessages['start_time']">
                                                                       <ul class="text-danger">
                                                                         <li v-for="err in errorMessages['start_time']" :key="err">{{ err }}</li>
                                                                       </ul>
                                                                     </span>
                                                                     <span class="text-danger">{{ errors.start_time }}</span>
-              
+
                                                               </div>
-                                                        
+
                                                         </div>
-                                                    
+
                                                   </div>
                                               </div>
                                           </div>
-                              
+
                                   </div>
-      
+
                                   </div>
-                                  
+
                                   <div v-else class="col-sm-6">
                                       <label class="form-label">{{ $t('landingpage.date_time') }}</label>
                                       <div class="input-group icon-left custom-form-field flex-nowrap">
@@ -225,7 +225,7 @@
                                                 placeholder="Select date and time"
                                                 name="date" />
                                       </div>
-      
+
                                       <span v-if="errorMessages['date']">
                                           <ul class="text-danger">
                                             <li v-for="err in errorMessages['date']" :key="err">{{ err }}</li>
@@ -233,14 +233,14 @@
                                         </span>
                                         <span class="text-danger">{{ errors.date }}</span>
                                   </div>
-                                
-      
+
+
                                   <div v-if="service.type=='fixed'" class="col-sm-4" :class="{'mt-4': service.is_slot == 1}">
                                       <label class="form-label">{{ $t('landingpage.quantity') }}</label>
                                       <div class="custom-form-field">
                                           <div class="btn-group iq-qty-btn" data-qty="btn" role="group">
                                               <button type="button" class="iq-quantity-plus" @click="decrement()">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></svg>                                                
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></svg>
                                               </button>
                                               <input type="text" class="input-display" id="quntity" v-model="quantity" name="quantity" disabled />
                                               <button type="button" class="iq-quantity-minus"  @click="increment()">
@@ -267,8 +267,8 @@
                                           </span>
                                           <textarea class="form-control"
                                           :placeholder="$t('placeholder.address')" v-model="address" name="address"></textarea>
-      
-                                          
+
+
                                       </div>
                                       <span v-if="errorMessages['address']">
                                           <ul class="text-danger">
@@ -310,8 +310,8 @@
                                           <td class="pe-0"><span
                                                   class="d-block text-success text-end">-{{formatCurrencyVue(discount)}}</span></td>
                                       </tr>
-          
-                                      
+
+
                                        <tr v-if="validCoupons.length > 0 && SeletedCouponId == 0 && props.service.package_type == null">
   <td class="ps-0">
     <span class="text-capitalize">{{ $t('landingpage.coupon') }}</span>
@@ -350,20 +350,20 @@
                                           <td class="pe-0"><span
                                                   class="d-block text-primary text-end">{{formatCurrencyVue(addonAmount)}}</span></td>
                                       </tr>
-          
+
                                       <tr>
                                           <td class="ps-0"><span class="text-capitalize">{{ $t('landingpage.subtotal') }}</span></td>
                                           <td class="pe-0"><span
                                                   class="d-block text-primary text-end">{{ formatCurrencyVue(subtotal || 0) }}</span></td>
                                       </tr>
-          
+
                                       <tr >
                                           <td class="ps-0"><span class="text-capitalize">{{ $t('landingpage.tax') }}</span></td>
                                           <td class="pe-0"><span
                                                   class="d-block text-danger text-end"><i v-if="taxAmount>0" class="fa fa-info-circle text-body cursor-pointer" aria-hidden="true" @click="openTaxModel()"></i> +{{ formatCurrencyVue(taxAmount||0)}}</span></td>
                                           </tr>
-          
-          
+
+
                                       <tr>
                                           <td class="border-bottom-0 ps-0 pt-3">
                                               <h5 class="m-0 text-capitalize">{{ $t('landingpage.total') }}</h5>
@@ -380,7 +380,7 @@
                                               <h5 class="m-0 text-end">{{ formatCurrencyVue(advance_payment_amount)}}</h5>
                                           </td>
                                       </tr>
-                                     
+
                                   </tbody>
                               </table>
                           </div>
@@ -395,7 +395,7 @@
                                 {{console.log(service.service_id)}}
                                 <a v-if="!service.package_type" :href="`${baseUrl}/service-detail/${service.id}`" class="btn btn-outline-primary">{{ $t('landingpage.cancel') }}</a>
                                 <a v-if="service.package_type" :href="`${baseUrl}/service-detail/${service.service_id}`" class="btn btn-outline-primary">{{ $t('landingpage.cancel') }}</a>
-                                  
+
                                   <button  type="submit"  v-if="service.is_enable_advance_payment == 1"  class="btn btn-primary"> <span v-if="IsLoading==1" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span v-else>{{ $t('landingpage.pay_advance') }}</span></button>
                                   <button type="submit"  v-else class="btn btn-primary"> <span v-if="IsLoading==1" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span v-else>{{ $t('messages.book_now') }}</span></button>
                               </div>
@@ -405,7 +405,7 @@
                     <div class="col-lg-12 text-end" v-else>
                       <button type="submit"  class="btn btn-primary"> <span v-if="IsLoading==1" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span v-else>{{ $t('messages.book_now') }}</span></button>
                     </div>
-                  </div>     
+                  </div>
                 </template>
                 <component :is="currentComponent" :service="service" :booking_id="bookingId" :customer_id="user_id" :discount="discount"  :total_amount="totalAmount" :advance_payment_amount="advance_payment_amount" :wallet_amount = "wallet_amount" v-if="isChildComponentVisible" />
             </div>
@@ -428,11 +428,11 @@
                   </div>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
-    
+
     </div>
-</template> 
+</template>
 
 <script setup>
 import { ref, defineProps,computed,onMounted} from 'vue';
@@ -441,9 +441,9 @@ import FlatPickr from 'vue-flatpickr-component'
 import { useField, useForm } from 'vee-validate'
 import 'flatpickr/dist/flatpickr.css';
 import * as yup from 'yup';
-import { STORE_BOOKING_API} from '../data/api'; 
+import { STORE_BOOKING_API} from '../data/api';
 import couponcard from '../components/CouponCard.vue';
-import { confirmcancleSwal} from '../data/utilities'; 
+import { confirmcancleSwal} from '../data/utilities';
 import Swal from 'sweetalert2-neutral';
 import { Calendar, DatePicker } from 'v-calendar';
 import 'v-calendar/style.css';
@@ -472,7 +472,7 @@ const config = {
 
 const todos = ref([
   {
-    highlight: true,  
+    highlight: true,
   },
 ]);
 
@@ -626,7 +626,7 @@ const removeAddons = (index) => {
 };
 
 
-const increment = () => {  
+const increment = () => {
     quantity.value = quantity.value+1
 };
 
@@ -644,7 +644,7 @@ const subtotal = computed(() => {
     }else{
       return (props.service.price*quantity.value) - discount.value - coupondiscount.value
     }
-   
+
  }else{
 
     if(props.serviceaddon){
@@ -654,7 +654,7 @@ const subtotal = computed(() => {
     }
 
   }
-  
+
 });
 
 const taxAmount = computed(() => {
@@ -665,16 +665,16 @@ const taxAmount = computed(() => {
     for(const tax of props.taxes) {
 
         if (tax.type === 'percent') {
-        
+
            totalTaxAmount += (( subtotal.value) *tax.value) / 100;
-        
+
         } else {
           totalTaxAmount += tax.value;
         }
 
       }
         return totalTaxAmount;
-     
+
     }
 
 });
@@ -682,7 +682,7 @@ const taxAmount = computed(() => {
 const discount = computed(() => {
 
  if(props.service.discount !='' && props.service.discount >0){
-         
+
      return  props.service.price*quantity.value*props.service.discount/100
  }
 
@@ -694,30 +694,30 @@ const discount = computed(() => {
 const coupondiscount = computed(() => {
 
  if(selectedCoupon.value !=null){
-    if(selectedCoupon.value.discount_type=='fixed'){   
+    if(selectedCoupon.value.discount_type=='fixed'){
         return  selectedCoupon.value.discount
     }else{
 
         return  props.service.price*quantity.value*selectedCoupon.value.discount/100
     }
   }
- 
+
   return 0
-    
+
  });
 
  const  totalAmount = computed(() => {
 
   return taxAmount.value+ subtotal.value;
-   
+
 });
 
 const advance_payment_amount = computed(() => {
 
   const rawValue = totalAmount.value * props.service.advance_payment_amount / 100;
   const roundedValue = Number(rawValue).toFixed(2);
-  return parseFloat(roundedValue); 
- 
+  return parseFloat(roundedValue);
+
 });
 
 
@@ -799,14 +799,14 @@ const validationSchema = yup.object({
     }),
 
    start_time: yup.string().test('start_time', "Please Select Time Slot", function(value) {
-       
+
        if(props.service.is_slot == 1 && !value  ) {
-           
+
           return false ;
          }
          return true;
       }),
-   
+
 })
 
 const { handleSubmit, errors, resetForm,setValues } = useForm({
@@ -815,12 +815,12 @@ const { handleSubmit, errors, resetForm,setValues } = useForm({
 const { value: address } = useField('address')
 const { value: date } = useField('date')
 const { value: start_time } = useField('start_time')
-const isLoading = ref(false); 
+const isLoading = ref(false);
 const getCurrentLocation = async () => {
   isLoading.value = true;
   navigator.geolocation.getCurrentPosition(async (position) => {
     try {
-       
+
         const currentLatitude = position.coords.latitude;
         const currentLongitude = position.coords.longitude;
 
@@ -840,7 +840,7 @@ const getCurrentLocation = async () => {
           }
   }, (error) => {
     console.error('Error getting current position:', error);
-    isLoading.value = false; 
+    isLoading.value = false;
   });
 };
 const cancellation = window.cancellationCharge;
@@ -855,7 +855,7 @@ const errorMessages = ref({})
 const formSubmit = handleSubmit(async(values) => {
 
     IsLoading.value=1
- 
+
     const title='Confirm Booking '
 
     const subtitle='Do you want to Confirm this booking ?'
@@ -866,7 +866,7 @@ const formSubmit = handleSubmit(async(values) => {
     if (cancellationCharge > 0) {
         note = `A ${formatCurrencyVue(cancellationCharge)} fee applies for cancellation within ${cancellation['cancellation_charge_hours']} hours of the scheduled service.`;
     }
-    
+
 
     confirmcancleSwal({ title: title, subtitle:subtitle, text: note }).then(async(result) => {
       IsLoading.value=0
@@ -922,7 +922,7 @@ const formSubmit = handleSubmit(async(values) => {
       //values.coupon_id=SeletedCouponId.value
       values.coupon_id=selectedCoupon.value.code
       values.final_coupon_discount_amount=coupondiscount.value
-    
+
     }else{
         values.coupon_id = ''
      }
@@ -930,7 +930,7 @@ const formSubmit = handleSubmit(async(values) => {
      const response = await fetch(STORE_BOOKING_API, {
            method: 'POST',
            headers: {
-          
+
               'Content-Type': 'application/json',
               'Accept': 'application/json',
               'X-CSRF-TOKEN': csrfToken,
@@ -956,7 +956,7 @@ const formSubmit = handleSubmit(async(values) => {
           title: 'Done',
           text: responseData.message,
           icon: 'success',
-          iconColor: '#5F60B9'
+          iconColor: '#284A8A'
         }).then((result) => {
 
             if (result.isConfirmed) {
@@ -967,7 +967,7 @@ const formSubmit = handleSubmit(async(values) => {
           })
 
          }
-        
+
         } else {
 
           IsLoading.value=0
@@ -976,15 +976,15 @@ const formSubmit = handleSubmit(async(values) => {
               title: 'Error',
               text: 'Something Went Wrong!',
               icon: 'error',
-              iconColor: '#5F60B9'
+              iconColor: '#284A8A'
             }).then((result) => {
-    
+
             })
         }
 
      })
 
-})    
+})
 
 const validCoupons = computed(() => {
   return props.coupons.filter(coupon => {

@@ -63,13 +63,13 @@
                 </li>
             </ul>
         </div>
-    </div>    
+    </div>
 </template>
 
 <script setup>
 import { ref,computed,onMounted} from 'vue';
 import { useField, useForm } from 'vee-validate';
-import { STORE_BOOKING_RATING_API, DELETE_BOOKING_RATING_API} from '../data/api'; 
+import { STORE_BOOKING_RATING_API, DELETE_BOOKING_RATING_API} from '../data/api';
 import * as yup from 'yup';
 import Swal from 'sweetalert2-neutral';
 
@@ -106,7 +106,7 @@ const { handleSubmit, errors, resetForm } = useForm({
 const { value: rating } = useField('rating')
 const { value: review } = useField('review')
 
-const formSubmit = handleSubmit(async(values) => { 
+const formSubmit = handleSubmit(async(values) => {
     const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
     values.booking_id = props.booking_id;
@@ -117,7 +117,7 @@ const formSubmit = handleSubmit(async(values) => {
         values.id = props.bookingrating.id
     }
 
-    try { 
+    try {
         const response = await fetch(STORE_BOOKING_RATING_API, {
             method: 'POST',
             headers: {
@@ -126,14 +126,14 @@ const formSubmit = handleSubmit(async(values) => {
             },
             body: JSON.stringify(values),
         });
-    
+
         if (response.ok) {
             const responseData = await response.json();
             Swal.fire({
             title: 'Done',
             text: responseData.message,
             icon: 'success',
-            iconColor: '#5F60B9'
+            iconColor: '#284A8A'
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.reload();
@@ -146,7 +146,7 @@ const formSubmit = handleSubmit(async(values) => {
     } catch (error) {
         console.error('Error saving rating:', error);
     }
-});  
+});
 
 const editRating = () =>{
     showForm.value = true;
@@ -183,7 +183,7 @@ const deleteRating = async(id) =>{
             title: 'Done',
             text: responseData.message,
             icon: 'success',
-            iconColor: '#5F60B9'
+            iconColor: '#284A8A'
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.reload();

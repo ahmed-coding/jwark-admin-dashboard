@@ -244,7 +244,7 @@ const formSubmit = handleSubmit(async () => {
                 title: 'Done',
                 text: responseData.message,
                 icon: 'success',
-                iconColor: '#5F60B9'
+                iconColor: '#284A8A'
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.reload();

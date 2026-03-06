@@ -55,19 +55,19 @@ $serviceData = json_decode($service->content(), true);
 
 @endsection
 
- 
+
 <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
  <script>
     $(document).ready(function () {
-    
+
      const baseUrl = document.querySelector('meta[name="baseUrl"]').getAttribute('content');
      $('.save_fav').off('click').on('click', function () {
- 
+
         const form = $(this).closest('form');
- 
+
         const serviceId = form.find('.service_id').data('service-id');
         const userId = $('#user_id').val();
- 
+
         $.ajax({
              url: baseUrl + '/api/save-favourite',
              type: 'POST',
@@ -81,7 +81,7 @@ $serviceData = json_decode($service->content(), true);
                 title: 'Done',
                 text: response.message,
                 icon: 'success',
-                iconColor: '#5F60B9'
+                iconColor: '#284A8A'
                 }).then((result) => {
                    if (result.isConfirmed) {
                       window.location.reload();
@@ -93,13 +93,13 @@ $serviceData = json_decode($service->content(), true);
              }
          });
      });
- 
+
      $('.delete_fav').off('click').on('click', function () {
         const form = $(this).closest('form');
- 
+
         const serviceId = form.find('.service_id').data('service-id');
         const userId = $('#user_id').val();
- 
+
         $.ajax({
              url: baseUrl + '/api/delete-favourite',
              type: 'POST',
@@ -113,7 +113,7 @@ $serviceData = json_decode($service->content(), true);
                 title: 'Done',
                 text: response.message,
                 icon: 'success',
-                iconColor: '#5F60B9'
+                iconColor: '#284A8A'
                 }).then((result) => {
                    if (result.isConfirmed) {
                       window.location.reload();
@@ -125,11 +125,11 @@ $serviceData = json_decode($service->content(), true);
              }
          });
      });
- 
+
      $('.service-heading, .service-img').on('click', function (e) {
      e.preventDefault();
      var serviceId = $(this).closest('.service-box-card').data('service-id');
- 
+
      // Local Storage
      var storedServiceIds = JSON.parse(localStorage.getItem('recentlyViewed')) || [];
      if (!storedServiceIds.includes(serviceId)) {
@@ -137,7 +137,7 @@ $serviceData = json_decode($service->content(), true);
          storedServiceIds = storedServiceIds.slice(0, 10);
          localStorage.setItem('recentlyViewed', JSON.stringify(storedServiceIds));
      }
- 
+
      // Laravel Session
      $.ajax({
          url: '/save-recently-viewed/' + serviceId,
@@ -152,7 +152,7 @@ $serviceData = json_decode($service->content(), true);
              console.error('Error storing recently viewed service:', error);
          }
      });
- 
+
      window.location.href = $(this).attr('href');
  });
  });

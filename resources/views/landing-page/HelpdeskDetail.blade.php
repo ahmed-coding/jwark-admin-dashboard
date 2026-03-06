@@ -61,7 +61,7 @@
 
             <div class="mt-2 pt-1">
                     <div class="row">
-                       
+
                         <div class="col-12 mt-2">
                             <div class="p-5 bg-primary-subtle rounded-3">
                                 <div class="service-accordian helpdesk-accordion accordion" id="service-accordion">
@@ -77,12 +77,12 @@
                                                 <img src="{{ $activity['sender_image'] }}" class="avatar-70 object-cover rounded-circle" alt="comment-user" />
                                             </div>
                                             <div class="flex-grow-1">
-                                            <div class="accrodion-title collapsed p-0" 
-                                                @if($activity['activity_type'] !== 'closed_helpdesk') 
-                                                    data-bs-toggle="collapse" 
+                                            <div class="accrodion-title collapsed p-0"
+                                                @if($activity['activity_type'] !== 'closed_helpdesk')
+                                                    data-bs-toggle="collapse"
                                                 @endif
-                                                data-bs-target="#q-{{$activity['id']}}" 
-                                                aria-expanded="false" 
+                                                data-bs-target="#q-{{$activity['id']}}"
+                                                aria-expanded="false"
                                                 aria-controls="q-{{$activity['id']}}">
                                                     <div class="d-flex justify-content-between gap-2">
                                                         <h6 class="title text-body m-0">{{ __($messageKey, [
@@ -128,7 +128,7 @@
                                 <div class="p-3 col-12 ">
                                     <h6 class="mb-3" id="replytitle" style="display: none;">Reply to this message</h6>
                                     <form method="POST" enctype="multipart/form-data" id="replyForm" style="display: none;">
-                                    
+
                                     @csrf
                                     <input type="hidden" name="helpdesk_id" class="helpdesk_id" value="{{ $findHelpdesk->id }}" data-helpdesk-id="{{ $findHelpdesk->id }}">
                                     @if(!empty(auth()->user()))
@@ -164,7 +164,7 @@
                                     </div>
                                     </form>
                                 </div>
-                               
+
                             </div>
                             <p class="text-danger mt-2">* You can mark this as closed if you are satisfied with our answer.</p>
                         </div>
@@ -239,7 +239,7 @@
                         title: 'Done',
                         text: response.message,
                         icon: 'success',
-                        iconColor: '#5F60B9'
+                        iconColor: '#284A8A'
                     }).then((result) => {
                         if (result.isConfirmed) {
                             setLoading(button, false);
@@ -275,7 +275,7 @@
                         title: 'Done',
                         text: response.message,
                         icon: 'success',
-                        iconColor: '#5F60B9'
+                        iconColor: '#284A8A'
                     }).then((result) => {
                         if (result.isConfirmed) {
                             setLoading(button, false);
