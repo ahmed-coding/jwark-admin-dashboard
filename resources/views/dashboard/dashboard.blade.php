@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- test-->
-            @if($rezorpayX_details ==null)
+            {{-- @if($rezorpayX_details ==null)
             <div class="col-md-12">
                 <div class="alert alert-warning border border-warning py-3">
                     <p class="h5 text-warning">
@@ -15,7 +15,7 @@
                     </p>
                 </div>
             </div>
-            @endif
+            @endif --}}
 
             <div class="col-md-12">
                 <div class="row">
