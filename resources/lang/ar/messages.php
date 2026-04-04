@@ -900,6 +900,7 @@
     'open' => 'مفتوحة',
     'filter_title' => 'فلترة حسب',
     'detail' => 'تفاصيل',
+    'marked_closed' => 'وضع علامة كمغلق',
     'service_label' => 'نوع الخدمة',
     'daterange_label' => 'حدد التاريخ',
     'select_date_range' => 'حدد نطاق التواريخ',
