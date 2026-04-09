@@ -628,7 +628,8 @@
 //                 )
 //                 ->nickname('provider_withdrawal_requests')
 //                 ->data('permission', 'service list');
-//         }
+
+        // }
 
         $user = auth()->user();
         $isAdminOrProvider = $user && ($user->hasRole('admin') || $user->hasRole('provider')); // Check if user is admin or provider
