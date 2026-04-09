@@ -10,15 +10,15 @@
         </li>
         @if (default_earning_type() === 'subscription')
         <li class="nav-item {{request()->routeIs('service.show') ? 'active' : ''}}">
-                <a class="nav-link" href="{{ route('service.show',$providerdata->id) }}"> {{__('messages.plan')}}</a> 
+                <a class="nav-link" href="{{ route('service.show',$providerdata->id) }}"> {{__('messages.plan')}}</a>
         </li>
         @endif
         <li class="nav-item {{request()->routeIs('booking.details') ? 'active' : ''}}">
             <a class="nav-link" href="{{ route('booking.details',$providerdata->id) }}"> {{__('messages.Bookings')}}</a>
         </li>
-        <li class="nav-item {{request()->routeIs('handyman.show') ? 'active' : ''}}">
+        {{-- <li class="nav-item {{request()->routeIs('handyman.show') ? 'active' : ''}}">
             <a class="nav-link" href="{{ route('handyman.show',$providerdata->id) }}">{{__('messages.handyman')}}</a>
-        </li>
+        </li> --}}
         <li class="nav-item {{request()->routeIs('setting.comission') ? 'active' : ''}}">
             <a class="nav-link" href="{{ route('setting.comission',$providerdata->id) }}">{{__('messages.commission')}}</a>
         </li>

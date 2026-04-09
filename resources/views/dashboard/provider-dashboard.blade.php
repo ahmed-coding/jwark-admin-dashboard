@@ -158,7 +158,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6">
+            {{-- <div class="col-md-6 col-sm-6">
                 <div class="card top-providers">
                     <div class="card-header d-flex justify-content-between gap-10">
                         <h4 class="fw-bold">{{ __('messages.top_handyman') }}</h4>
@@ -193,10 +193,10 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
+            </div> --}}
+            <div class="col-md-12 ">
                 <div class="card recent-activities">
-                    <div class="card-header d-flex justify-content-between gap-10">
+                    <div class="card-header d-flex justify-content-between align-items-center gap-10">
                         <h4>{{ __('messages.recent_booking') }}</h4>
                         <a href="{{ route('booking.index') }}"
                             class="btn-link btn-link-hover"><u>{{ __('messages.view_all') }}</u></a>

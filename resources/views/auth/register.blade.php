@@ -84,7 +84,7 @@
                                  <label for="user_type" class="text-secondary">{{ __('messages.user_type') }} <span class="text-danger">*</span></label>
                                  <select name="usertype" class="form-select select2 mb-5" id="user_type" style="width:100%">
                                     <option value="provider">{{ __('messages.provider') }}</option>
-                                    <option value="handyman">{{ __('messages.handyman') }}</option>
+                                    {{-- <option value="handyman">{{ __('messages.handyman') }}</option> --}}
                                  </select>
                               </div>
                            </div>
@@ -117,9 +117,9 @@
                                  <select name="providertype_id" class="form-select select2 mb-5" id="providertype" style="width:100%">
                                     <option value="">{{ __('messages.select_provider_type') }}</option>
                                  </select>
-                                 <select name="handymantype_id" class="form-select select2 mb-5 d-none" id="handymantype" style="width:100%">
+                                 {{-- <select name="handymantype_id" class="form-select select2 mb-5 d-none" id="handymantype" style="width:100%">
                                     <option value="">{{ __('messages.select_handyman_type') }}</option>
-                                 </select>
+                                 </select> --}}
                               </div>
                            </div>
                            @endif

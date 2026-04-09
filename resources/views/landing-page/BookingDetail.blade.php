@@ -226,7 +226,7 @@
                             <h6 class="mt-0 mb-4 font-size-18 text-capitalize">
                                 {{ __('landingpage.about_provider') }}
                                 @if(isset($bookingData['handyman_data']) && count($bookingData['handyman_data']) > 0 && $bookingData['provider_data']['id'] === $bookingData['handyman_data'][0]['id'])
-                                    <span class="text-muted"> ({{ __('landingpage.as_handyman') }} )</span>
+                                    {{-- <span class="text-muted"> ({{ __('landingpage.as_handyman') }} )</span> --}}
                                 @endif
                             </h6>
                             <div class="img flex-shrink-0 mb-4">

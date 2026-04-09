@@ -103,13 +103,13 @@
                         orderable: false, // Disable sorting
                         searchable : false
                     },
-                    {
-                        data: 'handyman_total_earning',
-                        name: 'handyman_total_earning',
-                        title: "{{ __('messages.hadyman_total_earning') }}",
-                        orderable: false, // Disable sorting
-                        searchable : false
-                    },
+                    // {
+                    //     data: 'handyman_total_earning',
+                    //     name: 'handyman_total_earning',
+                    //     title: "{{ __('messages.hadyman_total_earning') }}",
+                    //     orderable: false, // Disable sorting
+                    //     searchable : false
+                    // },
                     {
                         data: 'action',
                         name: 'action',

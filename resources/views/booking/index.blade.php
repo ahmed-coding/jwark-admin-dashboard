@@ -117,7 +117,7 @@
                 </select>
             </div>
             @endif
-            @if (!auth()->user()->hasAnyRole(['handyman']))
+            {{-- @if (!auth()->user()->hasAnyRole(['handyman']))
             <div class="form-group datatable-filter">
                 <label class="form-label" for="handyman_name">{{ __('messages.handyman_label') }}</label>
                 <select name="handyman_name[]" id="handyman_id" class="form-select select2" data-filter="select" multiple
@@ -128,7 +128,7 @@
 
                 </select>
             </div>
-            @endif
+            @endif --}}
             <div class="form-group datatable-filter">
                 <label class="form-label" for="bookingStatus">{{ __('messages.booking_status_label') }}</label>
                 <div class="btn-group d-flex flex-wrap gap-3">
@@ -673,12 +673,12 @@ console.log(data);
                         <span class="text-warning">${earnings.provider}</span>
                     </li>`;
                 }
-
+                    // <li class="py-2 d-flex justify-content-between">
+                    //     <span>Handyman Earned:</span>
+                    //     <span class="fw-bold text-info">${earnings.handyman}</span>
+                    // </li>
                 html += `
-                    <li class="py-2 d-flex justify-content-between">
-                        <span>Handyman Earned:</span>
-                        <span class="fw-bold text-info">${earnings.handyman}</span>
-                    </li>
+
                     <li class="py-2 d-flex justify-content-between">
                         <span>Tax Amount:</span>
                         <span class="text-danger">${earnings.tax}</span>

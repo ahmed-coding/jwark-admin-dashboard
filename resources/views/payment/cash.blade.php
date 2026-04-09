@@ -68,8 +68,8 @@
                                     <option value="pending_by_provider">{{ __('messages.pending_by_provider') }}
                                     </option>
                                     <option value="send_to_provider">{{ __('messages.send_to_provider') }}</option>
-                                    <option value="approved_by_handyman">{{ __('messages.approved_by_handyman') }}
-                                    </option>
+                                    {{-- <option value="approved_by_handyman">{{ __('messages.approved_by_handyman') }}
+                                    </option> --}}
 
                                 </select>
                             </div>
@@ -253,5 +253,5 @@
             }
         });
     </script>
-    
+
 </x-master-layout>

@@ -4,7 +4,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
 @endphp
 {{ html()->hidden('id',$bookingdata->id ?? null) }}
 <div class="container-fluid">
-    <div class="row">   
+    <div class="row">
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-body">
@@ -25,7 +25,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                         @endhasanyrole
                                     @endif
                                 </div>
-                                    <div class="w3-third">
+                                    {{-- <div class="w3-third">
                                         @if($bookingdata->handymanAdded->count() == 0 && $bookingdata->status !== "cancelled")
                                             @hasanyrole('admin|demo_admin|provider')
                                             <a href="{{ route('booking.assign_form',['id'=> $bookingdata->id ]) }}"
@@ -33,7 +33,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                             {{ __('messages.assign_handyman') }}</a>
                                             @endhasanyrole
                                         @endif
-                                    </div>
+                                    </div> --}}
 
                                 @if($bookingdata->payment_id !== null)
                                     <a href="{{route('invoice_pdf',$bookingdata->id)}}" class="btn btn-primary" target="_blank">
@@ -44,7 +44,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                             </div>
                         </div>
                         <!-- Main Content Row -->
-                        <div class="row ">    
+                        <div class="row ">
                             <div class="col-md-4 ">
                                 <div class="card">
                                     <div class="card-body">
@@ -108,7 +108,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- Add Cancellation Reason Card -->
                             @if($bookingdata->status === 'cancelled')
                             <div class="col-md-4">
@@ -125,7 +125,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
 
             <!-- Order information section  -->
             <div class="row">
@@ -134,14 +134,14 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                         <div class="card-body">
                         <div class="d-flex align-items-start gap-3">
                                                 <div class="flex-shrink-0">
-                                                    
-                                                        <img src="{{ getSingleMedia($bookingdata->customer,'profile_image', null) }}" 
-                                                            alt="Customer Profile" 
+
+                                                        <img src="{{ getSingleMedia($bookingdata->customer,'profile_image', null) }}"
+                                                            alt="Customer Profile"
                                                             class="rounded-circle"
                                                             style="width: 60px; height: 60px; object-fit: cover;">
                                                             @if(optional($bookingdata->customer)->profile_image)
-                                                        <img src="{{asset('public/images/default.png')}}" 
-                                                            alt="Default Profile" 
+                                                        <img src="{{asset('public/images/default.png')}}"
+                                                            alt="Default Profile"
                                                             class="rounded-circle"
                                                             style="width: 60px; height: 60px; object-fit: cover;">
                                                     @endif
@@ -178,21 +178,21 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                         <div class="card-body">
                             <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                    
-                                        <img src="{{ getSingleMedia($bookingdata->provider,'profile_image', null) }}" 
-                                            alt="Provider Profile" 
+
+                                        <img src="{{ getSingleMedia($bookingdata->provider,'profile_image', null) }}"
+                                            alt="Provider Profile"
                                             class="rounded-circle"
                                             style="width: 60px; height: 60px; object-fit: cover;">
                                     @if(optional($bookingdata->provider)->profile_image)
-                                        <img src="{{ asset('images/default-user.png') }}" 
-                                            alt="Default Profile" 
+                                        <img src="{{ asset('images/default-user.png') }}"
+                                            alt="Default Profile"
                                             class="rounded-circle"
                                             style="width: 60px; height: 60px; object-fit: cover;">
                                     @endif
                                 </div>
                                 <div class="flex-grow-1">
                                     <p class="mb-1 text-primary">
-                                        {{ __('messages.provider') }} 
+                                        {{ __('messages.provider') }}
                                         @if($bookingdata->handymanAdded->isNotEmpty() && $bookingdata->provider->id == optional($bookingdata->handymanAdded->first())->handyman->id)
                                             <span class="text-muted"> ({{ __('landingpage.as_handyman') }})</span>
                                         @endif
@@ -231,13 +231,13 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                         <div class="d-flex align-items-start gap-4">
                                             <div class="flex-shrink-0">
 
-                                                <img src="{{ getSingleMedia($booking->handyman,'profile_image', null) }}" 
-                                                    alt="Handyman Profile" 
+                                                <img src="{{ getSingleMedia($booking->handyman,'profile_image', null) }}"
+                                                    alt="Handyman Profile"
                                                     class="rounded-circle"
                                                     style="width: 60px; height: 60px; object-fit: cover;">
                                                 @if(optional($booking->handyman)->profile_image)
-                                                    <img src="{{ asset('images/default-user.png') }}" 
-                                                        alt="Default Profile" 
+                                                    <img src="{{ asset('images/default-user.png') }}"
+                                                        alt="Default Profile"
                                                         class="rounded-circle"
                                                         style="width: 60px; height: 60px; object-fit: cover;">
                                                 @endif
@@ -265,9 +265,9 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                         @endif
                     </div>
                 </div>
-                    
-            </div>  
-        </div>  
+
+            </div>
+        </div>
 
         <!-- billing section -->
         <div class="col-lg-4 mt-lg-0 mt-4">
@@ -318,7 +318,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
 
                                             <!-- discount -->
                                             @if($bookingdata->bookingPackage == null && $bookingdata->discount > 0)
-                                           
+
                                             <tr class="border-bottom">
                                                 <td colspan="3">{{ __('messages.discount') }} ({{ $bookingdata->discount }}% off)</td>
                                                 <td class="text-end text-success">-{{ getPriceFormat($bookingdata->final_discount_amount) }}</td>
@@ -345,18 +345,18 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                                 <td class="text-end text-success">+{{ getPriceFormat($extraCharges) }}</td>
                                             </tr>
                                             @endif
-                                           
+
                                             @if($addonTotalPrice > 0)
                                             <tr class="border-bottom">
                                                 <td colspan="3">{{ __('messages.add_ons') }}</td>
                                                 <td class="text-end text-success">+{{ getPriceFormat($addonTotalPrice) }}</td>
                                             </tr>
                                             @endif
-                                           
+
 
                                             @if($bookingdata->post_request_id == null)
                                             <!-- Subtotal -->
-                                           
+
                                             <tr class="border-bottom">
                                                 <td colspan="3">{{ __('messages.subtotal_vat') }}</td>
                                                 <td class="text-end text-success">{{ getPriceFormat($bookingdata->final_sub_total) ?? 0 }}</td>
@@ -368,12 +368,12 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                             </tr>
                                             @else
                                             <!-- Subtotal -->
-                                           
+
                                             <tr class="border-bottom">
                                                 <td colspan="3">{{ __('messages.subtotal_vat') }}</td>
                                                 <td class="text-end text-success">{{ getPriceFormat($bookingdata->total_amount) ?? 0 }}</td>
                                             </tr>
-                                           
+
                                             @endif
                                             <!-- Grand Total -->
                                             <tr class="border-bottom">
@@ -396,7 +396,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                                             @endif
                                                         </td>
                                                         <td class="text-end">
-                                                            @if($payment != null && $payment->payment_status == 'paid') 
+                                                            @if($payment != null && $payment->payment_status == 'paid')
                                                                 {{ __('messages.paid') }}
                                                             @else
                                                                 {{ getPriceFormat($bookingdata->total_amount - $bookingdata->advance_paid_amount) }}
@@ -410,15 +410,15 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                                         <td class="text-end">{{getPriceFormat($bookingdata->cancellation_charge_amount) ?? 0}}</td>
                                                     </tr>
                                                     @if($bookingdata->advance_paid_amount > 0)
-                                                        @php 
+                                                        @php
                                                             $refundamount = $bookingdata->advance_paid_amount - $bookingdata->cancellation_charge_amount
                                                         @endphp
                                                         @if($refundamount > 0)
                                                         <tr>
                                                             <td colspan="3">{{ __('messages.refund_amount') }}</td>
-                                                        
+
                                                             <td class="text-end">{{getPriceFormat($refundamount) ?? 0}} </td>
-                                                        
+
                                                         </tr>
                                                         @endif
                                                     @endif
@@ -427,10 +427,10 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                         </tbody>
                                     </table>
                     </div>
-                </div>  
+                </div>
             </div>
-        </div>  
-    </div>  
+        </div>
+    </div>
 
     <!-- Extra Charges table -->
     @if(count($bookingdata->bookingExtraCharge) > 0)
@@ -460,11 +460,11 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                         </tbody>
                     </table>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    @endif  
+    @endif
 
     <!-- Addon  Charges table -->
     @if($bookingdata->bookingAddonService->count() > 0 )
@@ -500,11 +500,11 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                         </tbody>
                     </table>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    @endif  
+    @endif
 </div>
 
 

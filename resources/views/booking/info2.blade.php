@@ -25,7 +25,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                 @endif
             </div>
 
-            <div class="w3-third">
+            {{-- <div class="w3-third">
                 @if($bookingdata->handymanAdded->count() == 0 && $bookingdata->status !== "cancelled")
                 @hasanyrole('admin|demo_admin|provider')
                 <a href="{{ route('booking.assign_form',['id'=> $bookingdata->id ]) }}"
@@ -33,7 +33,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                     {{ __('messages.assign_handyman') }}</a>
                 @endhasanyrole
                 @endif
-            </div>
+            </div> --}}
             @if($bookingdata->payment_id !== null)
             <a href="{{route('invoice_pdf',$bookingdata->id)}}" class="btn btn-primary" target="_blank">
                 <i class="ri-file-text-line"></i>
@@ -64,7 +64,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                 <span class="text-primary" id="booking_status__span">{{ $bookingdata->reason }}</span>
                 @endif
             </div>
-            
+
             <div class="d-flex justify-content-between gap-2 mb-2">
                 <span>{{__('messages.payment_status')}} : </span>
                 <span id="payment_status__span"
@@ -305,7 +305,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                 <td>{{ __('messages.advance_payment_amount') }} ({{ $bookingdata->service->advance_payment_amount }}%)</td>
                                 <td class="text-end">{{ getPriceFormat($bookingdata->advance_paid_amount) }}</td>
                             </tr>
-                           
+
                             <tr>
                                 <td>{{ __('messages.remaining_amount') }}
                                     @if($payment != null && $payment->payment_status == 'paid')
@@ -314,7 +314,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                     <span class="badge bg-warning">{{ __('messages.pending') }}</span>
                                     @endif
                                 </td>
-                            
+
                                 <td class="text-end">
                                     @if($payment != null && $payment->payment_status == 'paid')
                                     {{ getPriceFormat( ($bookingdata->total_amount - $bookingdata->advance_paid_amount )- $payment->total_amount) }}
@@ -323,7 +323,7 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                     @endif
 
                                 </td>
-                            
+
                             </tr>
                             @if($bookingdata->status === "cancelled")
                                 <tr>
@@ -331,15 +331,15 @@ $datetime = $sitesetup ? json_decode($sitesetup->value) : null;
                                     <td class="text-end">{{getPriceFormat($bookingdata->cancellation_charge_amount) ?? 0}}</td>
                                 </tr>
                                 @if($bookingdata->advance_paid_amount > 0)
-                                    @php 
+                                    @php
                                         $refundamount = $bookingdata->advance_paid_amount - $bookingdata->cancellation_charge_amount
                                     @endphp
                                     @if($refundamount > 0)
                                     <tr>
                                         <td>{{ __('messages.refund_amount') }}</td>
-                                    
+
                                         <td class="text-end">{{getPriceFormat($refundamount) ?? 0}} </td>
-                                    
+
                                     </tr>
                                     @endif
                                 @endif
