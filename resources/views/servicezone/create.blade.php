@@ -4,7 +4,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     </head>
-    
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -94,7 +94,7 @@
         // Form submission handling
         $('#serviceZoneForm').on('submit', function(e) {
             e.preventDefault();
-            
+
             // Show loading state
             Swal.fire({
                 title: '{{ __("messages.please_wait") }}',
@@ -140,7 +140,7 @@
                     } else if (xhr.responseJSON && xhr.responseJSON.errors) {
                         message = Object.values(xhr.responseJSON.errors).flat().join('\n');
                     }
-                    
+
                     Swal.fire({
                         icon: 'error',
                         title: '{{ __("messages.error") }}',
@@ -153,7 +153,7 @@
 
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 20.5937, lng: 78.9629 },
+                center: { lat: 15.4009837, lng: 44.3129314 },
                 zoom: 5,
             });
 
@@ -180,7 +180,7 @@
             if (existingCoordinates && existingCoordinates.length > 0) {
                 try {
                     console.log('Loading existing coordinates:', existingCoordinates);
-                    
+
                     const polygon = new google.maps.Polygon({
                         paths: existingCoordinates,
                         strokeColor: '#555',
