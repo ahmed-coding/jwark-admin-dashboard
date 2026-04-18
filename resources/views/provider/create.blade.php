@@ -80,7 +80,7 @@
                             </div>
                             @if(default_earning_type() !== 'subscription')
                             <div class="form-group col-md-4">
-                                {{ html()->label(__('messages.select_name', ['select' => __('messages.providertype')]) .
+                                {{ html()->label(__('messages.select_provider_type', ['select' => __('messages.providertype')]) .
                                 ' <span class="text-danger">*</span>', 'providertype_id')->class('form-control-label')
                                 }}
                                 <br />
@@ -88,7 +88,7 @@
                                 optional($providerdata->providertype)->name], optional($providerdata->providertype)->id)
                                 ->class('select2js form-group providertype')
                                 ->required()
-                                ->attribute('data-placeholder', __('messages.select_name', ['select' =>
+                                ->attribute('data-placeholder', __('messages.select_provider_type', ['select' =>
                                 __('messages.providertype')]))
                                 ->attribute('data-ajax--url', route('ajax-list', ['type' => 'providertype'])) }}
                             </div>

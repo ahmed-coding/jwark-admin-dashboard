@@ -266,11 +266,15 @@
 //                 ->link->attr(['class' => '']);
 //         }
 
-        $menu
-            ->add(__('messages.sidebar_form_title', ['form' => trans('messages.user')]), ['class' => 'category-main'])
-            ->data('permission', ['provider list', 'handyman list', 'user list']);
+        // $menu
+        //     ->add(__('messages.sidebar_form_title', ['form' => trans('messages.user')]), ['class' => 'category-main'])
+        //     ->data('permission', ['provider list', 'handyman list', 'user list']);
 
         if (auth()->user()->user_type == 'admin' || auth()->user()->user_type == 'demo_admin') {
+            $menu
+                ->add(__('messages.sidebar_form_title', ['form' => trans('messages.user')]), ['class' => 'category-main'])
+                ->data('permission', ['provider list', 'handyman list', 'user list']);
+
             $menu
                 ->add(
                     '<span>' .

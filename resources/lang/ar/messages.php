@@ -1,5 +1,5 @@
 <?php return array(
-    'user' => 'اشعارات للمستخدمين',
+    'user' => 'المستخدمين',
     'user_information' => 'معلومات المستخدم',
     'srno' => 'رقم',
     'permission' => 'الصلاحية',
@@ -110,7 +110,7 @@
     'country' => ' الدولة',
     'state' => 'الولاية',
     'city' => 'العاصمة',
-    'providertype' => 'نوع ',
+    'providertype' => 'نوع الاشتراك ',
     'commission' => 'العمولة',
     'username' => 'اسم المستخدم',
     'providers' => 'مزودين الخدمة',
