@@ -30,8 +30,8 @@
                                 <div class="form-group col-md-{{ $field === 'name' ? '4' : '12' }}">
                                     {{ html()->label($label . ($field === 'name' ? ' <span class="text-danger">*</span>' : ''), $field)->class('form-control-label language-label') }}
                                     @php
-                                        $value = $language['id'] == 'en' 
-                                            ? $servicedata ? $servicedata->translate($field, 'en') : '' 
+                                        $value = $language['id'] == 'en'
+                                            ? $servicedata ? $servicedata->translate($field, 'en') : ''
                                             : ($servicedata ? $servicedata->translate($field, $language['id']) : '');
                                         $name = $language['id'] == 'en' ? $field : "translations[{$language['id']}][$field]";
                                     @endphp
@@ -58,7 +58,7 @@
                                     <small class="help-block with-errors text-danger"></small>
                                 </div>
                                 @endforeach
-         
+
                                 <!-- Category Selection -->
                                 <div class="form-group col-md-4">
                                     {{ html()->label(__('messages.select_name', ['select' => __('messages.category')]) . ' <span class="text-danger">*</span>', 'category_id')->class('form-control-label') }}
@@ -190,7 +190,7 @@
                         </div>
 
                         <!-- SEO Enable/Disable Switch -->
-                        <div class="row mt-4">
+                        {{-- <div class="row mt-4">
                             <div class="col-12">
                                 <div class="form-group">
                                     <div class="custom-control custom-switch">
@@ -205,10 +205,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <!-- SEO Fields Section for this language -->
-                        <div class="row mt-4" id="seo_fields_section">
+                        {{-- <div class="row mt-4" id="seo_fields_section">
                             <div class="col-12">
                                 <h5 class="fw-bold mb-3">{{ __('messages.seo_fields') }}</h5>
                             </div>
@@ -219,10 +219,10 @@
                                     @php
                                         $seoImageUrl = (isset($servicedata->id) && getMediaFileExit($servicedata, 'seo_image')) ? $servicedata->getFirstMediaUrl('seo_image') : '';
                                         $seoImageHas = !empty($seoImageUrl) ? '1' : '0';
-                                    @endphp 
+                                    @endphp
                                     <input type="file" name="seo_image" class="form-control" accept=".jpg,.jpeg,.png" placeholder="{{ __('messages.choose_file', ['file' => __('messages.image')]) }}" onchange="previewSeoImage(event)" data-has-image="{{ $seoImageHas }}">
                                     <small class="help-block with-errors text-danger"></small>
-                                    <small class="text-muted d-block mt-1">{{ __('messages.only_jpg_png_jpeg_allowed') }}</small> 
+                                    <small class="text-muted d-block mt-1">{{ __('messages.only_jpg_png_jpeg_allowed') }}</small>
                                     <!-- @php
                                         $seoImageUrl = (isset($servicedata->id) && getMediaFileExit($servicedata, 'seo_image')) ? $servicedata->getFirstMediaUrl('seo_image') : '';
                                     @endphp -->
@@ -295,7 +295,7 @@
                                             for="is_slot">{{ __('messages.slot') }}</label>
                                     </div>
                                 </div>
-                            @endif
+                            @endif --}}
                             <div class="form-group col-md-3">
                                 <div class="custom-control custom-switch">
                                     {{ html()->checkbox('is_featured', $servicedata->is_featured)->class('custom-control-input')->id('is_featured') }}
@@ -415,21 +415,21 @@
 
 
                  const addLink = document.getElementById('add_provider_address_link');
-    
+
     if (addLink) {
         addLink.addEventListener('click', function(event) {
             event.preventDefault();
 
             const providerId = document.getElementById('provider_id').value;
             let providerAddressCreateUrl = "{{ route('provideraddress.create', ['provideraddress' => '']) }}";
-            
+
             providerAddressCreateUrl = providerAddressCreateUrl.replace('provideraddress=',
                 'provideraddress=' + providerId);
 
             window.location.href = providerAddressCreateUrl;
         });
     }
-                 
+
             });
 
             function updateServiceStatus(serviceId, status, reason = '') {
@@ -505,8 +505,8 @@
                 <label for="reject-reason" style="font-size: 14px; font-weight: bold; display: block; margin-bottom: 5px;">
                     Provide the reason for rejection
                 </label>
-                <textarea id="reject-reason" placeholder="e.g. Insufficient details" 
-                    style="width: 100%; height: 100px; background-color: #ffffff; border: 1px solid #ccc; 
+                <textarea id="reject-reason" placeholder="e.g. Insufficient details"
+                    style="width: 100%; height: 100px; background-color: #ffffff; border: 1px solid #ccc;
                     border-radius: 8px; padding: 10px; font-size: 14px; resize: none;"></textarea>
             </div>
         `,
@@ -967,7 +967,7 @@
                 });
             }
 
-            
+
 
             // SEO Enable/Disable Switch functionality
             var seoEnabledSwitch = document.getElementById('seo_enabled');

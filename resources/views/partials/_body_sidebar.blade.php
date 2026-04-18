@@ -922,136 +922,136 @@
             )
             ->link->attr(['class' => '']);
 
-        $menu
-            ->add(
-                '<span>' .
-                    __('messages.notification_templates') .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.notification_templates') .
-                    '</span></span>',
-                ['route' => 'notification-templates.index'],
-            )
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15.5 9L15.6716 9.17157C17.0049 10.5049 17.6716 11.1716 17.6716 12C17.6716 12.8284 17.0049 13.4951 15.6716 14.8284L15.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M13.2939 7.16992L11.9998 11.9996L10.7058 16.8292" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M8.50019 9L8.32861 9.17157C6.99528 10.5049 6.32861 11.1716 6.32861 12C6.32861 12.8284 6.99528 13.4951 8.32861 14.8284L8.50019 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="currentColor" stroke-width="1.5"/>
-</svg>',
-            )
-            ->nickname('notification_template')
-            ->data('role', ['admin', 'demo_admin'])
-            ->link->attr(['class' => '']);
+//         $menu
+//             ->add(
+//                 '<span>' .
+//                     __('messages.notification_templates') .
+//                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                     __('messages.notification_templates') .
+//                     '</span></span>',
+//                 ['route' => 'notification-templates.index'],
+//             )
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M15.5 9L15.6716 9.17157C17.0049 10.5049 17.6716 11.1716 17.6716 12C17.6716 12.8284 17.0049 13.4951 15.6716 14.8284L15.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M13.2939 7.16992L11.9998 11.9996L10.7058 16.8292" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M8.50019 9L8.32861 9.17157C6.99528 10.5049 6.32861 11.1716 6.32861 12C6.32861 12.8284 6.99528 13.4951 8.32861 14.8284L8.50019 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="currentColor" stroke-width="1.5"/>
+// </svg>',
+//             )
+//             ->nickname('notification_template')
+//             ->data('role', ['admin', 'demo_admin'])
+//             ->link->attr(['class' => '']);
 
-        $menu
-            ->add(
-                '<span>' .
-                    __('messages.pages') .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.pages') .
-                    '</span></span>',
-                ['class' => ''],
-            )
-            ->data('permission', [
-                'terms condition',
-                'privacy policy',
-                'about us',
-                'Help and support',
-                'Refund and Cancellation Policy',
-                'data deletion request',
-            ])
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5 8C5 5.17157 5 3.75736 5.87868 2.87868C6.75736 2 8.17157 2 11 2H13C15.8284 2 17.2426 2 18.1213 2.87868C19 3.75736 19 5.17157 19 8V16C19 18.8284 19 20.2426 18.1213 21.1213C17.2426 22 15.8284 22 13 22H11C8.17157 22 6.75736 22 5.87868 21.1213C5 20.2426 5 18.8284 5 16V8Z" stroke="currentColor" stroke-width="1.5"/>
-<path d="M5 4.07617C4.02491 4.17208 3.36857 4.38885 2.87868 4.87873C2 5.75741 2 7.17163 2 10.0001V14.0001C2 16.8285 2 18.2427 2.87868 19.1214C3.36857 19.6113 4.02491 19.828 5 19.9239" stroke="currentColor" stroke-width="1.5"/>
-<path d="M19 4.07617C19.9751 4.17208 20.6314 4.38885 21.1213 4.87873C22 5.75741 22 7.17163 22 10.0001V14.0001C22 16.8285 22 18.2427 21.1213 19.1214C20.6314 19.6113 19.9751 19.828 19 19.9239" stroke="currentColor" stroke-width="1.5"/>
-<path d="M9 13H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M9 9H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M9 17H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-',
-            )
-            ->nickname('pages')
-            ->link->attr(['class' => ''])
-            ->href('#pages');
+//         $menu
+//             ->add(
+//                 '<span>' .
+//                     __('messages.pages') .
+//                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
+//                     __('messages.pages') .
+//                     '</span></span>',
+//                 ['class' => ''],
+//             )
+//             ->data('permission', [
+//                 'terms condition',
+//                 'privacy policy',
+//                 'about us',
+//                 'Help and support',
+//                 'Refund and Cancellation Policy',
+//                 'data deletion request',
+//             ])
+//             ->prepend(
+//                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M5 8C5 5.17157 5 3.75736 5.87868 2.87868C6.75736 2 8.17157 2 11 2H13C15.8284 2 17.2426 2 18.1213 2.87868C19 3.75736 19 5.17157 19 8V16C19 18.8284 19 20.2426 18.1213 21.1213C17.2426 22 15.8284 22 13 22H11C8.17157 22 6.75736 22 5.87868 21.1213C5 20.2426 5 18.8284 5 16V8Z" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M5 4.07617C4.02491 4.17208 3.36857 4.38885 2.87868 4.87873C2 5.75741 2 7.17163 2 10.0001V14.0001C2 16.8285 2 18.2427 2.87868 19.1214C3.36857 19.6113 4.02491 19.828 5 19.9239" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M19 4.07617C19.9751 4.17208 20.6314 4.38885 21.1213 4.87873C22 5.75741 22 7.17163 22 10.0001V14.0001C22 16.8285 22 18.2427 21.1213 19.1214C20.6314 19.6113 19.9751 19.828 19 19.9239" stroke="currentColor" stroke-width="1.5"/>
+// <path d="M9 13H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M9 9H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// <path d="M9 17H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+// </svg>
+// ',
+//             )
+//             ->nickname('pages')
+//             ->link->attr(['class' => ''])
+//             ->href('#pages');
 
-        $menu->pages
-            ->add('<span>' . __('messages.terms_condition') . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'term-condition',
-            ])
-            ->data('permission', 'terms condition')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M14 1.5H8L6.5 0H2C1.175 0 0.5075 0.675 0.5075 1.5L0.5 10.5C0.5 11.325 1.175 12 2 12H14C14.825 12 15.5 11.325 15.5 10.5V3C15.5 2.175 14.825 1.5 14 1.5ZM14 10.5H2V1.5H5.8775L7.3775 3H14V10.5ZM12.5 6H3.5V4.5H12.5V6ZM9.5 9H3.5V7.5H9.5V9Z" fill="#6C757D" />
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->pages
+//             ->add('<span>' . __('messages.terms_condition') . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'term-condition',
+//             ])
+//             ->data('permission', 'terms condition')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M14 1.5H8L6.5 0H2C1.175 0 0.5075 0.675 0.5075 1.5L0.5 10.5C0.5 11.325 1.175 12 2 12H14C14.825 12 15.5 11.325 15.5 10.5V3C15.5 2.175 14.825 1.5 14 1.5ZM14 10.5H2V1.5H5.8775L7.3775 3H14V10.5ZM12.5 6H3.5V4.5H12.5V6ZM9.5 9H3.5V7.5H9.5V9Z" fill="#6C757D" />
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->pages
-            ->add('<span>' . __('messages.privacy_policy') . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'privacy-policy',
-            ])
-            ->data('permission', 'privacy policy')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 0.75L0.25 3.75V8.25C0.25 12.4125 3.13 16.305 7 17.25C10.87 16.305 13.75 12.4125 13.75 8.25V3.75L7 0.75ZM12.25 8.25C12.25 11.64 10.015 14.7675 7 15.6975C3.985 14.7675 1.75 11.64 1.75 8.25V4.725L7 2.3925L12.25 4.725V8.25ZM3.5575 8.6925L2.5 9.75L5.5 12.75L11.5 6.75L10.4425 5.685L5.5 10.6275L3.5575 8.6925Z" fill="#6C757D" />
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->pages
+//             ->add('<span>' . __('messages.privacy_policy') . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'privacy-policy',
+//             ])
+//             ->data('permission', 'privacy policy')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M7 0.75L0.25 3.75V8.25C0.25 12.4125 3.13 16.305 7 17.25C10.87 16.305 13.75 12.4125 13.75 8.25V3.75L7 0.75ZM12.25 8.25C12.25 11.64 10.015 14.7675 7 15.6975C3.985 14.7675 1.75 11.64 1.75 8.25V4.725L7 2.3925L12.25 4.725V8.25ZM3.5575 8.6925L2.5 9.75L5.5 12.75L11.5 6.75L10.4425 5.685L5.5 10.6275L3.5575 8.6925Z" fill="#6C757D" />
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->pages
-            ->add('<span>' . __('messages.help_support') . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'help-support',
-            ])
-            ->data('permission', 'helpdesk')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 3.5H0.5V14C0.5 14.825 1.175 15.5 2 15.5H12.5V14H2V3.5ZM14 0.5H5C4.175 0.5 3.5 1.175 3.5 2V11C3.5 11.825 4.175 12.5 5 12.5H14C14.825 12.5 15.5 11.825 15.5 11V2C15.5 1.175 14.825 0.5 14 0.5ZM14 11H5V2H14V11ZM9.1325 6.62C9.44 6.0725 10.0175 5.75 10.355 5.27C10.715 4.76 10.5125 3.815 9.5 3.815C8.84 3.815 8.51 4.3175 8.375 4.7375L7.3475 4.31C7.6325 3.47 8.39 2.75 9.4925 2.75C10.415 2.75 11.0525 3.17 11.375 3.695C11.6525 4.145 11.81 4.9925 11.3825 5.6225C10.91 6.32 10.46 6.53 10.2125 6.98C10.115 7.16 10.0775 7.28 10.0775 7.865H8.9375C8.945 7.5575 8.8925 7.055 9.1325 6.62ZM8.7125 9.4625C8.7125 9.02 9.065 8.6825 9.5 8.6825C9.9425 8.6825 10.28 9.02 10.28 9.4625C10.28 9.8975 9.95 10.25 9.5 10.25C9.065 10.25 8.7125 9.8975 8.7125 9.4625Z" fill="#6C757D" />
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->pages
+//             ->add('<span>' . __('messages.help_support') . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'help-support',
+//             ])
+//             ->data('permission', 'helpdesk')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M2 3.5H0.5V14C0.5 14.825 1.175 15.5 2 15.5H12.5V14H2V3.5ZM14 0.5H5C4.175 0.5 3.5 1.175 3.5 2V11C3.5 11.825 4.175 12.5 5 12.5H14C14.825 12.5 15.5 11.825 15.5 11V2C15.5 1.175 14.825 0.5 14 0.5ZM14 11H5V2H14V11ZM9.1325 6.62C9.44 6.0725 10.0175 5.75 10.355 5.27C10.715 4.76 10.5125 3.815 9.5 3.815C8.84 3.815 8.51 4.3175 8.375 4.7375L7.3475 4.31C7.6325 3.47 8.39 2.75 9.4925 2.75C10.415 2.75 11.0525 3.17 11.375 3.695C11.6525 4.145 11.81 4.9925 11.3825 5.6225C10.91 6.32 10.46 6.53 10.2125 6.98C10.115 7.16 10.0775 7.28 10.0775 7.865H8.9375C8.945 7.5575 8.8925 7.055 9.1325 6.62ZM8.7125 9.4625C8.7125 9.02 9.065 8.6825 9.5 8.6825C9.9425 8.6825 10.28 9.02 10.28 9.4625C10.28 9.8975 9.95 10.25 9.5 10.25C9.065 10.25 8.7125 9.8975 8.7125 9.4625Z" fill="#6C757D" />
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->pages
-            ->add('<span>' . __('messages.refund_cancellation_policy') . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'refund-cancellation-policy',
-            ])
-            ->data('permission', 'Refund and Cancellation Policy')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6.4075 14H1.75V6.5H12.25V9.785L13.75 8.285V3.5C13.75 2.675 13.075 2 12.25 2H11.5V0.5H10V2H4V0.5H2.5V2H1.75C0.9175 2 0.2575 2.675 0.2575 3.5L0.25 14C0.25 14.825 0.9175 15.5 1.75 15.5H7.9075L6.4075 14ZM1.75 3.5H12.25V5H1.75V3.5ZM10.405 15.875L7.75 13.22L8.8075 12.1625L10.3975 13.7525L13.5775 10.5725L14.635 11.63L10.405 15.875ZM5.8075 9.5L7 10.6925L5.9425 11.75L4.75 10.5575L3.5575 11.75L2.5 10.6925L3.6925 9.5L2.5 8.3075L3.5575 7.25L4.75 8.4425L5.9425 7.25L7 8.3075L5.8075 9.5Z" fill="#6C757D" />
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->pages
+//             ->add('<span>' . __('messages.refund_cancellation_policy') . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'refund-cancellation-policy',
+//             ])
+//             ->data('permission', 'Refund and Cancellation Policy')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M6.4075 14H1.75V6.5H12.25V9.785L13.75 8.285V3.5C13.75 2.675 13.075 2 12.25 2H11.5V0.5H10V2H4V0.5H2.5V2H1.75C0.9175 2 0.2575 2.675 0.2575 3.5L0.25 14C0.25 14.825 0.9175 15.5 1.75 15.5H7.9075L6.4075 14ZM1.75 3.5H12.25V5H1.75V3.5ZM10.405 15.875L7.75 13.22L8.8075 12.1625L10.3975 13.7525L13.5775 10.5725L14.635 11.63L10.405 15.875ZM5.8075 9.5L7 10.6925L5.9425 11.75L4.75 10.5575L3.5575 11.75L2.5 10.6925L3.6925 9.5L2.5 8.3075L3.5575 7.25L4.75 8.4425L5.9425 7.25L7 8.3075L5.8075 9.5Z" fill="#6C757D" />
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-        $menu->pages
-            ->add('<span>' . __('messages.data_deletion_request') . '</span>', [
-                'class' => 'sidebar-layout',
-                'route' => 'data-deletion-request',
-            ])
-            ->data('permission', 'data deletion request')
-            ->prepend(
-                '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6.4075 14H1.75V6.5H12.25V9.785L13.75 8.285V3.5C13.75 2.675 13.075 2 12.25 2H11.5V0.5H10V2H4V0.5H2.5V2H1.75C0.9175 2 0.2575 2.675 0.2575 3.5L0.25 14C0.25 14.825 0.9175 15.5 1.75 15.5H7.9075L6.4075 14ZM1.75 3.5H12.25V5H1.75V3.5ZM10.405 15.875L7.75 13.22L8.8075 12.1625L10.3975 13.7525L13.5775 10.5725L14.635 11.63L10.405 15.875ZM5.8075 9.5L7 10.6925L5.9425 11.75L4.75 10.5575L3.5575 11.75L2.5 10.6925L3.6925 9.5L2.5 8.3075L3.5575 7.25L4.75 8.4425L5.9425 7.25L7 8.3075L5.8075 9.5Z" fill="#6C757D" />
-</svg>',
-            )
-            ->link->attr(['class' => '']);
+//         $menu->pages
+//             ->add('<span>' . __('messages.data_deletion_request') . '</span>', [
+//                 'class' => 'sidebar-layout',
+//                 'route' => 'data-deletion-request',
+//             ])
+//             ->data('permission', 'data deletion request')
+//             ->prepend(
+//                 '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M6.4075 14H1.75V6.5H12.25V9.785L13.75 8.285V3.5C13.75 2.675 13.075 2 12.25 2H11.5V0.5H10V2H4V0.5H2.5V2H1.75C0.9175 2 0.2575 2.675 0.2575 3.5L0.25 14C0.25 14.825 0.9175 15.5 1.75 15.5H7.9075L6.4075 14ZM1.75 3.5H12.25V5H1.75V3.5ZM10.405 15.875L7.75 13.22L8.8075 12.1625L10.3975 13.7525L13.5775 10.5725L14.635 11.63L10.405 15.875ZM5.8075 9.5L7 10.6925L5.9425 11.75L4.75 10.5575L3.5575 11.75L2.5 10.6925L3.6925 9.5L2.5 8.3075L3.5575 7.25L4.75 8.4425L5.9425 7.25L7 8.3075L5.8075 9.5Z" fill="#6C757D" />
+// </svg>',
+//             )
+//             ->link->attr(['class' => '']);
 
-            $menu->pages
-    ->add('<span>' . __('messages.about_us') . '</span>', [
-        'class' => 'sidebar-layout',
-        'route' => 'about-us',
-    ])
-    ->data('permission', 'about us')
-    ->prepend(
-        '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 0C3.58984 0 0 3.58984 0 8C0 12.4102 3.58984 16 8 16C12.4102 16 16 12.4102 16 8C16 3.58984 12.4102 0 8 0ZM8 14.5C4.41016 14.5 1.5 11.5898 1.5 8C1.5 4.41016 4.41016 1.5 8 1.5C11.5898 1.5 14.5 4.41016 14.5 8C14.5 11.5898 11.5898 14.5 8 14.5ZM8.75 12H7.25V7H8.75V12ZM8.75 5H7.25V3.5H8.75V5Z" fill="#6C757D" />
-</svg>',
-    )
-    ->link->attr(['class' => '']);
+//             $menu->pages
+//     ->add('<span>' . __('messages.about_us') . '</span>', [
+//         'class' => 'sidebar-layout',
+//         'route' => 'about-us',
+//     ])
+//     ->data('permission', 'about us')
+//     ->prepend(
+//         '<svg width="15" height="15" class="sidebar-menu-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M8 0C3.58984 0 0 3.58984 0 8C0 12.4102 3.58984 16 8 16C12.4102 16 16 12.4102 16 8C16 3.58984 12.4102 0 8 0ZM8 14.5C4.41016 14.5 1.5 11.5898 1.5 8C1.5 4.41016 4.41016 1.5 8 1.5C11.5898 1.5 14.5 4.41016 14.5 8C14.5 11.5898 11.5898 14.5 8 14.5ZM8.75 12H7.25V7H8.75V12ZM8.75 5H7.25V3.5H8.75V5Z" fill="#6C757D" />
+// </svg>',
+//     )
+//     ->link->attr(['class' => '']);
 
 
         $menu
