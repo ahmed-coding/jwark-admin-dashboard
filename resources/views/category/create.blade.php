@@ -101,16 +101,16 @@
                                     <label class="custom-control-label" for="is_featured">{{ __('messages.set_as_featured') }}</label>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
+                            {{-- <div class="form-group col-md-6">
                                 <div class="custom-control custom-switch">
                                     {{ html()->checkbox('seo_enabled', $categorydata->seo_enabled)->class('custom-control-input')->id('seo_enabled') }}
                                     <label class="custom-control-label" for="seo_enabled">{{ __('messages.set_seo') }}</label>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <!-- SEO Fields Section for this language -->
-                        <div class="row mt-4" id="seo_fields_section">
+                        {{-- <div class="row mt-4" id="seo_fields_section">
                             <div class="col-12">
                                 <h5 class="fw-bold mb-3">{{ __('messages.seo_fields') }}</h5>
                             </div>
@@ -191,7 +191,7 @@
                                     ->attribute('id', 'meta_description') }}
                                 <small class="help-block with-errors text-danger"></small>
                             </div>
-                        </div>
+                        </div> --}}
 
                         {{ html()->submit(trans('messages.save'))
                         ->class('btn btn-md btn-primary float-end')
@@ -206,7 +206,7 @@
     </div>
 
     @section('bottom_script')
-    
+
         <script type="text/javascript">
             function previewSeoImage(event) {
                 const preview = document.getElementById('seo_image_preview');
@@ -289,9 +289,9 @@
                                 document.querySelector('input[name="category_image"]').value =
                                 ''; // Clear the file input
                                 fileLabel.textContent =
-                                    '{{ __('messages.choose_file', ['file' => __('messages.image')]) }}'; 
+                                    '{{ __('messages.choose_file', ['file' => __('messages.image')]) }}';
                                 saveButton.disabled = true; // Disable the save button
-                                $('#removeButton').addClass('d-none'); 
+                                $('#removeButton').addClass('d-none');
 
                                 // Optionally show a success message
                                 Swal.fire(
@@ -626,7 +626,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 seoImageInput.setAttribute('data-has-image', '1');
                 if (errorBlock) errorBlock.textContent = '';
-                
+
             }
         });
     }

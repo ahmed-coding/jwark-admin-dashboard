@@ -124,15 +124,15 @@
                                     <label class="custom-control-label" for="is_featured">{{ __('messages.set_as_featured') }}</label>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
+                            {{-- <div class="form-group col-md-6">
                                 <div class="custom-control custom-switch">
                                     {{ html()->checkbox('seo_enabled', $subcategory->seo_enabled)->class('custom-control-input')->id('seo_enabled') }}
                                     <label class="custom-control-label" for="seo_enabled">{{ __('messages.set_seo') }}</label>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
-                    
-                        <div class="row mt-4" id="seo_fields_section">
+
+                        {{-- <div class="row mt-4" id="seo_fields_section">
                             <div class="col-12">
                                 <h5 class="fw-bold mb-3">{{ __('messages.seo_fields') }}</h5>
                             </div>
@@ -156,7 +156,7 @@
                                     <!-- @php
                                         $seoImageUrl = ($subcategory && getMediaFileExit($subcategory, 'seo_image')) ? $subcategory->getFirstMediaUrl('seo_image') : null;
                                     @endphp -->
-                                   
+
                                     <img id="seo_image_preview" src="{{ $seoImageUrl }}" alt="SEO Image Preview" style="max-width: 100px; margin-top: 10px; @if(empty($seoImageUrl)) display: none; @endif" />
                                 </div>
                                 <div class="form-group col-md-6 mb-3">
@@ -208,7 +208,7 @@
                                     ->attribute('maxlength', 200)
                                     ->attribute('id', 'meta_description') }}
                             </div>
-                        </div>
+                        </div> --}}
                         <script>
                         function slugify(text) {
                             return text.toString().toLowerCase()
@@ -241,7 +241,7 @@
                             }
                         }
                         </script>
-                    
+
                         {{ html()->submit(trans('messages.save'))->class('btn btn-md btn-primary float-end')->id('saveButton') }}
                         {{ html()->form()->close() }}
                     </div>
@@ -391,7 +391,7 @@
                     }
                 });
             }
-        
+
             document.addEventListener('DOMContentLoaded', function() {
                 var input = document.querySelector('input[name=meta_keywords]');
                 if (input) {
