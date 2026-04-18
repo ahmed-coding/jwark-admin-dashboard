@@ -115,7 +115,7 @@
                                 __('messages.state')])) }}
                             </div>
 
-                            <div class="form-group col-md-4">
+                            {{-- <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.select_name', ['select' => __('messages.city')]),
                                 'city_id')->class('form-control-label') }}
                                 <br />
@@ -123,8 +123,8 @@
                                 ->class('select2js form-group city_id')
                                 ->attribute('data-placeholder', __('messages.select_name', ['select' =>
                                 __('messages.city')])) }}
-                            </div>
-                            <div class="form-group col-md-4">
+                            </div> --}}
+                            {{-- <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.select_name', ['select' => __('messages.tax')]),
                                 'tax_id')->class('form-control-label') }}
                                 <br />
@@ -134,7 +134,7 @@
                                 ->multiple()
                                 ->attribute('data-placeholder', __('messages.select_name', ['select' =>
                                 __('messages.tax')])) }}
-                            </div>
+                            </div> --}}
                             <div class="form-group col-md-4">
                                 {{ html()->label(__('messages.select_name', ['select' => __('messages.service_zone')]),
                                 'service_zones')->class('form-control-label') }}
