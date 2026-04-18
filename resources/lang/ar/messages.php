@@ -104,7 +104,7 @@
     'discount' => 'الخصم',
     'price_type' => 'نوع السعر',
     'fixed' => 'ثابت',
-    'hourly' => 'ساعي',
+    'hourly' => 'بالساعة',
     'first_name' => 'الاسم الأول',
     'last_name' => 'الاسم الأخير',
     'country' => ' الدولة',
