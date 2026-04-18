@@ -100,7 +100,7 @@
     'featured' => 'متميز',
     'set_as_featured' => 'تعيين كملف مميز',
     'msg_fail_to_delete' => ':item لا يمكن حذف.',
-    'provider' => 'قائمة',
+    'provider' => 'مزود',
     'discount' => 'الخصم',
     'price_type' => 'نوع السعر',
     'fixed' => 'ثابت',
